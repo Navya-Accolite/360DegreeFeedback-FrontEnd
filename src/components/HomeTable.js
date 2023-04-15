@@ -7,14 +7,17 @@ import { FormGroup, Label, Input, Row, Col, Button} from 'reactstrap';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 function HomeTable(props) {
-  const headers = ['ID', 'NAME', 'MAIL'];
+const headers = ['ID', 'NAME', 'MAIL'];
 
   const [isOpenCon, setIsOpenCon] = useState(false);
   const [data, setData] = useState([]);
+<<<<<<< HEAD
   const [shareData, setshareData] = useState([])
   const [isOpenShare, setIsOpenShare] = useState(false);
   const emailId = window.localStorage.getItem('emailId');
   const [message,updateMessage]=useState('');
+=======
+>>>>>>> 00e6bfa0c1eb23ae10173a3ccbb5c987fa8ce3e0
 
 
   const form = useRef();
