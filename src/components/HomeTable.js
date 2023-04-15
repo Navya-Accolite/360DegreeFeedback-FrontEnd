@@ -5,10 +5,10 @@ import StarRating from './StarRating';
 import axios from "axios";
 import '../Styles/feedbackPage.css';
 function HomeTable(props) {
-  const headers = ['ID', 'NAME', 'MAIL'];
+const headers = ['ID', 'NAME', 'MAIL'];
 
   const [isOpenCon, setIsOpenCon] = useState(false);
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
     useEffect(() => {
         // axios.get("http://localhost:4545/api/questions/checkValid")
