@@ -8,6 +8,7 @@ import RequestFeedback from './components/RequestFeedback';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogOutPage from './components/LogOutPage';
 import ManageQuestions from './components/ManageQuestions';
+import ManageUsers from './components/ManageUsers';
 
 function App() {
 
@@ -47,45 +48,10 @@ function Content(){
       <Route path="/requestfeedback" Component={RequestFeedback}></Route>
       <Route path="/logout" Component={LogOutPage}></Route>
       <Route path="managequestions" Component={ManageQuestions}></Route>
+      <Route path="manageusers" Component={ManageUsers}></Route>
+
 </Routes>
   </div>
 }
 export default App;
 
-
-// import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-
-// class App extends Component {
-  
-//   render() {
-    
-    
-//     return (
-//       <div
-//         className="loginLayout"
-//       >
-//         <div  style={{paddingLeft:35}}>
-//           <div style={{color: "red",padding:"20px"}}><center>Please Login First!</center></div>
-            
-          
-//           <label>User Name</label>
-          
-//         </div>
-//         <div style={{ marginTop: 20 , paddingLeft:40}}>
-//           <label>Password</label>
-          
-//         </div>
-//         <div className="loinBtn">
-//         <div className="loinBtn">
-          
-//           <Link path='/h'> Click
-//           </Link>
-//         </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;

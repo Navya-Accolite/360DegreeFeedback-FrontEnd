@@ -9,7 +9,7 @@ function HomeContent() {
   const emailId = window.localStorage.getItem('emailId');
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:4545/api/pendingResponses/"+emailId)
+    axios.get("http://localhost:4545/api/feedbackProviders/"+emailId)
         .then((response) => setData(response.data));
     console.log(data)
 }, []);

@@ -8,19 +8,9 @@ import { Input } from 'reactstrap';
 
 function ManageQuestionsTable(props) {
   const headers = ['QuesionID', 'NAME'];
-  const postdata=useState('')
     
-
- 
-// const data = {
-//   attributeId: 123,
-//   status: 'active'
-// };
-
   function handleOnChange(attributeId, status) {
     const url = 'http://localhost:4545/api/status/'+attributeId;
-    console.log("id",attributeId)
-    console.log("status",status)
     if(status===0)
      status=1
     else
@@ -35,8 +25,6 @@ function ManageQuestionsTable(props) {
       console.error(error);
     });
   
-
-    
 
   }
     

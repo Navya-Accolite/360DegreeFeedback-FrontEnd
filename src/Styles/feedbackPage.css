@@ -62,7 +62,7 @@ textarea::placeholder{
 {
   top:150px;
   position: absolute;
-  width: 100vw;
+  width: 70vw;
   height: 300px;
   background-color: #00000046;
   display: flex;
@@ -75,6 +75,7 @@ textarea::placeholder{
     background: whitesmoke;
     width: 60vw;
     border-radius: 3px;
+    margin-left:350px;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.4);
   }
 

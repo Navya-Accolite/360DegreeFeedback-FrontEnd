@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styles/StylesforGiveFeedback.css';
 import  { useEffect, useState } from "react";
-import StarRating from './StarRating';
 import axios from "axios";
 import '../Styles/feedbackPage.css';
 function GiveFeedbackTable(props) {
@@ -9,7 +8,7 @@ function GiveFeedbackTable(props) {
 
   const[quesIdArray,setquesIdArray]=useState([])
   const[ratingArray,setRatingArray]=useState([])
-   const[rating,setRating]=useState(0)
+  const [feedbackid,setFeedbackId]=useState("");
    const [comment,setComment] = useState("");
   const [isOpenCon, setIsOpenCon] = useState(false);
     const [data, setData] = useState([]);
@@ -19,8 +18,11 @@ function GiveFeedbackTable(props) {
             .then((response) => setData(response.data));
     }, []);
 
-    const handleFeedBack = () => {
+    const handleFeedBack = (id) => {
+      setFeedbackId(id)
         setIsOpenCon(true)
+        console.log(feedbackid)
+
     }
     const update=(value,id1)=>{
       quesIdArray.push(id1);
@@ -39,7 +41,18 @@ const func=()=>{
   quesIdArray.map((v,i)=>{
       obj[`${v}`]=ratingArray[i];
   })
-  console.log(obj);
+  console.log("obj",obj);
+
+  axios.post('http://localhost:4545/api/storeRes/3', obj,{headers: {
+    'Content-Type': 'application/json'
+  }}
+  )
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
 }
 
   return (
@@ -60,7 +73,7 @@ const func=()=>{
             <td>{user[1]}</td>
             <td>{user[0]}</td>
             <td>
-              <button id='btn' onClick={handleFeedBack}>Provide Feedback</button>
+              <button id='btn' onClick={()=>handleFeedBack(user[3])}>Provide Feedback</button>
             </td>
           </tr>
         ))}
