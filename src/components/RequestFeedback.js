@@ -19,21 +19,6 @@ function RequestFeedback() {
   const [message,updateMessage]=useState('');
   const emailId = window.localStorage.getItem('emailId');
 
-  
-
-  // useEffect(() => {
-  //   axios.get("http://localhost:4545/api/pendingResponses/" + emailId).then((res) => {
-  //     console.log(res.data);
-  //     //  setdata(res.data)
-  //   })
-
-  //   axios.get("http://localhost:4545/api/completedResponses/" + emailId).then((res) => {
-  //     console.log(res.data);
-  //     //  setdata(res.data)
-  //   })
-
-  // })
-
 
   const data =
   {

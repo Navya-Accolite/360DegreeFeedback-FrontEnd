@@ -7,6 +7,7 @@ import SideNav from './components/SideNav';
 import RequestFeedback from './components/RequestFeedback';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogOutPage from './components/LogOutPage';
+import ManageQuestions from './components/ManageQuestions';
 
 function App() {
 
@@ -45,6 +46,7 @@ function Content(){
       <Route path="/givefeedback" Component={GiveFeedback}></Route>
       <Route path="/requestfeedback" Component={RequestFeedback}></Route>
       <Route path="/logout" Component={LogOutPage}></Route>
+      <Route path="managequestions" Component={ManageQuestions}></Route>
 </Routes>
   </div>
 }

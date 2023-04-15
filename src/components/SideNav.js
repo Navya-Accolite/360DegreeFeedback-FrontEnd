@@ -8,6 +8,8 @@ import {
   UserOutlined,
   ForwardOutlined,
   AliwangwangOutlined,
+  SolutionOutlined,
+  TeamOutlined
 } from '@ant-design/icons';
 
 function SideNav() {
@@ -52,7 +54,7 @@ function SideNav() {
   }}
   defaultSelectedKeys={[window.location.path]}
 
-    items={[
+  items={[
     { label: 'Home', key: '/', icon: <HomeOutlined /> },
     {
       label: 'Request Feedback',
@@ -64,6 +66,20 @@ function SideNav() {
       key: '/givefeedback',
       icon: <UserOutlined />,
     },
+    ...(data.role === 'ADMIN'
+      ? [
+          {
+            label: 'Manage Questions',
+            key: '/managequestions',
+            icon: <SolutionOutlined />,
+          },
+          {
+            label: 'Manage Users',
+            key: '/manageusers',
+            icon: <TeamOutlined />,
+          },
+        ]
+      : []),
   ]}
  
 />

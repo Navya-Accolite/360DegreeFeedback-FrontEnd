@@ -13,7 +13,6 @@ function GiveFeedback() {
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.log(error));
-      console.log("fid",data);
   }, []);
 
 
