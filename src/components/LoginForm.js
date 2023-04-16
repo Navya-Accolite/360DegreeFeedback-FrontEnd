@@ -24,7 +24,7 @@ const LoginForm = ({ onLogin }) => {
         onLogin();
         console.log(JSON.stringify({token:response.credential}))
         window.localStorage.setItem('LoggedIn',"YES");
-        fetch("http://localhost:4545/auth/login",{
+        fetch("http://localhost:4545/api/login",{
             method:"POST",
             body:JSON.stringify({token:response.credential})
         })
@@ -66,6 +66,9 @@ const LoginForm = ({ onLogin }) => {
             
     //       });
     // };
+
+    
+      
     return (
         <div className='loginWrapper'>
                 <h2>Welcome</h2>
