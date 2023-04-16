@@ -43,7 +43,7 @@ const func=()=>{
   })
   console.log("obj",obj);
 
-  axios.post('http://localhost:4545/api/storeRes/3', obj,{headers: {
+  axios.post('http://localhost:4545/api/storeRes/'+feedbackid, obj,{headers: {
     'Content-Type': 'application/json'
   }}
   )

@@ -3,6 +3,7 @@ import { Menu } from 'antd';
 import  { useEffect } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import image from '../Styles/profile-image.png'
 import {
   HomeOutlined,
   UserOutlined,
@@ -36,7 +37,7 @@ function SideNav() {
       <div className="sidebar-content">
         <div className="sidebar-header">
           <img
-            src="	https://randomuser.me/api/portraits/women/26.jpg"
+            src={image}
             alt="Profile"
             className="sidebar-profile-img"
           />
