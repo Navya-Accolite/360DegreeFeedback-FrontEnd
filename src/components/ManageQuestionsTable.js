@@ -4,6 +4,7 @@ import  { useEffect, useState } from "react";
 import Select from 'react-select';
 import axios from "axios";
 import '../Styles/StylesforGiveFeedback.css';
+import { ToastContainer, toast } from 'react-toastify';
 import { Input } from 'reactstrap';
 
 function ManageQuestionsTable(props) {
@@ -16,6 +17,7 @@ function ManageQuestionsTable(props) {
     else
     status=0
 
+    toast.success("Updated Successfully!")
     
     axios.put(url, status, { headers: { 'Content-Type': 'application/json' }})
     .then(response => {
@@ -63,6 +65,8 @@ function ManageQuestionsTable(props) {
               </td>
             </tr>
           ))}
+
+          <ToastContainer/>
         </tbody>
       </table>
     </>

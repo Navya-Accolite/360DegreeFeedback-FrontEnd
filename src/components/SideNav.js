@@ -17,12 +17,12 @@ function SideNav() {
   const navigate = useNavigate();
   
   const emailId = window.localStorage.getItem('emailId');
-  // console.log(emailId);
+  //  console.log("mail",emailId);
   const [data,setdata]=useState([]);
 
   useEffect(()=>{
     axios.get("http://localhost:4545/api/getDetails/"+emailId).then((res)=>{
-      // console.log(res.data);
+      //  console.log(res.data);
        setdata(res.data)
     })
   })

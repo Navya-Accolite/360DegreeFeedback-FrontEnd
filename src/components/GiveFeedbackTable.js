@@ -41,6 +41,9 @@ const func=()=>{
   quesIdArray.map((v,i)=>{
       obj[`${v}`]=ratingArray[i];
   })
+  // console.log("obj",obj);
+  
+  JSON.stringify(obj);
   console.log("obj",obj);
 
   axios.post('http://localhost:4545/api/storeRes/'+feedbackid, obj,{headers: {
