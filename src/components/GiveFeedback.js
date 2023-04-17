@@ -19,7 +19,7 @@ function GiveFeedback() {
   return (
     <>
     <div>
-      <h3>Please provide your Feedback</h3>
+      <h3>Provide your Feedback</h3>
     </div>
     <div className="searchBarContainer">
 

@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -34,10 +36,11 @@
 }
 
 .sidebar{
+  width: 200px;
   display: flex;
   flex-direction:row ;
   height: 100vh;
-  margin-right: 30px;
+  /* margin-right: 30px; */
 }
 .Head{
   color: white;
@@ -51,6 +54,7 @@
   flex-direction:column ;
   flex: 1;
   height: 100vh;
+
 }
 .Foot{
   color: white;
@@ -62,16 +66,8 @@
 }
 
 .sideBtn{
-  background-color: grey;
+  background-color: red;
 }
-
-/* .Head p{
-  font-weight: bolder;
-  padding-top: 30px;
-  font-size: larger;
-  padding-left: 10px;
-  text-shadow: #282c34;
-} */
 
 
 .Logout button{
@@ -109,7 +105,7 @@
   align-items: center;
   height: 100px;
   margin-bottom: 20px;
-  background-color: grey;
+  background-color: #070A52;
 }
 
 .sidebar-profile-img {
@@ -122,7 +118,7 @@
 }
 
 .profiledetails{
-  background-color:grey;
+  background-color:#070A52;
   align-items: center;
   align-content: center;
   margin-bottom: 30px;

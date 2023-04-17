@@ -1,8 +1,10 @@
 .ques{
-    margin-left: 20px;
+    /* margin-left: 200px; */
     font-family: 'Times New Roman', Times, serif;
     font-weight:light;
     font-size:large;
+    /* width: 30px; */
+    display: inline-block;
 }
 
 .question{
@@ -82,8 +84,8 @@ textarea::placeholder{
   .popup-boxd1 table{
     
         border-collapse: collapse;
-        width: 80%;
-        margin-left: 50px;
+        width: 100%;
+        /* margin-left: 50px; */
       
   }
 
@@ -104,18 +106,33 @@ textarea::placeholder{
   
 
 
+
   table {
+   
     border-collapse: collapse;
-    width: 90%;
-    margin-left: 100px;
+    margin-left: 200px;
+    /* width: 100%; */
+    /* margin-left: 100px; */
+  }
+
+  .table1 {
+    /* display: flex;
+    justify-content: center; */
+    border-collapse: collapse;
+    /* width: 100%; */
+    margin-left: 200px;
   }
 
   .admintable{
     margin-left: 200px;
   }
   
-  th,
-  td {
+  th{
+    /* /* display: flex; */
+    justify-content: center; 
+  }
+  th,td {
+    
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -168,5 +185,5 @@ textarea::placeholder{
   }
 
   .comment{
-    padding-left: 200px;
+    padding-left: 100px;
   }
