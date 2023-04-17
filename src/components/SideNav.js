@@ -10,7 +10,8 @@ import {
   ForwardOutlined,
   AliwangwangOutlined,
   SolutionOutlined,
-  TeamOutlined
+  TeamOutlined,
+  UserDeleteOutlined,
 } from '@ant-design/icons';
 
 function SideNav() {
@@ -78,6 +79,12 @@ function SideNav() {
             label: 'Manage Users',
             key: '/manageusers',
             icon: <TeamOutlined />,
+          },
+
+          {
+            label: 'Disable Employee',
+            key: '/disableemployee',
+            icon: <UserDeleteOutlined/>,
           },
         ]
       : []),

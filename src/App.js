@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LogOutPage from './components/LogOutPage';
 import ManageQuestions from './components/ManageQuestions';
 import ManageUsers from './components/ManageUsers';
+import DisableEmployee from './components/DisableEmployee';
 
 function App() {
 
@@ -49,6 +50,7 @@ function Content(){
       <Route path="/logout" Component={LogOutPage}></Route>
       <Route path="managequestions" Component={ManageQuestions}></Route>
       <Route path="manageusers" Component={ManageUsers}></Route>
+      <Route path="disableemployee" Component={DisableEmployee}></Route>
 
 </Routes>
   </div>

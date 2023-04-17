@@ -5,6 +5,8 @@ import { useRef } from 'react';
 import '../Styles/feedbackPage.css';
 import { FormGroup, Label, Form, Input, Row, Col, Button} from 'reactstrap';
 import emailjs from '@emailjs/browser';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { ToastContainer, toast } from 'react-toastify';
 function HomeTable(props) {
 const headers = ['ID', 'NAME', 'MAIL'];
@@ -47,37 +49,25 @@ const headers = ['ID', 'NAME', 'MAIL'];
     })
   }
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   console.log("para",templateParams);
-  //   emailjs.sendForm('service_91z8rbi', 'template_yq7ixod',  form.current,'piZXRCXKpuBTMThCC',templateParams,)
-  //     .then((result) => { 
-  //       console.log(result.text);
-  //     }, (error) => {
-  //       console.log(error.text);
-  //     });
-
-  //     toast.success('Request sent successfully!');
-
-  // };
+ 
 
   const sendEmail = (e) => {
 
 
     const templateParams = {
       to_email: emailTo,
-      message: shareData
+      message: shareData+comment,
     };
     
       emailjs.send('service_91z8rbi', 'template_uc7dh9l', templateParams, 'piZXRCXKpuBTMThCC')
         .then((result) => { 
           console.log(result.text);
-          toast.message("Report sent Successfully")
         }, (error) => {
           console.log(error.text);
         });
 
         setIsOpenShare(false)
+        toast.success("Report sent Successfully!")
     
   };
 
@@ -184,6 +174,7 @@ const headers = ['ID', 'NAME', 'MAIL'];
           ))}
         </tbody>
       </table>
+      <ToastContainer/>
 
 
     </>

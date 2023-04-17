@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import {Form,FormGroup,Label,Row,Col,Input} from 'reactstrap';
 import {Button} from 'reactstrap';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function ManageUsers() {
@@ -23,6 +25,7 @@ function ManageUsers() {
        .catch(error => {
         //  console.error(error);
        });
+       toast.success("Updated Suucessfully!")
     }
 
   return (
@@ -32,7 +35,7 @@ function ManageUsers() {
     </div>
 
 
-    <div className='manageusers'>
+  <div className='manageusers'>
    <div>
    <div>
     <Label
@@ -54,31 +57,22 @@ function ManageUsers() {
   </div>
 
   <div>
-    <Label
-      for="exampleSelect"
-      sm={2}
-    >
-      Select
-    </Label>
-    <Col sm={10}>
-      <Input
-        id="exampleSelect"
-        name="select"
-        type="select"
-        onChange={(e)=>updaterole(e.target.value)}
-      >
-        <option>
-          ADMIN
-        </option>
-        <option>
-          USER
-        </option>
-      </Input>
-    </Col>
-  </div>
+  <Label for="exampleSelect" sm={2}>Select</Label>
+  <Col sm={10}>
+    <Input id="exampleSelect" name="select" type="select" onChange={(e) => updaterole(e.target.value)}>
+      <option value=""></option>
+      <option value="ADMIN">ADMIN</option>
+      <option value="USER">USER</option>
+    </Input>
+  </Col>
+</div>
+
+
+
   <button id='btn4' onClick={()=>updateuser()}>Update</button>
 
    </div>
+   <ToastContainer/>
     </div>
     
     </>

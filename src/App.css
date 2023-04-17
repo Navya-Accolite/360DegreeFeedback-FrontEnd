@@ -41,7 +41,7 @@
 }
 .Head{
   color: white;
-  background-color: #2ece54;
+  background-color: rgb(67, 58, 68);
   height: 30px;
   font-weight: bold;
   padding-bottom: 50px;
@@ -75,7 +75,7 @@
 
 
 .Logout button{
-  background-color: lightcoral;
+  background-color: blue;
   margin-top: 6px;
   margin-right: 10px;
   border-radius: 3px;
