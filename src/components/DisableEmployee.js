@@ -37,7 +37,7 @@ function DisableEmployee() {
       <Input
         id="exampleEmail"
         name="email"
-        placeholder="with a placeholder"
+        placeholder="Enter email id"
         type="email"
         onChange={(e)=>setMail(e.target.value)}
        

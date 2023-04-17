@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
-import {Form,FormGroup,Label,Row,Col,Input} from 'reactstrap';
-import {Button} from 'reactstrap';
+import {Label,Col,Input} from 'reactstrap';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -20,12 +19,14 @@ function ManageUsers() {
        }
        axios.put(url, postdata, { headers: { 'Content-Type': 'application/json' }})
        .then(response => {
-        //  console.log(response.data);
+        toast.success("Updated Suucessfully!")
        })
        .catch(error => {
-        //  console.error(error);
+          console.error(error);
+          toast.error("Can't Remove Admin")
        });
-       toast.success("Updated Suucessfully!")
+       document.getElementById('exampleEmail').value="";
+      
     }
 
   return (
@@ -48,7 +49,7 @@ function ManageUsers() {
       <Input
         id="exampleEmail"
         name="email"
-        placeholder="with a placeholder"
+        placeholder="Enter email id"
         type="email"
         onChange={(e)=>updateemail(e.target.value)}
        
@@ -60,7 +61,7 @@ function ManageUsers() {
   <Label for="exampleSelect" sm={2}>Select</Label>
   <Col sm={10}>
     <Input id="exampleSelect" name="select" type="select" onChange={(e) => updaterole(e.target.value)}>
-      <option value="">Select</option>
+      <option value=""></option>
       <option value="ADMIN">ADMIN</option>
       <option value="USER">USER</option>
     </Input>
