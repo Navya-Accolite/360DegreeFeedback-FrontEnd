@@ -32,7 +32,7 @@ function RequestFeedback() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_91z8rbi', 'template_yq7ixod', form.current, 'piZXRCXKpuBTMThCC')
+    emailjs.sendForm('service_91z8rbi', 'template_uc7dh9l', form.current, 'piZXRCXKpuBTMThCC')
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -83,7 +83,7 @@ function RequestFeedback() {
                 </Label>
                 <Input onChange={(e)=>updateFromDate(e.target.value)}
                   id="exampleDate"
-                  name="date"
+                  name="message"
                   placeholder="date placeholder"
                   type="date"
                 />
@@ -96,7 +96,7 @@ function RequestFeedback() {
                 </Label>
                 <Input onChange={(e)=>updateToDate(e.target.value)}
                   id="exampleDate"
-                  name="date"
+                  name="message"
                   placeholder="date placeholder"
                   type="date"
                 />
