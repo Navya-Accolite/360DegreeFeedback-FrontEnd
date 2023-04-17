@@ -94,11 +94,11 @@ const func=()=>{
                             <div>{blog.attribute}</div>
                             <select onChange={(e)=>update(e.target.value,blog.attributeId)}>
                             <option value="" select hidden>Rating</option>
-                            <option value={1}>1-Poor</option>
-                            <option value={2}>2-Unsatisfactory</option>
-                            <option value={3}>3-Satisfactory</option>
-                            <option value={4}>4-Very Satisfactory</option>
-                            <option value={5}>5-Outstanding</option>
+                            <option value={1}>1-Needs Improvement</option>
+                            <option value={2}>2-Below Average</option>
+                            <option value={3}>3-Average</option>
+                            <option value={4}>4-Good</option>
+                            <option value={5}>5-Excellent</option>
                             </select>
                         </div>)
                     }

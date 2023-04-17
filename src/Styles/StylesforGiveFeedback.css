@@ -1,77 +1,57 @@
 table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-left: 200px;
-  }
-
-  .admintable{
-    margin-left: 200px;
-  }
-
-  h3{
-    display: flex;
-    justify-content: center;
-  }
-  
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: lightblue;
-  }
-
-  tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  tbody tr:hover {
-    background-color: aliceblue;
-  }
-  
-  
-  #btn {
-    background-color: #60cf64;
-    border: none;
-    color: white;
-    padding: 6px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    cursor: pointer;
-    margin-right: 30px;
-  }
-  
-  button:hover {
-    background-color: #3e8e41;
-  }
-  
-  #btn1{
-    background-color: #60cf64;
-    margin-right: 20px;
-    border-radius: 3px;
-  }
-  #btn2 {
-    background-color: #60cf64;
-    border: white;
-    color: white;
-    padding: 6px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    cursor: pointer;
-    margin-top: 30px;
-    border-radius: 4px;
-    margin-left: 400px;
-  }
-  
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: 100px;
+}
+.admintable{
+  margin-left: 200px;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f0b7b7;
+  font-weight: bold;
+}
+tbody tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+#btn {
+  background-color: #60CF64;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+button:hover {
+  background-color: #3E8E41;
+}
+#btn1{
+  background-color: #60CF64;
+  margin-right: 20px;
+  padding: 3px 3px 3px 3px;
+  color: white;
+  border-radius: 3px;
+}
+#btn2 {
+  background-color: #60CF64;
+  border: white;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 4px;
+  margin-left: 400px;
+}

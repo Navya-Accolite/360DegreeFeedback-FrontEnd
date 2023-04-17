@@ -80,11 +80,6 @@ function SideNav() {
             key: '/manageusers',
             icon: <TeamOutlined />,
           },
-
-<<<<<<< HEAD
-         
-=======
->>>>>>> c6a15c0978f2726f72c184a16a9436d2a0dc9ce1
         ]
       : []),
   ]}

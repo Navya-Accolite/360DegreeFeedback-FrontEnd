@@ -1,60 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .group:hover .group-hover\:flex {
-	display: flex !important;
+  display: flex !important;
 }
-
 body {
   margin: 0;
-  background-color: green;
   font-family: "Gill Sans Extrabold", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #60cf64;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
 .feedbacks{
   display: inline-block;
 }
-
 .group:hover .group-hover\:flex {
-	display: flex !important;
+  display: flex !important;
 }
-h4{
-  width: 100%;
-  margin-left: 80%;
-  margin-right: 50%;
-  padding-top: 20px;
-  padding-bottom: 100px;
-  }
-
 .manageusers{
   display: flex;
   flex-direction: column;
-  margin-left: 300px;
-  width: 100%;
+  margin-left: 200px;
 }
-
-
 #btn4{
-  background-color: #60cf64;
+  background-color: #60CF64;
   margin-top: 40px;
   padding: 3px 3px 3px 3px;
   margin-left: 80px;
   border-radius: 3px;
-  box-shadow: 2px 1px;
-}
-
-.home1{
-  /* background-color: aliceblue;
-  width: 100%;
-  height: 100%; */
 }

@@ -1,129 +1,115 @@
 .App {
-  text-align: center;
-
+text-align: center;
 }
-
-
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+height: 40vmin;
+pointer-events: none;
 }
-
-
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+background-color: #282C34;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-size: calc(10px + 2vmin);
+color: white;
 }
-
 .App-link {
-  color: pink;
+color: pink;
 }
-
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+from {
+  transform: rotate(0deg);
 }
-
+to {
+  transform: rotate(360deg);
+}
+}
 .sidebar{
-  width: 200px;
-  display: flex;
-  flex-direction:row ;
-  height: 100vh;
-  /* margin-right: 30px; */
+display: flex;
+flex-direction:row ;
+height: 100vh;
+margin-right: 30px;
 }
 .Head{
-  color: white;
-  background-color: rgb(67, 58, 68);
-  height: 30px;
-  font-weight: bold;
-  padding-bottom: 50px;
+color: white;
+background-color: rgb(21, 18, 15);
+height: 30px;
+font-weight: bold;
+padding-bottom: 50px;
 }
 .All{
-  display: flex;
-  flex-direction:column ;
-  flex: 1;
-  height: 100vh;
-
+display: flex;
+flex-direction:column ;
+flex: 1;
+height: 100vh;
 }
 .Foot{
-  color: white;
-  background-color: #282c34;
-  height: 70px;
-  display:flex;
-  font-weight: bold;
-  flex-direction: column;
+color: white;
+background-color: #282C34;
+height: 70px;
+display:flex;
+font-weight: bold;
+flex-direction: column;
 }
-
 .sideBtn{
-  background-color: red;
+background-color: grey;
 }
-
-
+/* .Head p{
+font-weight: bolder;
+padding-top: 30px;
+font-size: larger;
+padding-left: 10px;
+text-shadow: #282C34;
+} */
 .Logout button{
-  background-color: rgb(226, 226, 232);
-  border: 2px solid rgb(226, 226, 232);
-  margin-top: 6px;
-  margin-right: 10px;
-  border-radius: 3px;
-  color: rgb(19, 3, 3);
+background-color: rgb(226, 226, 232);
+border: 2px solid rgb(226, 226, 232);
+margin-top: 6px;
+margin-right: 10px;
+border-radius: 3px;
+color: rgb(19, 3, 3);
 }
 .Logout:hover{
-  color: white;
+color: white;
 }
-
 .name{
-  padding-left: 20px;
-  padding-top: 10px;
-  font-size: 20px;
+padding-left: 20px;
+padding-top: 10px;
+font-size: 20px;
 }
-
 .name:hover{
-  color: #e56e0c;
+color: #E56E0C;
 }
 .Head span:nth-of-type(1) { float:left }
 .Head span:nth-of-type(2) { float:right }
-
-
 .sidebar {
-  /* your existing styles */
+/* your existing styles */
 }
-
 .sidebar-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  margin-bottom: 20px;
-  background-color: #070A52;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100px;
+margin-bottom: 20px;
+background-color: rgb(171, 186, 231);
 }
-
 .sidebar-profile-img {
-  margin-top: 30px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
+margin-top: 30px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+object-fit: cover;
+margin-right: 10px;
 }
-
 .profiledetails{
-  background-color:#070A52;
-  align-items: center;
-  align-content: center;
-  margin-bottom: 30px;
-  color: white;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  display: flexbox;
+background-color:rgb(171, 186, 231);
+align-items: center;
+align-content: center;
+margin-bottom: 30px;
+color: white;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: bold;
+display: flexbox;
 }

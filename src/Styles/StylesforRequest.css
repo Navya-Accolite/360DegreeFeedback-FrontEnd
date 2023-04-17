@@ -1,13 +1,19 @@
 .Formelement{
-    padding-left: 150px;
-    /* margin-left: 50% */
-  }
+  padding-left: 50px;
+  margin-left: 50px;
+}
+h3{
+  padding-left: 300px;
+  padding-bottom: 80px;
+}
+.label{
+  width: 700px;
+}
 
-  h3{
-    padding-left: 300px;
-    padding-bottom: 80px;
-  }
-
-  .label{
-    width: 700px;
-  }
+#btn0{
+  background-color: #60CF64;
+  margin-right: 20px;
+  padding: 3px 3px 3px 3px;
+  color: white;
+  border-radius: 3px;
+}

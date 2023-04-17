@@ -45,7 +45,7 @@ function App() {
 }
 
 function Content(){
-  return <div>
+  return <div classname="change">
 <Routes>
       <Route path="/" Component={HomeContent}></Route>
       <Route path="/givefeedback" Component={GiveFeedback}></Route>

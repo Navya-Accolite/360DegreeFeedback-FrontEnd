@@ -36,7 +36,7 @@ function ManageUsers() {
     </div>
 
 
-  <div className='manageusers'>
+  <div className='manageusers' style={{width:"100%"}}>
    <div>
    <div>
     <Label
@@ -58,7 +58,7 @@ function ManageUsers() {
   </div>
 
   <div>
-  <Label for="exampleSelect" sm={2}>Select Role</Label>
+  <Label for="exampleSelect" >Select Role</Label>
   <Col sm={10}>
     <Input id="exampleSelect" name="select" type="select" onChange={(e) => updaterole(e.target.value)}>
       <option value=""></option>

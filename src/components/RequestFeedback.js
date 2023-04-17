@@ -138,9 +138,9 @@ function RequestFeedback() {
             </FormGroup>
           </Row>
 
-          <Button type="submit" value="Send">
+          <button type="submit" value="Send" id="btn0">
             Send Request
-          </Button>
+          </button>
         </form>
         <ToastContainer />
 
