@@ -112,7 +112,7 @@ function RequestFeedback() {
               <Input onChange={(e)=>updateMessage(e.target.value)}
                 id="exampleZip"
                 name="message"
-                placeholder='Pitch yourself'
+                placeholder='Message'
                 type="textarea"
               />
             </FormGroup>
