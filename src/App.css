@@ -75,11 +75,12 @@
 
 
 .Logout button{
-  background-color: blue;
+  background-color: rgb(226, 226, 232);
+  border: 2px solid rgb(226, 226, 232);
   margin-top: 6px;
   margin-right: 10px;
   border-radius: 3px;
-  color: white;
+  color: rgb(19, 3, 3);
 }
 .Logout:hover{
   color: white;
@@ -129,7 +130,4 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   display: flexbox;
-}
-.google_btn{
- 
 }
