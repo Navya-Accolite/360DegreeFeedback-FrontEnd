@@ -60,7 +60,7 @@ function ManageUsers() {
   <Label for="exampleSelect" sm={2}>Select</Label>
   <Col sm={10}>
     <Input id="exampleSelect" name="select" type="select" onChange={(e) => updaterole(e.target.value)}>
-      <option value=""></option>
+      <option value="">Select</option>
       <option value="ADMIN">ADMIN</option>
       <option value="USER">USER</option>
     </Input>
