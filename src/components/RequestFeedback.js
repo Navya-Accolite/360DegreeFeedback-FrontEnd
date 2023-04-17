@@ -11,7 +11,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function RequestFeedback() {
 
-
   const form = useRef();
   const [username, updateUserName] = useState('');
   const [todate,updateToDate]=useState('');
@@ -19,6 +18,12 @@ function RequestFeedback() {
   const [message,updateMessage]=useState('');
   const emailId = window.localStorage.getItem('emailId');
 
+
+
+  const today = new Date().toISOString().split('T')[0];
+  console.log("today",today);
+  // document.getElementById("exampleDate").setAttribute("max",today);
+  // document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
 
   const data =
   {
@@ -82,8 +87,9 @@ function RequestFeedback() {
                   From Date
                 </Label>
                 <Input onChange={(e)=>updateFromDate(e.target.value)}
-                  id="exampleDate"
+                  id="exampleDate1"
                   name="message"
+                  max={today}
                   placeholder="date placeholder"
                   type="date"
                 />
@@ -98,6 +104,7 @@ function RequestFeedback() {
                   id="exampleDate"
                   name="message"
                   placeholder="date placeholder"
+                  max={today}
                   type="date"
                 />
               </FormGroup>

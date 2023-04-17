@@ -16,6 +16,7 @@ function App() {
   const handleRefresh = () => {
     if (window.confirm("Are you sure you want to Logout?")) {
       window.location.reload();
+      localStorage.clear();
     }
   };
  
