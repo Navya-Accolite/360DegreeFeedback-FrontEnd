@@ -19,12 +19,13 @@ function GiveFeedback() {
   return (
     <>
     <div>
-      <h3>Please provide your Valuable Feedback</h3>
+      <h3>Please provide your Feedback</h3>
     </div>
     <div className="searchBarContainer">
 
     <div>
-    <GiveFeedbackTable data={data} />
+      {data.length ? <GiveFeedbackTable data={data} /> : <div>No Requested Feedbacks</div> }
+
     </div>
 
     </div>

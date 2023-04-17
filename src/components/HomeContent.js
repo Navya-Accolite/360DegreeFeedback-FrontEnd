@@ -11,7 +11,6 @@ function HomeContent() {
   useEffect(() => {
     axios.get("http://localhost:4545/api/feedbackProviders/"+emailId)
         .then((response) => setData(response.data));
-    console.log(data)
 }, []);
 
   return (
@@ -21,7 +20,8 @@ function HomeContent() {
     </div>
 
     <div>
-    <HomeTable data={data} />
+      {data.length?<HomeTable data={data} />:<p>You have no Feedbacks available. Please request to view here.</p>}
+    
     </div>
     
     </>
