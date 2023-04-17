@@ -19,12 +19,8 @@ function RequestFeedback() {
   const [message,updateMessage]=useState('');
   const emailId = window.localStorage.getItem('emailId');
 
-
-
   const today = new Date().toISOString().split('T')[0];
   console.log("today",today);
-  // document.getElementById("exampleDate").setAttribute("max",today);
-  // document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
 
   const data =
   {
@@ -39,7 +35,7 @@ function RequestFeedback() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_91z8rbi', 'template_uc7dh9l', form.current, 'piZXRCXKpuBTMThCC')
+    emailjs.sendForm('service_91z8rbi', 'template_yq7ixod', form.current, 'piZXRCXKpuBTMThCC')
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -79,9 +75,7 @@ function RequestFeedback() {
                 />
               </FormGroup>
             </Col>
-          </Row>
-
-          <Row>
+         
             <Col md={6}>
             <FormGroup>
               <Label for="projectName" className='label'>
@@ -155,15 +149,6 @@ function RequestFeedback() {
 
       </div>
 
-      {/* <form ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
-      <input type="text" name="user_name" />
-      <label>Email</label>
-      <input type="email" name="to_email" />
-      <label>Message</label> 
-      <textarea name="message" />
-      <input type="submit" value="Send" />
-    </form> */}
 
     </div>
   )

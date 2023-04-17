@@ -81,11 +81,6 @@ function SideNav() {
             icon: <TeamOutlined />,
           },
 
-          {
-            label: 'Disable Employee',
-            key: '/disableemployee',
-            icon: <UserDeleteOutlined/>,
-          },
         ]
       : []),
   ]}

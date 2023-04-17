@@ -14,7 +14,7 @@ function HomeContent() {
 }, []);
 
   return (
-    <>
+    <div className='home1'>
     <div>
       <h3>Your Feedbacks!</h3>
     </div>
@@ -24,7 +24,7 @@ function HomeContent() {
     
     </div>
     
-    </>
+    </div>
 
   )
 }

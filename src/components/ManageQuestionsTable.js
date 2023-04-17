@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Input } from 'reactstrap';
 
 function ManageQuestionsTable(props) {
-  const headers = ['QuesionID', 'NAME'];
+  const headers = ['ATTRIBUTE'];
     
   function handleOnChange(attributeId, status) {
     const url = 'http://localhost:4545/api/status/'+attributeId;
@@ -46,13 +46,12 @@ function ManageQuestionsTable(props) {
             {headers.map((header) => (
               <th key={header}>{header}</th>
             ))}
-            <th>Reply</th>
+            <th>STATUS</th>
           </tr>
         </thead>
         <tbody>
           {props.data.map((question) => (
             <tr key={question.attributeId}>
-              <td>{question.attributeId}</td>
               <td>{question.attribute}</td>
               <td>
                 <Select

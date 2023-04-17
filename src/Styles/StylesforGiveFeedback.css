@@ -1,11 +1,16 @@
 table {
     border-collapse: collapse;
-    width: 90%;
-    margin-left: 100px;
+    width: 100%;
+    margin-left: 200px;
   }
 
   .admintable{
     margin-left: 200px;
+  }
+
+  h3{
+    display: flex;
+    justify-content: center;
   }
   
   th,
@@ -21,8 +26,17 @@ table {
   }
   
   tbody tr:nth-child(even) {
+    background-color: lightblue;
+  }
+
+  tbody tr:nth-child(even) {
     background-color: #f2f2f2;
   }
+  
+  tbody tr:hover {
+    background-color: aliceblue;
+  }
+  
   
   #btn {
     background-color: #60cf64;
@@ -60,3 +74,4 @@ table {
     border-radius: 4px;
     margin-left: 400px;
   }
+  

@@ -10,6 +10,8 @@ import LogOutPage from './components/LogOutPage';
 import ManageQuestions from './components/ManageQuestions';
 import ManageUsers from './components/ManageUsers';
 import DisableEmployee from './components/DisableEmployee';
+import image from './Styles/accolite-logo.png';
+import './index.css';
 
 function App() {
 

@@ -53,7 +53,7 @@ const postQuestion=(e)=>{
   return (
     <>
     <div>
-      <h3>Manage Questions</h3>
+      <h4>Manage Questions</h4>
     </div>
     <div className="searchBarContainer">
 

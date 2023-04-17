@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { ToastContainer, toast } from 'react-toastify';
 function HomeTable(props) {
-const headers = [ 'NAME', 'MAIL'];
+const headers = ['NAME', 'MAIL'];
 
   const [isOpenCon, setIsOpenCon] = useState(false);
   const [data, setData] = useState([]);
@@ -26,6 +26,13 @@ const headers = [ 'NAME', 'MAIL'];
     setEmailTo(value);
   };
 
+  const ratings={
+    1:"Poor",
+    2:"Unsatisfactory",
+    3:"Satisfactory",
+    4:"Very Satisfactory",
+    5:"Outstanding"
+  }
  
 
   const handleView = (feedbackid) => {
@@ -49,7 +56,6 @@ const headers = [ 'NAME', 'MAIL'];
     })
   }
 
- 
 
   const sendEmail = (e) => {
 
@@ -87,8 +93,8 @@ const headers = [ 'NAME', 'MAIL'];
               <tbody>
                 {data.map((question) => (
                   <tr key={question[0]}>
-                    <td>{question[1]}</td>
-                    <td>{question[2]}</td>
+                    <td>{question[0]}</td>
+                    <td>{ratings[question[1]]}</td>
                   </tr>
                 ))}
               </tbody>
@@ -131,7 +137,7 @@ const headers = [ 'NAME', 'MAIL'];
       </div>
       }
 
-      <table>
+      <table className='table1'>
         <thead>
           <tr>
             {headers.map((header) => (
@@ -139,6 +145,7 @@ const headers = [ 'NAME', 'MAIL'];
             ))}
             <th>Feedback</th>
             <th>Share</th>
+            <br></br>
           </tr>
         </thead>
         <tbody>

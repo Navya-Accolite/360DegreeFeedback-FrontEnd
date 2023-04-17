@@ -2,11 +2,10 @@ import React from 'react';
 import '../Styles/StylesforGiveFeedback.css';
 import  { useEffect, useState } from "react";
 import axios from "axios";
-import '../Styles/feedbackPage.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 function GiveFeedbackTable(props) {
-  const headers = ['ID', 'NAME', 'MAIL'];
+  const headers = ['NAME', 'MAIL'];
 
   const[quesIdArray,setquesIdArray]=useState([])
   const[ratingArray,setRatingArray]=useState([])
@@ -76,7 +75,6 @@ const func=()=>{
       <tbody>
         {props.data.map((user) => (
           <tr key={user[2]}>
-            <td>{user[2]}</td>
             <td>{user[1]}</td>
             <td>{user[0]}</td>
             <td>
@@ -96,11 +94,11 @@ const func=()=>{
                             <div>{blog.attribute}</div>
                             <select onChange={(e)=>update(e.target.value,blog.attributeId)}>
                             <option value="" select hidden>Rating</option>
-                            <option value={1}>1</option>
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
-                            <option value={4}>4</option>
-                            <option value={5}>5</option>
+                            <option value={1}>1-Poor</option>
+                            <option value={2}>2-Unsatisfactory</option>
+                            <option value={3}>3-Satisfactory</option>
+                            <option value={4}>4-Very Satisfactory</option>
+                            <option value={5}>5-Outstanding</option>
                             </select>
                         </div>)
                     }
