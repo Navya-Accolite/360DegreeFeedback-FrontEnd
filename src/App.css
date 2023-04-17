@@ -8,6 +8,7 @@
 }
 
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -40,7 +41,7 @@
 }
 .Head{
   color: white;
-  background-color: rgb(42, 35, 68);
+  background-color: #2ece54;
   height: 30px;
   font-weight: bold;
   padding-bottom: 50px;
@@ -74,7 +75,7 @@
 
 
 .Logout button{
-  background-color: rgb(67, 67, 243);
+  background-color: lightcoral;
   margin-top: 6px;
   margin-right: 10px;
   border-radius: 3px;
@@ -129,7 +130,6 @@
   font-weight: bold;
   display: flexbox;
 }
-
-.mananageusers{
-  background-color: green;
+.google_btn{
+ 
 }
