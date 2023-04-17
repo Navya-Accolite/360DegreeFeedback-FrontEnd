@@ -3,6 +3,8 @@ import '../Styles/StylesforGiveFeedback.css';
 import  { useEffect, useState } from "react";
 import axios from "axios";
 import '../Styles/feedbackPage.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 function GiveFeedbackTable(props) {
   const headers = ['ID', 'NAME', 'MAIL'];
 
@@ -56,6 +58,8 @@ const func=()=>{
       .catch(error => {
         console.log(error);
       });
+  setIsOpenCon(false);
+  toast.success("Feedback Submitted Successfully!")
 }
 
   return (
@@ -82,7 +86,7 @@ const func=()=>{
         ))}
       </tbody>
     </table>
-
+    <ToastContainer/>
 
 {isOpenCon && <div className='popupContainer' onClick={()=>setIsOpenCon(false)}>
             <div className='popup-boxd'onClick={(e) => {e.stopPropagation()}}>
