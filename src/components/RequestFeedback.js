@@ -13,6 +13,7 @@ function RequestFeedback() {
 
   const form = useRef();
   const [username, updateUserName] = useState('');
+  const[projectName, updateProjectName]= useState('');
   const [todate,updateToDate]=useState('');
   const [fromdate,updateFromDate]=useState('');
   const [message,updateMessage]=useState('');
@@ -31,7 +32,8 @@ function RequestFeedback() {
     "gemail": username,
     "startDate":fromdate,
     "endDate":todate,
-    "selfInput":message
+    "selfInput":message,
+    "projectName": projectName
   }
 
 
@@ -76,6 +78,23 @@ function RequestFeedback() {
                   type="email"
                 />
               </FormGroup>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col md={6}>
+            <FormGroup>
+              <Label for="projectName" className='label'>
+                  Project Name
+              </Label>
+              <Input onChange={(e) => updateProjectName(e.target.value)}
+                    id="projectName"
+                    name="projectName"
+                    placeholder='Project Name'
+                    type="text"
+              />
+            </FormGroup>
+
             </Col>
           </Row>
 
