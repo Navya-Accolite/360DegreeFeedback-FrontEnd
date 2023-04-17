@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
+import image from '../Styles/feedback1.jpg';
+import logo from '../Styles/accolite-logo.png';
 const LoginForm = ({ onLogin }) => {
 
 
@@ -62,13 +64,93 @@ const LoginForm = ({ onLogin }) => {
             
     //       });
     // };
-    return (
-        <div className='loginWrapper'>
-                <h2>Welcome</h2>
-                <div className="google_btn" onClick={handleLoginApi}>
-                    <div id="LoginButton"></div>
+//     return (
+//         <>
+
+
+    
+      
+      
+//         <div 
+//         style={{
+//             backgroundImage: `url(${image})`,
+//             backgroundSize: "cover",
+//             backgroundPosition: "center",
+//             height: "100vh",
+//         display: "flex",
+//         justifyContent: "center",
+//         alignItems: "center",
+//         }}
+//         >
+//         <div className='loginWrapper'>
+//                 <h2>Welcome</h2>
+//                 <div className="google_btn" onClick={handleLoginApi}>
+//                     <div id="LoginButton"></div>
+//                 </div>
+//             </div>
+//             </div>
+           
+//         </>
+//     )
+// }
+
+
+return (
+    <div
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundColor: "rgba(255,255,255,0.8)",
+          padding: "20px",
+          borderRadius: "10px",
+          width:"600px",
+        }}
+      >
+        <img
+          src={logo}
+          alt="Logo"
+          style={{
+            width: "200px",
+            height: "100px",
+            objectFit: "cover",
+            marginBottom: "20px",
+          }}
+        />
+        <h1 style={{ fontSize: "2rem", textAlign: "center" }}>
+          Login here
+        </h1>
+        <button
+          style={{
+            backgroundColor: "orange",
+            color: "white",
+            border: "none",
+            borderRadius: "10px",
+            padding: "10px 20px",
+            fontSize: "1.5rem",
+            marginTop: "20px",
+            cursor: "pointer",
+          }}
+        >
+         <div className="google_btn" onClick={handleLoginApi}>
+                     <div id="LoginButton"></div>
                 </div>
-            </div>
-    )
+        </button>
+      </div>
+    </div>
+  );
 }
+
+
 export default LoginForm;
