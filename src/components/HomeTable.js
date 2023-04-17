@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { ToastContainer, toast } from 'react-toastify';
 function HomeTable(props) {
-const headers = ['ID', 'NAME', 'MAIL'];
+const headers = [ 'NAME', 'MAIL'];
 
   const [isOpenCon, setIsOpenCon] = useState(false);
   const [data, setData] = useState([]);
@@ -144,7 +144,6 @@ const headers = ['ID', 'NAME', 'MAIL'];
         <tbody>
           {props.data.map((user) => (
             <tr key={user[2]}>
-              <td>{user[0]}</td>
               <td>{user[1]}</td>
               <td>{user[2]}</td>
               <td>
