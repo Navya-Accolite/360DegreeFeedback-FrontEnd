@@ -15,6 +15,7 @@ const headers = ['ID', 'NAME', 'MAIL'];
   const [isOpenShare, setIsOpenShare] = useState(false);
   const emailId = window.localStorage.getItem('emailId');
   const [message,updateMessage]=useState('');
+  const [comment,setComment]=useState('');
 
   const form = useRef();
   const [emailTo, setEmailTo] = useState('');
@@ -29,6 +30,12 @@ const headers = ['ID', 'NAME', 'MAIL'];
     setIsOpenCon(true)
     axios.get('http://localhost:4545/api/getRating/' + feedbackid).then((res) => {
       setData(res.data)
+    })
+
+    axios.get('http://localhost:4545/api/findComment/'+feedbackid).then((res)=>{
+      console.log("comment"+comment);
+      setComment(res.data)
+      console.log("comment"+comment);
     })
   }
 
@@ -96,6 +103,7 @@ const headers = ['ID', 'NAME', 'MAIL'];
                 ))}
               </tbody>
             </table>
+            <div className='comment'>Comment: {comment}</div>
           </div>
         </div>
       </div>
@@ -146,8 +154,8 @@ const headers = ['ID', 'NAME', 'MAIL'];
         <tbody>
           {props.data.map((user) => (
             <tr key={user[2]}>
-              <td>{user[1]}</td>
               <td>{user[0]}</td>
+              <td>{user[1]}</td>
               <td>{user[2]}</td>
               <td>
                 <button

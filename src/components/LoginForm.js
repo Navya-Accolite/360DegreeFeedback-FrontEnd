@@ -1,4 +1,4 @@
-    import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 const LoginForm = ({ onLogin }) => {
 
@@ -22,23 +22,19 @@ const LoginForm = ({ onLogin }) => {
     },[])
     function handleLoginApi(response){
         onLogin();
-        console.log(JSON.stringify({token:response.credential}))
+        console.log(response.credential);
         window.localStorage.setItem('LoggedIn',"YES");
-        fetch("http://localhost:4545/api/login",{
-            method:"POST",
-            body:JSON.stringify({token:response.credential})
-        })
-       .then((response) => {
+        axios.post("http://localhost:4545/api/login",{
+            body: response.credential
+        }).then((response) => {
             console.log(response.data.user.emailId);
-            const emailId = response.email;
-            const token=response.accessToken;
+            const emailId = response.data.user.emailId;
             console.log(emailId);
-            window.localStorage.setItem('email', emailId);
-            window.localStorage.setItem('token', token);
+            window.localStorage.setItem('emailId', emailId);
         });
-
         onLogin();
     }
+    
     // const handleLoginApi = (response) => {
     //   console.log(response)
     //     fetch(`http://localhost:4545/auth/login`, {
@@ -66,9 +62,6 @@ const LoginForm = ({ onLogin }) => {
             
     //       });
     // };
-
-    
-      
     return (
         <div className='loginWrapper'>
                 <h2>Welcome</h2>

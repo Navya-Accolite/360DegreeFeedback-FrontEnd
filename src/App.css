@@ -9,7 +9,7 @@
 
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ce91c1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
 }
 .Head{
   color: white;
-  background-color: rgb(42, 35, 68);
+  background-color: rgb(69, 84, 93);
   height: 30px;
   font-weight: bold;
   padding-bottom: 50px;
@@ -74,11 +74,12 @@
 
 
 .Logout button{
-  background-color: rgb(67, 67, 243);
+  background-color: rgb(181, 153, 153);
   margin-top: 6px;
   margin-right: 10px;
   border-radius: 3px;
   color: white;
+  border:  rgb(112, 112, 150);
 }
 .Logout:hover{
   color: white;
@@ -91,7 +92,7 @@
 }
 
 .name:hover{
-  color: #e56e0c;
+  color: #cbaf97;
 }
 .Head span:nth-of-type(1) { float:left }
 .Head span:nth-of-type(2) { float:right }
@@ -120,7 +121,7 @@
 }
 
 .profiledetails{
-  background-color:grey;
+  background-color:rgb(87, 96, 119);
   align-items: center;
   align-content: center;
   margin-bottom: 30px;
@@ -131,5 +132,5 @@
 }
 
 .mananageusers{
-  background-color: green;
+  background-color: rgb(80, 116, 80);
 }

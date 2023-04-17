@@ -10,8 +10,19 @@ function ManageUsers() {
   const [role,updaterole]=useState("");
 
     function updateuser(){  
-       console.log(role);
-       //write axios
+
+      const url="http://localhost:4545/api/update/"+email;
+      //  console.log(role);
+       const postdata={
+          "role":role
+       }
+       axios.put(url, postdata, { headers: { 'Content-Type': 'application/json' }})
+       .then(response => {
+        //  console.log(response.data);
+       })
+       .catch(error => {
+        //  console.error(error);
+       });
     }
 
   return (
