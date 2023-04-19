@@ -69,7 +69,7 @@ function SideNav() {
     ...(data.role === 'ADMIN'
       ? [
           {
-            label: 'Manage Questions',
+            label: 'Manage Attributes',
             key: '/managequestions',
             icon: <SolutionOutlined />,
           },
@@ -81,6 +81,18 @@ function SideNav() {
 
         ]
       : []),
+
+      ...(data.role === 'MANAGER' || data.role==='BU HEAD'
+      ? [
+          {
+            label: 'View Reportees',
+            key: '/viewreportees',
+            icon: <SolutionOutlined />,
+          },
+
+        ]
+      : []),
+
   ]}
  
 />

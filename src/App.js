@@ -11,6 +11,7 @@ import ManageQuestions from './components/ManageQuestions';
 import ManageUsers from './components/ManageUsers';
 import DisableEmployee from './components/DisableEmployee';
 import image from './Styles/accolite-logo.png';
+import ViewReportees from './components/ViewReportees';
 import './index.css';
 
 function App() {
@@ -54,6 +55,7 @@ function Content(){
       <Route path="managequestions" Component={ManageQuestions}></Route>
       <Route path="manageusers" Component={ManageUsers}></Route>
       <Route path="disableemployee" Component={DisableEmployee}></Route>
+      <Route path="/viewreportees" Component={ViewReportees}></Route>
 
 </Routes>
   </div>

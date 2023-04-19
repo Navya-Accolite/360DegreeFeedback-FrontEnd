@@ -14,7 +14,7 @@ function ManageUsers() {
     function updateuser(){  
 
       const url="http://localhost:4545/api/update/"+email;
-      //  console.log(role);
+        console.log(role);
        const postdata={
           "role":role
        }
@@ -66,6 +66,8 @@ function ManageUsers() {
       <option value=""></option>
       <option value="ADMIN">ADMIN</option>
       <option value="USER">USER</option>
+      <option value="MANAGER">MANAGER</option>
+      <option value="BU HEAD">BU HEAD</option>
     </Input>
   </Col>
 </div>

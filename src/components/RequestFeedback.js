@@ -70,7 +70,7 @@ function RequestFeedback() {
                 <Input onChange={(e) => updateUserName(e.target.value)}
                   id="exampleEmail"
                   name="to_email"
-                  placeholder="Request To"
+                  placeholder="Request To Be Sent To"
                   type="email"
                 />
               </FormGroup>
@@ -132,14 +132,14 @@ function RequestFeedback() {
               <Input onChange={(e)=>updateMessage(e.target.value)}
                 id="exampleZip"
                 name="message"
-                placeholder='Message'
+                placeholder='Self Input'
                 type="textarea"
               />
             </FormGroup>
           </Row>
 
           <button type="submit" value="Send" className='requestbutton'>
-            Send Request
+             Request Feedback
           </button>
         </form>
         <ToastContainer />

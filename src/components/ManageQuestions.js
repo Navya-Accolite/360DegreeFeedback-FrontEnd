@@ -62,7 +62,7 @@ const postQuestion=(e)=>{
     <ManageQuestionsTable data={data} />
     </div>
 
-    <button id="btn2" onClick={handleFeedBack}>Add Question</button>
+    <button id="btn2" onClick={handleFeedBack}>Add Attribute</button>
 
     </div>
 
