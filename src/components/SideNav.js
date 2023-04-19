@@ -3,7 +3,7 @@ import { Menu } from 'antd';
 import  { useEffect } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import image from '../Styles/profile-image.png'
+import image from '../Styles/profile-photo1.png'
 import {
   HomeOutlined,
   UserOutlined,
@@ -46,10 +46,8 @@ function SideNav() {
         <div className='profiledetails' style={{textAlign: 'center'}}>
         <div>{data.name}</div>
         <div>{data.emailId}</div>
-        {/* <div>{data.id}</div> */}
-        {/* <div>{data.role}</div> */}
         </div>
-<div className='sideBtn'>
+
 <Menu
   onClick={({ key }) => {
     navigate(key);
@@ -86,7 +84,7 @@ function SideNav() {
   ]}
  
 />
-</div>
+
 
       </div>
     </div>

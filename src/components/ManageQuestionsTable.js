@@ -1,9 +1,7 @@
 import React from 'react';
-import '../Styles/StylesforGiveFeedback.css';
 import  { useEffect, useState } from "react";
 import Select from 'react-select';
 import axios from "axios";
-import '../Styles/StylesforGiveFeedback.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { Input } from 'reactstrap';
 
@@ -40,7 +38,7 @@ function ManageQuestionsTable(props) {
 
   return (
     <>
-      <table className='admintable'>
+      <table className='styled-table2'>
         <thead>
           <tr>
             {headers.map((header) => (

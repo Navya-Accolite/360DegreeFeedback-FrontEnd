@@ -1,13 +1,50 @@
 .Formelement{
-    padding-left: 150px;
-    /* margin-left: 50% */
+    margin-left: 170px;
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 50px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: aliceblue;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
   }
 
   h3{
-    padding-left: 300px;
-    padding-bottom: 80px;
+   display: flex;
+   justify-content: center;
+   padding-bottom: 50px;
   }
 
   .label{
     width: 700px;
+  }
+
+  /* .requestfeedbackh3{
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    width: 300px;
+    margin-left: 350px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    
+  } */
+
+  .requestfeedbackhome{
+    background-color:#c5e0e5;
+    width: 1000px;
+    height: 100%;
+  }
+
+  .requestbutton{
+    background-color: #96ddea;
+    border-radius: 3px;
+    border-color:#96ddea ;
+   
   }

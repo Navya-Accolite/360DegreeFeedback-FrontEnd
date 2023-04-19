@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <div className="Head">
-     <span className='name'><button>360 degree Feedback</button></span>
+     <span className='name'>360 DEGREE FEEDBACK</span>
      <div>
 
   
@@ -45,7 +45,7 @@ function App() {
 }
 
 function Content(){
-  return <div>
+  return <div className='class1'>
 <Routes>
       <Route path="/" Component={HomeContent}></Route>
       <Route path="/givefeedback" Component={GiveFeedback}></Route>

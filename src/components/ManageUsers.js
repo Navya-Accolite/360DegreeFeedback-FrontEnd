@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Label,Col,Input} from 'reactstrap';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import '../Styles/Manageuser.css'
 
 
 function ManageUsers() {
@@ -31,8 +32,9 @@ function ManageUsers() {
 
   return (
     <>
+    <div className='manageuserhome'>
     <div>
-      <h4>Manage your Users!</h4>
+      <h4>.</h4>
     </div>
 
 
@@ -74,6 +76,7 @@ function ManageUsers() {
 
    </div>
    <ToastContainer/>
+    </div>
     </div>
     
     </>

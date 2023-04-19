@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/StylesforGiveFeedback.css';
+import '../Styles/Managequestions.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
@@ -52,13 +52,13 @@ const postQuestion=(e)=>{
 
   return (
     <>
+    <div className='managequestionhome'>
     <div>
-      <h4>Manage Questions</h4>
+      <h4 className='managequestionsh4'>.</h4>
     </div>
     <div className="searchBarContainer">
 
     <div>
-      {console.log("ques",data)}
     <ManageQuestionsTable data={data} />
     </div>
 
@@ -83,6 +83,7 @@ const postQuestion=(e)=>{
             </div>
             </div>
         }
+        </div>
 
     </>
   )

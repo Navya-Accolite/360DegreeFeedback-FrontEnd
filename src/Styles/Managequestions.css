@@ -1,0 +1,47 @@
+.styled-table2 {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-left: 250px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table2 thead tr {
+  background-color: #070A52;
+  color: white;
+  text-align: left;
+}
+
+.styled-table2 th,
+.styled-table2 td {
+  padding: 12px 15px;
+}
+
+.styled-table2 tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table2 tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table2 tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table2 tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.managequestionhome{
+    width: 1000px;
+    height: 100%;
+    background-color: #c5e0e5;
+}
+
+#btn2{
+    margin-left: 400px;
+}

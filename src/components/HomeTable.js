@@ -6,6 +6,7 @@ import '../Styles/feedbackPage.css';
 import { FormGroup, Label, Form, Input, Row, Col, Button} from 'reactstrap';
 import emailjs from '@emailjs/browser';
 import 'react-toastify/dist/ReactToastify.css';
+import {Table} from 'reactstrap';
 
 import { ToastContainer, toast } from 'react-toastify';
 function HomeTable(props) {
@@ -81,9 +82,9 @@ const headers = ['NAME', 'MAIL'];
     <>
       {isOpenCon && <div className='popupContainer1' onClick={() => setIsOpenCon(false)}>
         <div className='popup-boxd1' onClick={(e) => { e.stopPropagation() }}>
-          <div className="ques">
+          <div className="ques1">
 
-            <table>
+            <table className='popuptable'>
               <thead>
                 <tr>
                   <th>Attribute</th>
@@ -99,7 +100,7 @@ const headers = ['NAME', 'MAIL'];
                 ))}
               </tbody>
             </table>
-            <div className='comment'>Comment: {comment}</div>
+            <div className='comment2'>Comment: {comment}</div>
           </div>
         </div>
       </div>
@@ -108,7 +109,7 @@ const headers = ['NAME', 'MAIL'];
 
       {isOpenShare && <div className='popupContainer1' onClick={() => setIsOpenShare(false)}>
         <div className='popup-boxd1' onClick={(e) => { e.stopPropagation() }}>
-          <div className="ques">
+          <div className="ques1">
               
               <form ref={form}>
       <Row>
@@ -137,17 +138,21 @@ const headers = ['NAME', 'MAIL'];
       </div>
       }
 
-      <table className='table1'>
-        <thead>
-          <tr>
-            {headers.map((header) => (
+      {/* <table className='table1'>
+
+      <thead>
+    <tr>
+      <th>
+      {headers.map((header) => (
               <th key={header}>{header}</th>
             ))}
             <th>Feedback</th>
             <th>Share</th>
-            <br></br>
-          </tr>
-        </thead>
+
+      </th>
+    </tr>
+  </thead>
+
         <tbody>
           {props.data.map((user) => (
             <tr key={user[2]}>
@@ -179,7 +184,57 @@ const headers = ['NAME', 'MAIL'];
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
+
+<Table style={{width:"700px"}} className='styled-table'>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Mail
+      </th>
+      <th>
+        View Feedback
+      </th>
+      <th>
+        Share
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+          {props.data.map((user) => (
+            <tr key={user[2]}>
+              <td>{user[1]}</td>
+              <td>{user[2]}</td>
+              <td>
+                <button
+                  id='btn'
+                  onClick={() => handleView(user[4])}
+                  disabled={user[3] === 0}
+                  title={user[3] === 0 ? 'Feedback not available' : ''}
+                  style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
+                >
+                  View
+                </button>
+              </td>
+              <td>
+                <button
+                  id='btn'
+                  onClick={() => handleShare(user[4])}
+                  disabled={user[3] === 0}
+                  title={user[3] === 0 ? 'Feedback not available' : ''}
+                  style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
+                >
+                  Share
+                  {console.log("user",user)}
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+</Table>
       <ToastContainer/>
 
 

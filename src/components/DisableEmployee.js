@@ -16,7 +16,6 @@ function DisableEmployee() {
         })
     }
  
-
   return (
     <>
     <div>

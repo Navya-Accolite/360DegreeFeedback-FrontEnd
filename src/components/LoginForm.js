@@ -66,11 +66,6 @@ const LoginForm = ({ onLogin }) => {
     // };
 //     return (
 //         <>
-
-
-    
-      
-      
 //         <div 
 //         style={{
 //             backgroundImage: `url(${image})`,

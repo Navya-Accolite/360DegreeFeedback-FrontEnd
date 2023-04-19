@@ -56,8 +56,8 @@ function RequestFeedback() {
   return (
 
 
-    <div>
-      <h3>Request Feedback </h3>
+    <div className='requestfeedbackhome'>
+      {/* <h4 className='requestfeedbackh3'>Request Feedback </h4> */}
 
       <div>
         <form ref={form} onSubmit={(e) => { sendEmail(e); form.current.reset(); }} className='Formelement'>
@@ -138,9 +138,9 @@ function RequestFeedback() {
             </FormGroup>
           </Row>
 
-          <Button type="submit" value="Send">
+          <button type="submit" value="Send" className='requestbutton'>
             Send Request
-          </Button>
+          </button>
         </form>
         <ToastContainer />
 

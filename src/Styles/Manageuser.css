@@ -1,0 +1,19 @@
+.manageuserhome{
+    background-color: #c5e0e5;
+    width: 1000px;
+    height: 100%;
+}
+
+.manageusers{
+ width: 500px;
+ margin-left: 300px;
+ margin-top: 90px;
+}
+#btn4{
+    background-color: #60cf64;
+    margin-top: 40px;
+    padding: 4px 5px 5px 4px;
+    margin-left: 150px;
+    border-radius: 10px;
+    box-shadow: 1px 1px;
+  }
