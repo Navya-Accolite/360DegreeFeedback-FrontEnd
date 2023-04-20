@@ -87,8 +87,12 @@ function RequestFeedback() {
   return (
 
 
+<<<<<<< HEAD
     <div>
       <h3>Request Feedback </h3>
+=======
+    <div className='requestfeedbackhome'>
+>>>>>>> 6ebc39cdf2e48df6c138d8acb8768157738a5d27
 
       <div>
         <form ref={form} onSubmit={(e) => { sendEmail(e); form.current.reset(); }} className='Formelement'>

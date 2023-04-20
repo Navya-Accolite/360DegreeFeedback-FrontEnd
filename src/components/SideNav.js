@@ -96,8 +96,8 @@ function SideNav() {
       ...(data.role==='BU HEAD'
       ? [
           {
-            label: 'View Reportees',
-            key: '/viewreporteesbu',
+            label: 'View BU Reportees',
+            key: '/viewbureportees',
             icon: <SolutionOutlined />,
           },
 

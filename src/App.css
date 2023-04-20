@@ -105,3 +105,17 @@
 .button-link:hover {
   background-color:#6cc16f;
 }
+
+.scrolltablediv{
+  overflow: auto;
+  /* max-height: 500px; */
+  max-width: 700px;
+  margin-left: 100px;
+}
+
+.homeclass1{
+  /* background-color: #60cf64; */
+  background-color: #c5e0e5;
+  width: 1000px;
+  height: 1000px;
+}
