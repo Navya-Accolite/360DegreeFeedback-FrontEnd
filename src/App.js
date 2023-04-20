@@ -10,8 +10,9 @@ import LogOutPage from './components/LogOutPage';
 import ManageQuestions from './components/ManageQuestions';
 import ManageUsers from './components/ManageUsers';
 import DisableEmployee from './components/DisableEmployee';
-import image from './Styles/accolite-logo.png';
 import ViewReportees from './components/ViewReportees';
+import ViewBUReportees from './components/ViewBUReportees';
+import ViewBUManagers from './components/ViewBUReporteesManager';
 import './index.css';
 import ViewReporteesFeedback from './components/ViewReporteesTable';
 
@@ -58,6 +59,8 @@ function Content() {
         <Route path="/disableemployee" element={<DisableEmployee />} />
         <Route path="/viewreportees" element={<ViewReportees />} />
         <Route path="viewreporteesfeedback" element={<ViewReporteesFeedback />} />
+        <Route path="/viewbureportees" element={<ViewBUReportees/>}/>
+        <Route path="/viewbumanagers" element={<ViewBUManagers/>}/>
       </Routes>
     </div>
   );

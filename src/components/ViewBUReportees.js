@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
-function ViewReportees() {
-  
+function ViewBUReportees() {
+
   const emailId = window.localStorage.getItem('emailId');
   const [data, setData] = useState([]);
 
@@ -15,6 +15,8 @@ function ViewReportees() {
     }
   }, []);
 
+ 
+
   const navigate = useNavigate();
   const [propValue, setPropValue] = useState('');
 
@@ -22,6 +24,13 @@ function ViewReportees() {
     setPropValue(name); // set the value of propValue
     navigate('/viewreporteesfeedback', { state: { propValue: name } }); // navigate to a new page and pass the prop value
   };
+
+
+  const handleReportees = (name) => {
+    setPropValue(name); 
+    navigate('/viewbumanagers', { state: { propValue: name } }); 
+  };
+
 
   return (
     <>
@@ -40,7 +49,10 @@ function ViewReportees() {
                   Mail
                 </th>
                 <th>
-                  Feedbacks
+                  
+                </th>
+                <th>
+                  
                 </th>
               </tr>
             </thead>
@@ -50,7 +62,10 @@ function ViewReportees() {
                   <td>{user[0]}</td>
                   <td>{user[1]}</td>
                   <td>
-                    <button onClick={() => handleClick(user[1])}>ViewReportees Feedback</button> {/* call handleClick with the user's name */}
+                    <button onClick={() => handleClick(user[1])}>View Feedback</button> 
+                  </td>
+                  <td>
+                    <button onClick={() => handleReportees(user[1])}>View Reportees</button> 
                   </td>
                 </tr>
               ))}
@@ -62,4 +77,4 @@ function ViewReportees() {
   )
 }
 
-export default ViewReportees;
+export default ViewBUReportees;

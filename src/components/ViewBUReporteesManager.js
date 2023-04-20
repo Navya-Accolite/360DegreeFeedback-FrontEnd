@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect,useState } from 'react';
+import { useLocation,useNavigate } from 'react-router-dom';
 import { Table } from 'reactstrap';
-import { useNavigate } from 'react-router-dom';
-function ViewReportees() {
-  
-  const emailId = window.localStorage.getItem('emailId');
-  const [data, setData] = useState([]);
+import axios from 'axios';
+
+function ViewBUManagers(props) {
+
+  const location = useLocation();
+  const propvalue = location.state.propValue;
+  const [data,setData]=useState([]);
+  const [prop,setprop]=useState('');
+
+  console.log("manager",propvalue);
+
 
   useEffect(() => {
-    if (emailId) {
-      fetch("http://localhost:4545/api/employeesUnderManager/"+emailId)
+     {
+      fetch("http://localhost:4545/api/employeesUnderManager/"+propvalue)
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.log(error));
@@ -16,12 +23,12 @@ function ViewReportees() {
   }, []);
 
   const navigate = useNavigate();
-  const [propValue, setPropValue] = useState('');
+
 
   const handleClick = (name) => {
-    setPropValue(name); // set the value of propValue
-    navigate('/viewreporteesfeedback', { state: { propValue: name } }); // navigate to a new page and pass the prop value
+     navigate('/viewreporteesfeedback', { state: { propValue: name } }); // navigate to a new page and pass the prop value
   };
+
 
   return (
     <>
@@ -62,4 +69,4 @@ function ViewReportees() {
   )
 }
 
-export default ViewReportees;
+export default ViewBUManagers;

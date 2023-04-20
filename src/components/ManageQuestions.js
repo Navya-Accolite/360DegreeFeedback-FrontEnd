@@ -54,7 +54,7 @@ const postQuestion=(e)=>{
     <>
     <div className='managequestionhome'>
     <div>
-      <h4 className='managequestionsh4'>.</h4>
+      <h4 className='managequestionsh4' style={{color:"#c5e0e5"}}>.</h4>
     </div>
     <div className="searchBarContainer">
 

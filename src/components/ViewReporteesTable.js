@@ -4,10 +4,11 @@ import { Table } from 'reactstrap';
 import axios from 'axios';
 
 function ViewReporteesFeedback(props) {
+
   const location = useLocation();
   const propValue = location.state.propValue;
   const [data,setData]=useState([]);
-  const [data2,setData2]=useState([]);
+  const [data2,setData1]=useState([]);
   const [isOpenCon, setIsOpenCon] = useState(false);
   const [comment,setComment]=useState('');
 
@@ -16,7 +17,7 @@ function ViewReporteesFeedback(props) {
 
   const data1 = [["Attitude",3],["Performance",3],["fghj",2]];
 
-  const headings = ["Attitude", "Behaviour", "Performance", "abc", "fghj"];
+  const headings = ["Project Name", "Received by", "Start date", "End Date", "Self Input","Comment","Q1","Q2","Q3","Q4","Q5","Q1","Q2","Q3","Q4","Q5"];
 
   const ratings={
     1:"Poor",
@@ -28,42 +29,15 @@ function ViewReporteesFeedback(props) {
 
   useEffect(() => {
      {
-      fetch("http://localhost:4545/api?rEmail="+propValue+"&status=1")
+      fetch("http://localhost:4545/api/getResult/"+propValue)
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.log(error));
-
         console.log("data",data);
-
-        // axios.get('http://localhost:4545/api/getRating/' + data.feedbackid).then((res) => {
-        //       setData1(res.data)
-        //     })
-        
-        //     axios.get('http://localhost:4545/api/findComment/'+feedbackid).then((res)=>{
-        //       console.log("comment"+comment);
-        //       setComment(res.data)
-        //       console.log("comment"+comment);
-        //     })
     }
   }, []);
 
-  // const handleView = (feedbackid) => {
-  //   setIsOpenCon(true)
-  //   axios.get('http://localhost:4545/api/getRating/' + feedbackid).then((res) => {
-  //     setData1(res.data)
-  //   })
-
-  //   axios.get('http://localhost:4545/api/findComment/'+feedbackid).then((res)=>{
-  //     console.log("comment"+comment);
-  //     setComment(res.data)
-  //     console.log("comment"+comment);
-  //   })
-  // }
-
-  const newData = headings.map((heading) => {
-    const foundData = data1.find((item) => item[0] === heading);
-    return foundData ? foundData[1] : 0;
-  });
+ 
 
 
   return (
@@ -78,21 +52,6 @@ function ViewReporteesFeedback(props) {
         <Table style={{width:"700px", marginLeft:"100px",marginTop:"100px"}} className='styled-table'>
           <thead>
             <tr>
-              <th>
-                Project Name
-              </th>
-              <th>
-               Feeddback by
-              </th>
-              <th>
-               StartDate
-              </th>
-              <th>
-               EndDate
-              </th>
-              <th>
-               SelfInput
-              </th>
               
         {headings.map((heading, index) => (
           <th key={index}>{heading}</th>
@@ -100,20 +59,27 @@ function ViewReporteesFeedback(props) {
             </tr>
           </thead>
           <tbody>
-            {data.map((user) => (
-              <tr key={user}>
-                <td>{user.projectName}</td>
-                <td>{user.gemail}</td>
-                <td>{user.startDate}</td>
-                <td>{user.endDate}</td>
-                <td>{user.selfInput}</td>
-                <td>      
-                </td>
-                {newData.map((value, index) => (
-                    <td key={index}>{value}</td>
-              ))}
-              </tr>
-            ))}
+          {data.map((row, index) => (
+          <tr key={index}>
+            <td>{row[1]}</td>
+            <td>{row[2]}</td>
+            <td>{row[3]}</td>
+            <td>{row[4]}</td>
+            <td>{row[5]}</td>
+            <td>{row[6]}</td>
+            <td>{row[7]}</td>
+            <td>{row[8]}</td>
+            <td>{row[9]}</td>
+            <td>{row[10]}</td>
+            <td>{row[11]}</td>
+            <td>{row[12]}</td>
+            <td>{row[13]}</td>
+            <td>{row[14]}</td>
+            <td>{row[15]}</td>
+            <td>{row[16]}</td>
+            <td>{row[17]}</td>
+          </tr>
+        ))}
           </tbody>
         </Table>
       </div>
@@ -124,3 +90,88 @@ function ViewReporteesFeedback(props) {
 }
 
 export default ViewReporteesFeedback;
+
+
+// import { useEffect, useState } from "react";
+
+// function ViewReporteesFeedback() {
+//   const [feedbackData, setFeedbackData] = useState([]);
+//   const [combinedData, setCombinedData] = useState([]);
+//   const [attributes, setAttributes] = useState([]);
+
+//   useEffect(() => {
+//     fetch("http://localhost:4545/api?rEmail=navya.r@accolitedigital.com&status=1")
+//       .then(response => response.json())
+//       .then(data => setFeedbackData(data))
+//       .catch(error => console.error(error));
+//   }, []);
+
+//   useEffect(() => {
+//     fetch("http://localhost:4545/api/allQuestions")
+//       .then(response => response.json())
+//       .then(data => setAttributes(data));
+//       console.log("attributes",attributes);
+//   }, []);
+
+
+//   useEffect(() => {
+//     if (feedbackData.length > 0) {
+//       const combined = feedbackData.map(async feedback => {
+//         try {
+//           const ratingResponse = await fetch(`http://localhost:4545/api/getRating/${feedback.feedbackId}`);
+//           const ratingData = await ratingResponse.json();
+
+//           const ratingData1 = ratingData.reduce((acc, [key, value]) => {
+//             acc[key] = value;
+//             return acc;
+//           }, {});
+
+//           console.log("rating",ratingData1);
+          
+//           return {
+//             gemail: feedback.gemail,
+//             startDate: feedback.startDate,
+//             endDate: feedback.endDate,
+//             attitude: ratingData1.Attitude,
+//             behaviour: ratingData.behaviour,
+            
+//           };
+//         } catch (error) {
+//           console.error(error);
+//         }
+//       });
+
+//       Promise.all(combined)
+//         .then(data => setCombinedData(data))
+//         .catch(error => console.error(error));
+//     }
+//   }, [feedbackData]);
+
+//   return (
+//     <table>
+//       <thead>
+//         <tr>
+//           <th>Email</th>
+//           <th>Start Date</th>
+//           <th>End Date</th>
+//           {attributes.map((header) => (
+//             <th key={header.attributeId}>{header.attribute}</th>
+//           ))}
+//         </tr>
+//       </thead>
+//       <tbody>
+//         {combinedData.map((data, index) => (
+//           <tr key={index}>
+//             <td>{data.gemail}</td>
+//             <td>{data.startDate}</td>
+//             <td>{data.endDate}</td>
+//             <td>{data.attitude}</td>
+//             <td>{data.behaviour}</td>
+//           </tr>
+//         ))}
+//       </tbody>
+//     </table>
+//   );
+// }
+
+// export default ViewReporteesFeedback;
