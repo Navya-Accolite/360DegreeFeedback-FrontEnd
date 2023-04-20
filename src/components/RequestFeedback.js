@@ -19,8 +19,12 @@ function RequestFeedback() {
   const [message,updateMessage]=useState('');
   const emailId = window.localStorage.getItem('emailId');
 
+
+
   const today = new Date().toISOString().split('T')[0];
   console.log("today",today);
+  // document.getElementById("exampleDate").setAttribute("max",today);
+  // document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
 
   const data =
   {
@@ -35,7 +39,7 @@ function RequestFeedback() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_91z8rbi', 'template_yq7ixod', form.current, 'piZXRCXKpuBTMThCC')
+    emailjs.sendForm('service_91z8rbi', 'template_uc7dh9l', form.current, 'piZXRCXKpuBTMThCC')
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -51,13 +55,40 @@ function RequestFeedback() {
       });
 
       toast.success('Request sent successfully!');
-
-  };
+  }
+  useEffect(()=>{
+    const data1=window.localStorage.getItem('username')
+   if(data1!==null) updateUserName(data1)
+   
+    const data2=window.localStorage.getItem('fromdate')
+    if(data2!==null) updateUserName(data2)
+    
+    const data3=window.localStorage.getItem('todate')
+    if(data3!==null) updateUserName(data3)
+    
+    const data4=window.localStorage.getItem('message')
+    if(data4!==null) updateUserName(data4)
+    
+    const data5=window.localStorage.getItem('projectName')
+    if(data5!==null) updateProjectName(data5)
+  },[])
+  console.log(username)
+  console.log(fromdate)
+  console.log(todate)
+  console.log(message)
+  console.log(projectName)
+  useEffect(()=>{
+    window.localStorage.setItem('username',JSON.stringify(username))
+    window.localStorage.setItem('fromdate',JSON.stringify(fromdate))
+    window.localStorage.setItem('todate',JSON.stringify(todate))
+    window.localStorage.setItem('message',JSON.stringify(message))
+    window.localStorage.setItem('projectName',JSON.stringify(projectName))
+  },[username,fromdate,todate,message,projectName])
   return (
 
 
-    <div className='requestfeedbackhome'>
-      {/* <h4 className='requestfeedbackh3'>Request Feedback </h4> */}
+    <div>
+      <h3>Request Feedback </h3>
 
       <div>
         <form ref={form} onSubmit={(e) => { sendEmail(e); form.current.reset(); }} className='Formelement'>
@@ -70,12 +101,14 @@ function RequestFeedback() {
                 <Input onChange={(e) => updateUserName(e.target.value)}
                   id="exampleEmail"
                   name="to_email"
-                  placeholder="Request To Be Sent To"
+                  placeholder="Request To"
                   type="email"
                 />
               </FormGroup>
             </Col>
-         
+          </Row>
+
+          <Row>
             <Col md={6}>
             <FormGroup>
               <Label for="projectName" className='label'>
@@ -132,15 +165,15 @@ function RequestFeedback() {
               <Input onChange={(e)=>updateMessage(e.target.value)}
                 id="exampleZip"
                 name="message"
-                placeholder='Self Input'
+                placeholder='Message'
                 type="textarea"
               />
             </FormGroup>
           </Row>
 
-          <button type="submit" value="Send" className='requestbutton'>
-             Request Feedback
-          </button>
+          <Button type="submit" value="Send">
+            Send Request
+          </Button>
         </form>
         <ToastContainer />
 
@@ -149,6 +182,15 @@ function RequestFeedback() {
 
       </div>
 
+      {/* <form ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="to_email" />
+      <label>Message</label> 
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form> */}
 
     </div>
   )
