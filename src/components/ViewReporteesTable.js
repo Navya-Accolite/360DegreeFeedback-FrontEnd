@@ -11,6 +11,9 @@ function ViewReporteesFeedback(props) {
   const [isOpenCon, setIsOpenCon] = useState(false);
   const [comment,setComment]=useState('');
 
+  const [feedbackIds, setFeedbackIds] = useState([]);
+  const [feedbackDetails, setFeedbackDetails] = useState([]);
+
   const data1 = [["Attitude",3],["Performance",3],["fghj",2]];
 
   const headings = ["Attitude", "Behaviour", "Performance", "abc", "fghj"];
