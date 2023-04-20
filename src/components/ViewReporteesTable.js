@@ -1,27 +1,28 @@
-import React from 'react'
-import '../Styles/StylesforGiveFeedback.css';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-function ViewReporteestable() {
-  const emailId = window.localStorage.getItem('emailId');
-  const [data, setData] = useState([]);
+function ViewReporteesFeedback(props) {
+  const location = useLocation();
+  const propValue = location.state.propValue;
+  const [data,setData]=useState([]);
 
-//   useEffect(() => {
-//     fetch("http://localhost:4545/api/ReceiverDetails/"+emailId)
-//       .then(response => response.json())
-//       .then(data => setData(data))
-//       .catch(error => console.log(error));
-//   }, []);
+  useEffect(() => {
+     {
+      fetch("http://localhost:4545/api?rEmail="+propValue+"&status=1")
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(error => console.log(error));
 
+        console.log(data);
+    }
+  }, []);
 
   return (
-    <>
-
-   table
-
-    </>
-  )
+   
+    <div>{propValue}
+     {console.log(propValue,location)}
+     </div>
+  );
 }
 
-export default ViewReporteesTable
+export default ViewReporteesFeedback;

@@ -82,7 +82,7 @@ function SideNav() {
         ]
       : []),
 
-      ...(data.role === 'MANAGER' || data.role==='BU HEAD'
+      ...(data.role === 'MANAGER'
       ? [
           {
             label: 'View Reportees',
@@ -92,6 +92,18 @@ function SideNav() {
 
         ]
       : []),
+
+      ...(data.role==='BU HEAD'
+      ? [
+          {
+            label: 'View Reportees',
+            key: '/viewreporteesbu',
+            icon: <SolutionOutlined />,
+          },
+
+        ]
+      : []),
+
 
   ]}
  
