@@ -12,11 +12,12 @@ function LoginPage() {
 
   return (
     <div>
-      {isLoggedIn ? (
+      {/* {isLoggedIn ? (
         <App/>
       ) : (
         <LoginForm onLogin={handleLogin}/>
-      )}
+      )} */}
+      
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { ImportOutlined } from '@ant-design/icons';
 
 function HomeContent() {
   
-  const emailId = window.localStorage.getItem('emailId');
+  const emailId = window.sessionStorage.getItem('emailId');
   const [data, setData] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:4545/api/feedbackProviders/"+emailId)

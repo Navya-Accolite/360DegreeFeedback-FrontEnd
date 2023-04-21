@@ -5,7 +5,7 @@ import { useState } from 'react';
 import GiveFeedbackTable from './GiveFeedbackTable';
 
 function GiveFeedback() {
-  const emailId = window.localStorage.getItem('emailId');
+  const emailId = window.sessionStorage.getItem('emailId');
   const [data, setData] = useState([]);
 
   useEffect(() => {

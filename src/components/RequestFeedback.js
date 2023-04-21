@@ -56,34 +56,34 @@ function RequestFeedback() {
 
       toast.success('Request sent successfully!');
   }
-  useEffect(()=>{
-    const data1=window.localStorage.getItem('username')
-   if(data1!==null) updateUserName(data1)
+  // useEffect(()=>{
+  //   const data1=window.sessionStorage.getItem('username')
+  //  if(data1!==null) updateUserName(data1)
    
-    const data2=window.localStorage.getItem('fromdate')
-    if(data2!==null) updateUserName(data2)
+  //   const data2=window.sessionStorage.getItem('fromdate')
+  //   if(data2!==null) updateUserName(data2)
     
-    const data3=window.localStorage.getItem('todate')
-    if(data3!==null) updateUserName(data3)
+  //   const data3=window.sessionStorage.getItem('todate')
+  //   if(data3!==null) updateUserName(data3)
     
-    const data4=window.localStorage.getItem('message')
-    if(data4!==null) updateUserName(data4)
+  //   const data4=window.sessionStorage.getItem('message')
+  //   if(data4!==null) updateUserName(data4)
     
-    const data5=window.localStorage.getItem('projectName')
-    if(data5!==null) updateProjectName(data5)
-  },[])
+  //   const data5=window.sessionStorage.getItem('projectName')
+  //   if(data5!==null) updateProjectName(data5)
+  // },[])
   console.log(username)
   console.log(fromdate)
   console.log(todate)
   console.log(message)
   console.log(projectName)
-  useEffect(()=>{
-    window.localStorage.setItem('username',JSON.stringify(username))
-    window.localStorage.setItem('fromdate',JSON.stringify(fromdate))
-    window.localStorage.setItem('todate',JSON.stringify(todate))
-    window.localStorage.setItem('message',JSON.stringify(message))
-    window.localStorage.setItem('projectName',JSON.stringify(projectName))
-  },[username,fromdate,todate,message,projectName])
+  // useEffect(()=>{
+  //   window.sessionStorage.setItem('username',JSON.stringify(username))
+  //   window.sessionStorage.setItem('fromdate',JSON.stringify(fromdate))
+  //   window.sessionStorage.setItem('todate',JSON.stringify(todate))
+  //   window.sessionStorage.setItem('message',JSON.stringify(message))
+  //   window.sessionStorage.setItem('projectName',JSON.stringify(projectName))
+  // },[username,fromdate,todate,message,projectName])
   return (
     <div>
       <h3>Request Feedback </h3>

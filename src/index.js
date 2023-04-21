@@ -25,15 +25,23 @@ import LoginPage from './components/LoginPage';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import LoginForm from './components/LoginForm';
+import { useState } from 'react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const isLoggedIn = false; // set this to true once the user is logged in
+ const isLoggedIn = false; // set this to true once the user is logged in
+
+function handleLogin() {
+  isLoggedIn=false;
+}
+
+
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {isLoggedIn ? <App /> : <LoginPage />}
+      <App/>
     </BrowserRouter>
   </React.StrictMode>,
   
