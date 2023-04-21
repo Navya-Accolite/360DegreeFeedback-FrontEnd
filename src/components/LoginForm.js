@@ -39,7 +39,7 @@ const LoginForm = ({ onLogin }) => {
     
     const handleLoginApi = (response) => {
       console.log(response)
-        fetch(`http://localhost:4545/auth/login`, {
+        fetch(`http://localhost:4545/api/login`, {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ token: response.credential }),

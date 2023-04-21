@@ -23,11 +23,11 @@ function SideNav() {
 
   useEffect(()=>{
     axios.get("http://localhost:4545/api/getDetails/"+emailId).then((res)=>{
-      //  console.log(res.data);
+       console.log(res.data);
        setdata(res.data)
     })
   })
-
+console.log(data)
   const [current, setCurrent] = useState('/');
   const handleClick = (e) => {
     setCurrent(e.key);

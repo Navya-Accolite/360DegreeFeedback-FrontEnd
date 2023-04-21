@@ -22,7 +22,7 @@ function RequestFeedback() {
 
 
   const today = new Date().toISOString().split('T')[0];
-  console.log("today",today);
+  // console.log("today",today);
   // document.getElementById("exampleDate").setAttribute("max",today);
   // document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
 
@@ -85,15 +85,9 @@ function RequestFeedback() {
     window.localStorage.setItem('projectName',JSON.stringify(projectName))
   },[username,fromdate,todate,message,projectName])
   return (
-
-
-<<<<<<< HEAD
     <div>
       <h3>Request Feedback </h3>
-=======
     <div className='requestfeedbackhome'>
->>>>>>> 6ebc39cdf2e48df6c138d8acb8768157738a5d27
-
       <div>
         <form ref={form} onSubmit={(e) => { sendEmail(e); form.current.reset(); }} className='Formelement'>
           <Row>
@@ -197,7 +191,8 @@ function RequestFeedback() {
     </form> */}
 
     </div>
+    </div>
   )
 }
 
-export default RequestFeedback
+export default RequestFeedback;
