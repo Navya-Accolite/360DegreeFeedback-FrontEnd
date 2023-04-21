@@ -17,7 +17,7 @@ import {
 function SideNav() {
   const navigate = useNavigate();
   
-  const emailId = window.localStorage.getItem('emailId');
+  const emailId = window.sessionStorage.getItem('emailId');
   //  console.log("mail",emailId);
   const [data,setdata]=useState([]);
 

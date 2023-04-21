@@ -5,7 +5,7 @@ import { useState } from 'react';
 import GiveFeedbackTable from './GiveFeedbackTable';
 
 function GiveFeedback() {
-  const emailId = window.localStorage.getItem('emailId');
+  const emailId = window.sessionStorage.getItem('emailId');
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -26,6 +26,7 @@ function GiveFeedback() {
     <div className="searchBarContainer">
 
     <div className='givefeedbacktable'>
+      {console.log("data",data.length)}
       {data.length ? <GiveFeedbackTable data={data} /> : <div className='norequest'>No Requested Feedbacks</div> }
 
     </div>

@@ -24,7 +24,6 @@ function ViewBUManagers(props) {
 
   const navigate = useNavigate();
 
-
   const handleClick = (name) => {
      navigate('/viewreporteesfeedback', { state: { propValue: name } }); // navigate to a new page and pass the prop value
   };

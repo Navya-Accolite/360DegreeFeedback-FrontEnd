@@ -18,6 +18,7 @@ function GiveFeedbackTable(props) {
     useEffect(() => {
         axios.get("http://localhost:4545/api/questions/checkValid")
             .then((response) => setData(response.data));
+            console.log(data);
     }, []);
 
     const handleFeedBack = (id) => {

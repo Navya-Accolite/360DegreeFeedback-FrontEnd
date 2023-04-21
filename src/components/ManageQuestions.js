@@ -10,7 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function ManageQuestions() {
-  const emailId = window.localStorage.getItem('emailId');
+  const emailId = window.sessionStorage.getItem('emailId');
   const [data, setData] = useState([]);
   const [question,setQuestion] = useState("");
   const [isOpenCon, setIsOpenCon] = useState(false);
