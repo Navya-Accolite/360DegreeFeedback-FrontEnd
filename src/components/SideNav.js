@@ -20,6 +20,7 @@ function SideNav() {
   const emailId = window.sessionStorage.getItem('emailId');
   //  console.log("mail",emailId);
   const [data,setdata]=useState([]);
+  const [role,setrole]=useState([]);
 
   useEffect(()=>{
     axios.get("http://localhost:4545/api/getDetails/"+emailId).then((res)=>{
@@ -27,6 +28,24 @@ function SideNav() {
        setdata(res.data)
     })
   })
+
+  useEffect(()=>{
+    axios.get("http://localhost:4545/api/isManager/"+emailId).then((res)=>{
+      
+       console.log("role",res.data);
+
+       if(res.data){
+        console.log("MANAGER");
+        setrole("MANAGER")
+     } else {
+        console.log("USER");
+        setrole("USER")
+     }
+     
+
+    })
+  })
+
 
   const [current, setCurrent] = useState('/');
   const handleClick = (e) => {
@@ -82,7 +101,7 @@ function SideNav() {
         ]
       : []),
 
-      ...(data.role === 'MANAGER'
+    ...(role==='MANAGER'
       ? [
           {
             label: 'View Reportees',

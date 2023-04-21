@@ -63,7 +63,7 @@ function ViewReporteesFeedback(props) {
             <td>{row[4]}</td>
             <td>{row[5]}</td>
             <td>{row[6]}</td>
-            <td>{row[7]}</td>
+            <td>{ratings[row[7]]}</td>
             <td>{ratings[row[8]]}</td>
             <td>{ratings[row[9]]}</td>
             <td>{ratings[row[10]]}</td>
