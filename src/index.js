@@ -30,10 +30,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const isLoggedIn = false; // set this to true once the user is logged in
 
+function handleLogin(){
+  isLoggedIn=false;
+}
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {isLoggedIn ? <App /> : <LoginPage />}
+     <App/>
     </BrowserRouter>
   </React.StrictMode>,
   

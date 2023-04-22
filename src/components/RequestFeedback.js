@@ -17,7 +17,7 @@ function RequestFeedback() {
   const [todate,updateToDate]=useState('');
   const [fromdate,updateFromDate]=useState('');
   const [message,updateMessage]=useState('');
-  const emailId = window.localStorage.getItem('emailId');
+  const emailId = window.sessionStorage.getItem('emailId');
 
   const today = new Date().toISOString().split('T')[0];
   console.log("today",today);

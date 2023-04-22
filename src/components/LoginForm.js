@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import image from '../Styles/feedback1.jpg';
 import logo from '../Styles/accolite-logo.png';
-const LoginForm = ({ onLogin }) => {
-
-
+import { Navigate, useNavigate } from 'react-router-dom';
+const LoginForm = ({onLoginSuccess}) => {
+  const navigate= useNavigate();
     useEffect(()=>{
         /* global google */
    setTimeout(()=>{
@@ -23,20 +23,18 @@ const LoginForm = ({ onLogin }) => {
    },500)
     },[])
     function handleLoginApi(response){
-        onLogin();
         console.log(response.credential);
-        window.localStorage.setItem('LoggedIn',"YES");
+        window.sessionStorage.setItem('LoggedIn',"YES");
         axios.post("http://localhost:4545/api/login",{
             body: response.credential
         }).then((response) => {
             console.log(response.data.user.emailId);
             const emailId = response.data.user.emailId;
             console.log(emailId);
-            window.localStorage.setItem('emailId', emailId);
+            window.sessionStorage.setItem('emailId', emailId);
+            onLoginSuccess();
         });
-        onLogin();
     }
-    
     // const handleLoginApi = (response) => {
     //   console.log(response)
     //     fetch(`http://localhost:4545/auth/login`, {
@@ -51,7 +49,6 @@ const LoginForm = ({ onLogin }) => {
     //         return res.json();
     //       })
     //       .then((data) => {
-            
     //         if (data.length !== 0) {
     //           localStorage.setItem("email", data.email);
     //           localStorage.setItem("accessToken", data.accessToken);
@@ -61,12 +58,11 @@ const LoginForm = ({ onLogin }) => {
     //         // updateaccessToken(data);
     //       })
     //       .catch((error) => {
-            
     //       });
     // };
 //     return (
 //         <>
-//         <div 
+//         <div
 //         style={{
 //             backgroundImage: `url(${image})`,
 //             backgroundSize: "cover",
@@ -84,12 +80,9 @@ const LoginForm = ({ onLogin }) => {
 //                 </div>
 //             </div>
 //             </div>
-           
 //         </>
 //     )
 // }
-
-
 return (
     <div
       style={{
@@ -146,6 +139,4 @@ return (
     </div>
   );
 }
-
-
 export default LoginForm;

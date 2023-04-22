@@ -3,7 +3,7 @@ import { Table } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
 function ViewReportees() {
   
-  const emailId = window.localStorage.getItem('emailId');
+  const emailId = window.sessionStorage.getItem('emailId');
   const [data, setData] = useState([]);
 
   useEffect(() => {
