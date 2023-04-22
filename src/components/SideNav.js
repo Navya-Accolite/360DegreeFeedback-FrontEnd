@@ -30,19 +30,26 @@ function SideNav() {
   })
 
   useEffect(()=>{
-    axios.get("http://localhost:4545/api/isManager/"+emailId).then((res)=>{
+    axios.get("http://localhost:4545/api/checkRole/"+emailId).then((res)=>{
       
        console.log("role",res.data);
 
-       if(res.data){
+       if(res.data=="manager"){
         console.log("MANAGER");
         setrole("MANAGER")
-     } else {
+     } else if(res.data=="employee") {
         console.log("USER");
         setrole("USER")
      }
-     
-
+     else if(res.data=="ADMIN") {
+      console.log("ADMIN");
+      setrole("ADMIN")
+   }
+   else
+   {
+    console.log("BU Head");
+    setrole("BU HEAD")
+   }
     })
   })
 
@@ -85,7 +92,7 @@ function SideNav() {
       key: '/givefeedback',
       icon: <UserOutlined />,
     },
-    ...(data.role === 'ADMIN'
+    ...(role === 'ADMIN'
       ? [
           {
             label: 'Manage Attributes',
@@ -112,7 +119,7 @@ function SideNav() {
         ]
       : []),
 
-      ...(data.role==='BU HEAD'
+      ...(role==='BU HEAD'
       ? [
           {
             label: 'View BU Reportees',
