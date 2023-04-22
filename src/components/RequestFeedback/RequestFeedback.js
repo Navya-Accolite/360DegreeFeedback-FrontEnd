@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { FormGroup, Label, Input, Row, Col, Button} from 'reactstrap';
-import '../Styles/StylesforRequest.css';
+import '../../Styles/StylesforRequest.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

@@ -2,20 +2,20 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'reactstrap';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import HomeContent from './components/HomeContent';
-import GiveFeedback from './components/GiveFeedback';
-import SideNav from './components/SideNav';
-import RequestFeedback from './components/RequestFeedback';
+import HomeContent from './components/Home/HomeContent';
+import GiveFeedback from './components/GiveFeedback/GiveFeedback';
+import SideNav from './components/Auth/SideNav';
+import RequestFeedback from './components/RequestFeedback/RequestFeedback';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LogOutPage from './components/LogOutPage';
-import ManageQuestions from './components/ManageQuestions';
-import ManageUsers from './components/ManageUsers';
-import ViewReportees from './components/ViewReportees';
-import ViewBUReportees from './components/ViewBUReportees';
-import ViewBUManagers from './components/ViewBUReporteesManager';
+import LogOutPage from './components/Auth/LogOutPage';
+import ManageQuestions from './components/Admin/ManageQuestions';
+import ManageUsers from './components/Admin/ManageUsers';
+import ViewReportees from './components/Manager/ViewReportees';
+import ViewBUReportees from './components/BUHead/ViewBUReportees';
+import ViewBUManagers from './components/BUHead/ViewBUReporteesManager';
 import './index.css';
-import ViewReporteesFeedback from './components/ViewReporteesTable';
-import LoginForm from './components/LoginForm';
+import ViewReporteesFeedback from './components/Manager/ViewReporteesTable';
+import LoginForm from './components/Auth/LoginForm';
 function App() {
   useEffect(() => {
     if (window.sessionStorage.getItem('emailId')) {

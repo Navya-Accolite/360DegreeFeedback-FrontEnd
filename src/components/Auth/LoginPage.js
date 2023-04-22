@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
-import App from '../App';
+import App from '../../App';
 
 
 function LoginPage() {

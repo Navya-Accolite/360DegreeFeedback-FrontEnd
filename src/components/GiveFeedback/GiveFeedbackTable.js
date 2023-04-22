@@ -1,8 +1,8 @@
 import React from 'react';
-import '../Styles/StylesforGiveFeedback.css';
+import '../../Styles/StylesforGiveFeedback.css';
 import  { useEffect, useState } from "react";
 import axios from "axios";
-import '../Styles/feedbackPage.css'
+import '../../Styles/feedbackPage.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 function GiveFeedbackTable(props) {

@@ -27,7 +27,7 @@ function ViewReportees() {
     <>
       <div className='manageuserhome'>
         <div>
-          <h4>.</h4>
+          <center><h5>Your Reportees</h5></center>
         </div>
         <div className='homeclass'>
           <Table style={{width:"700px", marginLeft:"100px",marginTop:"100px"}} className='styled-table'>

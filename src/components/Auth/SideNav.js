@@ -3,7 +3,7 @@ import { Menu } from 'antd';
 import  { useEffect } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import image from '../Styles/profile-photo1.png'
+import image from '../../Styles/profile-photo1.png'
 import {
   HomeOutlined,
   UserOutlined,

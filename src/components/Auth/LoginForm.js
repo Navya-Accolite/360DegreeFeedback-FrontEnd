@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
-import image from '../Styles/feedback1.jpg';
-import logo from '../Styles/accolite-logo.png';
+import image from '../../Styles/feedback1.jpg';
+import logo from '../../Styles/accolite-logo.png';
 import { Navigate, useNavigate } from 'react-router-dom';
 const LoginForm = ({onLoginSuccess}) => {
   const navigate= useNavigate();

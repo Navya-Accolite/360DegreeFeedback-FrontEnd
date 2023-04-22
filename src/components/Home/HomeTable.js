@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRef } from 'react';
-import '../Styles/feedbackPage.css';
+import '../../Styles/feedbackPage.css';
 import { FormGroup, Label, Form, Input, Row, Col, Button} from 'reactstrap';
 import emailjs from '@emailjs/browser';
 import 'react-toastify/dist/ReactToastify.css';

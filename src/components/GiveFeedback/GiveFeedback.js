@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/StylesforGiveFeedback.css';
+import '../../Styles/feedbackPage.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import GiveFeedbackTable from './GiveFeedbackTable';

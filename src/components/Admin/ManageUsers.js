@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Label,Col,Input} from 'reactstrap';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
-import '../Styles/Manageuser.css'
+import '../../Styles/Manageuser.css'
 
 
 function ManageUsers() {

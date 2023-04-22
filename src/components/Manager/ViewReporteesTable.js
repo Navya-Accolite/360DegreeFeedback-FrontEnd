@@ -46,6 +46,9 @@ function ViewReporteesFeedback(props) {
       
     <div className='viewreporteetablehome'>
       <div className='homeclass1'>
+        <div>
+        <center><h5 style={{paddingTop:"40px"}}>Here's {propValue}'s overall feedback</h5></center>
+        </div>
         
       <div className='scrolltablediv'>
         <Table style={{width:"700px", marginLeft:"100px",marginTop:"100px"}} className='styled-table'>
