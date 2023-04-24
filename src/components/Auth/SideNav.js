@@ -4,6 +4,7 @@ import  { useEffect } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import image from '../../Styles/profile-photo1.png'
+import {VscFeedback} from 'react-icons/vsc'
 import {
   HomeOutlined,
   UserOutlined,
@@ -32,22 +33,22 @@ function SideNav() {
   useEffect(()=>{
     axios.get("http://localhost:4545/api/checkRole/"+emailId).then((res)=>{
       
-       console.log("role",res.data);
+      //  console.log("role",res.data);
 
        if(res.data=="manager"){
-        console.log("MANAGER");
+        // console.log("MANAGER");
         setrole("MANAGER")
      } else if(res.data=="employee") {
         console.log("USER");
         setrole("USER")
      }
      else if(res.data=="ADMIN") {
-      console.log("ADMIN");
+      // console.log("ADMIN");
       setrole("ADMIN")
    }
    else
    {
-    console.log("BU Head");
+    // console.log("BU Head");
     setrole("BU HEAD")
    }
     })
@@ -90,7 +91,7 @@ function SideNav() {
     {
       label: 'Give Feedback',
       key: '/givefeedback',
-      icon: <UserOutlined />,
+      icon: <VscFeedback />,
     },
     ...(role === 'ADMIN'
       ? [

@@ -56,4 +56,79 @@ h4{
 
 .homeh3{
   padding-top: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.card1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #c5e0e5;
+}
+
+.card-content1 {
+  width: 500px;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card-title1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.select-wrapper1 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+select {
+  appearance: none;
+  border: none;
+  background-color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+select:focus {
+  outline: none;
+}
+
+.select-arrow1 {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.select-arrow1:before {
+  content: '';
+  display: block;
+  width: 0.6em;
+  height: 0.6em;
+  border-top: 0.2em solid #ccc;
+  border-right: 0.2em solid #ccc;
+  transform: rotate(45deg);
+}
+
+.submit-button1 {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }

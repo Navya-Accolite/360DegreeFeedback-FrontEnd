@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import '../../index.css';
 import HomeTable from './HomeTable';
 import axios from 'axios';
-import { ImportOutlined } from '@ant-design/icons';
 
 function HomeContent() {
   
@@ -22,9 +21,6 @@ function HomeContent() {
       </div>
     </div>
     </div>
-    
-    
-
   )
 }
 

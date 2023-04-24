@@ -115,7 +115,7 @@ color: #009879;
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    /* min-width: 500px; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -127,6 +127,7 @@ color: #009879;
 
 .styled-table th,
 .styled-table td {
+ 
   padding: 12px 15px;
 }
 
@@ -136,6 +137,10 @@ color: #009879;
 
 .styled-table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:nth-of-type(odd) {
+  background-color: aliceblue;
 }
 
 .styled-table tbody tr:last-of-type {
@@ -204,3 +209,4 @@ align-items: center;
 .comment2{
 margin-left: 150px; 
 }
+

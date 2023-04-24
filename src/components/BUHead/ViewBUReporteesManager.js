@@ -36,7 +36,7 @@ function ViewBUManagers(props) {
           <h4>.</h4>
         </div>
         <div className='homeclass'>
-          <Table style={{width:"700px", marginLeft:"100px",marginTop:"100px"}} className='styled-table'>
+          <Table className='styled-table'>
             <thead>
               <tr>
                 <th>

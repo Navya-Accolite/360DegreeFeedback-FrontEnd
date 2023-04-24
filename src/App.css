@@ -109,13 +109,19 @@
 .scrolltablediv{
   overflow: auto;
   /* max-height: 500px; */
-  max-width: 700px;
-  margin-left: 100px;
+  max-width: 800px;
+  margin-left: 50px;
+}
+
+.scrolltablediv td{
+ border: 1px solid black;
+ /* column-width: 200px; */
 }
 
 .homeclass1{
   /* background-color: #60cf64; */
   background-color: #c5e0e5;
   width: 1000px;
-  height: 1000px;
+  height: 600px;
 }
+
