@@ -72,7 +72,7 @@ const postQuestion=(e)=>{
                     
                 </div>
                 <div className="cmntBox">
-                    <label>Enter the question</label>
+                    <label>Enter an Attribute</label>
                     <textarea id="text" onChange={(e)=>setQuestion(e.target.value)}></textarea>
                     <span>
                     <button id='btn1' onClick={()=>postQuestion()}>Submit</button>

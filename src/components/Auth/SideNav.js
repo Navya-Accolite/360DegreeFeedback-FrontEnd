@@ -73,6 +73,7 @@ function SideNav() {
         <div className='profiledetails' style={{textAlign: 'center'}}>
         <div>{data.name}</div>
         <div>{data.emailId}</div>
+        <div>{role}</div>
         </div>
 
 <Menu
@@ -100,11 +101,11 @@ function SideNav() {
             key: '/managequestions',
             icon: <SolutionOutlined />,
           },
-          {
-            label: 'Manage Users',
-            key: '/manageusers',
-            icon: <TeamOutlined />,
-          },
+          // {
+          //   label: 'Manage Users',
+          //   key: '/manageusers',
+          //   icon: <TeamOutlined />,
+          // },
 
         ]
       : []),

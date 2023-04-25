@@ -27,10 +27,10 @@ function ViewReportees() {
     <>
       <div className='manageuserhome'>
         <div>
-          <center><h5>Your Reportees</h5></center>
+          <center><h5 style={{paddingTop:"50px"}} className='homeh3'>Your Reportees</h5></center>
         </div>
         <div className='homeclass'>
-          <Table style={{width:"700px", marginLeft:"100px",marginTop:"100px"}} className='styled-table'>
+          <Table style={{width:"800px", marginLeft:"100px",marginTop:"50px"}} className='styled-table'>
             <thead>
               <tr>
                 <th>

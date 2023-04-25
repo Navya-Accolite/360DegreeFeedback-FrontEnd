@@ -14,6 +14,7 @@ import ViewReportees from './components/Manager/ViewReportees';
 import ViewBUReportees from './components/BUHead/ViewBUReportees';
 import ViewBUManagers from './components/BUHead/ViewBUReporteesManager';
 import './index.css';
+import a from '../src/Styles/accolite-logo.png'
 import ViewReporteesFeedback from './components/Manager/ViewReporteesTable';
 import LoginForm from './components/Auth/LoginForm';
 function App() {
@@ -41,9 +42,13 @@ function App() {
       {isLoggedIn &&
         <>
           <div className="Head">
-            <span className='name'>360 DEGREE FEEDBACK</span>
-            <div>
-            </div>
+             <span>
+                {/* <span className='logo'>
+                  <img src={a} style={{height:"60px",width:"150px"}}></img>
+                </span> */}
+                  <span className='name'>360 DEGREE FEEDBACK</span>
+              </span>
+            
             <span className='Logout'><Button color="primary" onClick={handleRefresh}>
               Logout
             </Button></span>

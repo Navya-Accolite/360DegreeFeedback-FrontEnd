@@ -5,9 +5,11 @@
 }
 
 .manageusers{
+background-color:#f7faff ;
  width: 500px;
  margin-left: 300px;
  margin-top: 90px;
+ border-radius: 6px;
 }
 #btn4{
     background-color: #60cf64;

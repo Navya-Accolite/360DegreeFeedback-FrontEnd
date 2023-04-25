@@ -1,10 +1,10 @@
 .styled-table2 {
     border-collapse: collapse;
-    margin: 25px 0;
-    margin-left: 250px;
+    margin: 3px 0;
+    margin-left: 80px;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    min-width: 800px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -23,8 +23,12 @@
   border-bottom: 1px solid #dddddd;
 }
 
-.styled-table2 tbody tr:nth-of-type(even) {
+.styled-table2 tbody tr:nth-of-type(odd) {
   background-color: #f3f3f3;
+}
+
+.styled-table2 tbody tr:nth-of-type(even) {
+  background-color: rgb(230, 223, 223);
 }
 
 .styled-table2 tbody tr:last-of-type {
