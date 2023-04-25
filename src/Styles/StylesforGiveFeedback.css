@@ -6,17 +6,17 @@
 
 
 .givefeedbacktable{
-  margin-left: 200px;
+  margin-left: 100px;
   margin-top: 50px;
 }
 
 
 .styled-table1 {
   border-collapse: collapse;
-  margin: 25px 0;
+  /* margin: 25px 0; */
   font-size: 0.9em;
   font-family: sans-serif;
-  min-width: 400px;
+  min-width: 800px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -35,8 +35,12 @@ padding: 12px 15px;
 border-bottom: 1px solid #dddddd;
 }
 
+.styled-table1 tbody tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
 .styled-table1 tbody tr:nth-of-type(even) {
-background-color: #f3f3f3;
+  background-color: rgb(243, 214, 203);
 }
 
 .styled-table1 tbody tr:last-of-type {
@@ -49,16 +53,16 @@ color: #009879;
 }
 
 .ques{
-  /* margin-left: 200px; */
+  margin-left: 20px;
   font-family: 'Times New Roman', Times, serif;
   font-weight:light;
   font-size:large;
-  /* width: 30px; */
+  width: 300px;
   display: inline-block;
 }
 
 .question{
-  padding: 15px;
+  padding: 5px;
 }
 /* .table1{
 display: flex;
@@ -69,7 +73,7 @@ margin-right: 100%;
   margin-left: 20px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
-  font-size: large;
+  height: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -84,18 +88,20 @@ textarea::placeholder{
 }
 .popupContainer
 {
-top:170px;
+top:210px;
 position: absolute;
-width: 700px;
-height: 300px;
+min-width: 700px;
+margin-left: 200px;
+height: 200px;
 display: flex;
-padding-right: 350px;
+padding-right: 450px;
 justify-content: center;
 align-items: center;
 }
 .popup-boxd {
   position: absolute;
   background: aliceblue;
+  display: inline-block;
   width: 35vw;
   border-radius: 3px;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.4);

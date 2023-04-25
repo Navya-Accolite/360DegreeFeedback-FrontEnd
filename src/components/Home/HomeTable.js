@@ -114,8 +114,8 @@ const headers = ['NAME', 'MAIL'];
               <form ref={form}>
       <Row>
         <Col md={6}>
-          <FormGroup>
-            <Label for="exampleEmail" className='label'>
+          <FormGroup style={{paddingLeft:"20px"}}>
+            <Label for="exampleEmail" className='label' style={{width:"400px"}}>
               Email
             </Label>
             <Input onChange={(e) => updateEmailTo(e.target.value)}
@@ -128,7 +128,7 @@ const headers = ['NAME', 'MAIL'];
         </Col>
       </Row>
 
-      <Button onClick={()=>sendEmail()}>
+      <Button onClick={()=>sendEmail()} style={{marginLeft:"20px"}}>
         Send Report
       </Button>
       </form>
@@ -186,7 +186,7 @@ const headers = ['NAME', 'MAIL'];
         </tbody>
       </table> */}
 
-<Table style={{width:"700px"}} className='styled-table'>
+<Table style={{width:"900px"}} className='styled-table'>
   <thead>
     <tr>
       <th>

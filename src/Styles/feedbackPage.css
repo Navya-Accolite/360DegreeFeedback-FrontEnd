@@ -72,7 +72,7 @@ color: #009879;
   }
   
   #btn {
-    background-color: #60cf64;
+    background-color: #35a539;
     border: none;
     color: white;
     padding: 6px 10px;
@@ -89,12 +89,12 @@ color: #009879;
   }
   
   #btn1{
-    background-color: #60cf64;
+    background-color: #1fa924;
     margin-right: 20px;
     border-radius: 3px;
   }
   #btn2 {
-    background-color: #60cf64;
+    background-color: #2fcc34;
     border: white;
     color: white;
     padding: 6px 10px;
@@ -103,7 +103,7 @@ color: #009879;
     display: inline-block;
     font-size: 12px;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 1px;
     border-radius: 4px;
     margin-left: 400px;
   }
@@ -115,32 +115,32 @@ color: #009879;
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    /* min-width: 500px; */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 20px rgba(12, 12, 12, 0.15);
 }
 
 .styled-table thead tr {
   background-color: #070A52;
   color: white;
   text-align: left;
+  height: 50px;
 }
 
 .styled-table th,
 .styled-table td {
- 
   padding: 12px 15px;
 }
 
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
+  height: 50px;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: rgb(243, 214, 203);
 }
 
 .styled-table tbody tr:nth-of-type(odd) {
-  background-color: aliceblue;
+  background-color: #f3f3f3;
 }
 
 .styled-table tbody tr:last-of-type {
@@ -189,12 +189,12 @@ textarea::placeholder{
 }
 .popupContainer1
 {
-top:170px;
+top:100px;
 position: absolute;
 width: 900px;
-height: 400px;
+height: 300px;
 display: flex;
-padding-right: 350px;
+padding-right: 150px;
 justify-content: center;
 align-items: center;
 }

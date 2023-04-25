@@ -95,7 +95,7 @@ function RequestFeedback() {
           <Row md={2}>
             <Col>
               <FormGroup>
-                <Label for="exampleDate">
+                <Label for="exampleDate" className='label'>
                   From Date
                 </Label>
                 <Input onChange={(e)=>updateFromDate(e.target.value)}
@@ -109,7 +109,7 @@ function RequestFeedback() {
             </Col>
             <Col>
               <FormGroup>
-                <Label for="exampleDate">
+                <Label for="exampleDate" className='label'>
                   To Date
                 </Label>
                 <Input onChange={(e)=>updateToDate(e.target.value)}
