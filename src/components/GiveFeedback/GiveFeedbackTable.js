@@ -65,7 +65,7 @@ const func=()=>{
 
   return (
     <>
-    <table className='styled-table1'>
+    <table className='tableContainer' style={{width:"800px"}}>
       <thead>
         <tr>
           {headers.map((header) => (

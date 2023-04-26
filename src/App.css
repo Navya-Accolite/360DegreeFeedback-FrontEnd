@@ -71,16 +71,15 @@
 }
 
 .Logout button {
-  background-color: white;
+  background-color: #FF8C00;
   border: none;
   border-radius: 3px;
-  color: black;
+  color: white;
   margin-right: 10px;
   padding: 5px 10px;
 }
 
 .Logout button:hover {
-  background-color: #FF8C00;
   color: white;
 }
 
@@ -134,14 +133,6 @@
 
 
 
-.sidebar-profile-img {
-  margin-top: 30px;
-  width: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
-  height: 50px;
-}
 
 /* .profiledetails{
   background-color:#070A52;
@@ -168,9 +159,9 @@
 .sidebar {
   display: flex;
   flex-direction: row;
-  width: 300px;
-  height: 100vh;
-  background-color: #010101;
+  width: 400px;
+  height: 90vh;
+  background-color: #0f0f0f;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
@@ -186,7 +177,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 20px;
+  padding: 10px;
 }
 
 .sidebar-header {
@@ -194,29 +185,23 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
-  background-color: #292626;
+  margin-bottom: 50px;
+  background-color: #2b2d42;
   padding: 10px;
   box-shadow: 0px 0px 5px 0px rgba(32, 32, 32, 0.2);
 }
 
-.sidebar-profile-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
-}
+
 
 .profiledetails {
-  background-color: #4d4848;
-  align-items: center;
-  align-content: center;
+  background-color: #0f0f0f;
+  /* align-items: left;
+  align-content: left; */
   margin-bottom: 10px;
   color: white;
-  font-family: 'Segoe UI', Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Verdana, sans-serif; */
   width: 100%;
-  /* padding: 10px; */
+  font-family: 'Lato', sans-serif;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -257,4 +242,5 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  
 } 

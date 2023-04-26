@@ -44,7 +44,7 @@ function App() {
           <div className="Head">
              <span>
                 <span className='logo'>
-                  <img src={a} style={{height:"55px",width:"130px"}}></img>
+                  <img src={a} style={{height:"65px",width:"200px"}}></img>
                 </span>
                   <span className='name'>360 DEGREE FEEDBACK</span>
               </span>

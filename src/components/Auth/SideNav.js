@@ -58,16 +58,16 @@ function SideNav() {
   return (
     <div className="sidebar">
       <div className="sidebar-content">
-        <div className="sidebar-header">
+        {/* <div className="sidebar-header">
           <img
             src={image}
             alt="Profile"
             className="sidebar-profile-img"
           />
-        </div>
-        <div className='profiledetails' style={{textAlign: 'center'}}>
+        </div> */}
+        <div className='profiledetails' >
         <div>{data.name}</div>
-        <div>{data.emailId}</div>
+        {/* <div>{data.emailId}</div> */}
         <div>{role}</div>
         </div>
 

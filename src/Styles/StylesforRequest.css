@@ -1,5 +1,5 @@
 .Formelement{
-    margin-left: 150px;
+    margin-left: 120px;
     width: 900px;
     position: absolute;
     top: 50%;
@@ -16,7 +16,7 @@
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29);  */
     box-sizing: border-box;
     /* box-shadow: 0 15px 25px rgba(220, 225, 227, 0.6); */
-    filter: drop-shadow(10px 10px 4px #141414);
+    filter: drop-shadow(3px 3px 3px #141414);
     border-radius: 10px;
   }
 
@@ -52,13 +52,13 @@
   }
 
   .requestbutton{
-    background-color: #535151;
+    background-color: #83a4d4;
     border-radius: 5px;
     border-color:#96ddea ;
-    color:white;
-   
+    color:white;  
   }
 
   .requestbutton:hover{
-      background-color:aliceblue;
+    background: #83a4d4;  
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
   }
