@@ -14,7 +14,7 @@ import ViewReportees from './components/Manager/ViewReportees';
 import ViewBUReportees from './components/BUHead/ViewBUReportees';
 import ViewBUManagers from './components/BUHead/ViewBUReporteesManager';
 import './index.css';
-import a from '../src/Styles/accolite-logo.png'
+import a from '../src/Styles/accoliteimage-removebg.png'
 import ViewReporteesFeedback from './components/Manager/ViewReporteesTable';
 import LoginForm from './components/Auth/LoginForm';
 function App() {
@@ -43,9 +43,9 @@ function App() {
         <>
           <div className="Head">
              <span>
-                {/* <span className='logo'>
-                  <img src={a} style={{height:"60px",width:"150px"}}></img>
-                </span> */}
+                <span className='logo'>
+                  <img src={a} style={{height:"55px",width:"130px"}}></img>
+                </span>
                   <span className='name'>360 DEGREE FEEDBACK</span>
               </span>
             

@@ -56,7 +56,7 @@ function RequestFeedback() {
   return (
 
 
-    <div className='requestfeedbackhome'>
+    <div className='homeclass'>
 
       <div>
         <form ref={form} onSubmit={(e) => { sendEmail(e); form.current.reset(); }} className='Formelement'>

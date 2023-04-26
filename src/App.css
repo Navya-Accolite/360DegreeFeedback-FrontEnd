@@ -7,11 +7,9 @@
     transform: rotate(360deg);
   }
 }
-
+/* 
 .Head{
-  /* color: white; */
   background-color: #070A52;
-  /* height: 30px; */
   font-weight: bold;
   height:60px;
   width: 100%;
@@ -43,7 +41,48 @@
   color: #e56e0c;
 }
 .Head span:nth-of-type(1) { float:left }
-.Head span:nth-of-type(2) { float:right }
+.Head span:nth-of-type(2) { float:right } */
+
+
+.Head {
+  background-color: #212121;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 30px;
+  width: 70px;
+}
+
+.name {
+  font-weight: bolder;
+  font-size: large;
+  
+}
+
+.name:hover{
+  color: #FF8C00;
+  box-shadow: 3px 3px 5px 3px rgba(243, 239, 239, 0.2);
+}
+
+.Logout button {
+  background-color: white;
+  border: none;
+  border-radius: 3px;
+  color: black;
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+.Logout button:hover {
+  background-color: #FF8C00;
+  color: white;
+}
 
 .sidebar-header {
   display: flex;
@@ -53,36 +92,6 @@
   width:300px;
   margin-bottom: 20px;
   background-color:aliceblue;
-}
-
-.sidebar-profile-img {
-  margin-top: 30px;
-  width: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
-  height: 100px;
-}
-
-.profiledetails{
-  background-color:#070A52;
-  align-items: center;
-  align-content: center;
-  margin-bottom: 30px;
-  color: white;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  width: 300px;
-}
-
-.sidebar{
-  /* width: 215px; */
-  display: flex;
-  width: 300px;
-  flex-direction:row ;
-  background-color: aliceblue;
-  height: 100vh;
-  /* margin-right: 30px; */
 }
 
 .button-link {
@@ -118,7 +127,134 @@
 .homeclass1{
   /* background-color: #60cf64; */
   background-color: #c5e0e5;
+  /* background-color: gray; */
   width: 1000px;
   height: 600px;
 }
 
+
+
+.sidebar-profile-img {
+  margin-top: 30px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  height: 50px;
+}
+
+/* .profiledetails{
+  background-color:#070A52;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 30px;
+  color: white;
+  font-family: Garamond, serif;
+  font-weight: bold;
+  width: 300px;
+} */
+
+/* .sidebar{
+  display: flex;
+  width: 300px;
+  flex-direction:row ;
+  background-color: aliceblue;
+  height: 100vh;
+} */
+
+
+
+
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 100vh;
+  background-color: #010101;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.sidebar:hover {
+  box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #292626;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(32, 32, 32, 0.2);
+}
+
+.sidebar-profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.profiledetails {
+  background-color: #4d4848;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 10px;
+  color: white;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+  width: 100%;
+  /* padding: 10px; */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.profiledetails :hover{
+  box-shadow: 2px 2px 9px 2px rgb(228, 226, 226);
+}
+.ant-menu {
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  width: 100%;
+  margin-top: auto;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.ant-menu-item {
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.ant-menu-item:hover {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+.ant-menu-item-selected {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+.ant-menu-item-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+} 

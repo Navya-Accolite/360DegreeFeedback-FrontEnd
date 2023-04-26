@@ -43,27 +43,32 @@ const headers = ['NAME', 'MAIL'];
     })
 
     axios.get('http://localhost:4545/api/findComment/'+feedbackid).then((res)=>{
-      console.log("comment"+comment);
       setComment(res.data)
-      console.log("comment"+comment);
     })
   }
 
   const handleShare = (feedbackid) => {
     setIsOpenShare(true)
     axios.get('http://localhost:4545/api/getRating/' + feedbackid).then((res) => {
-      setshareData(res.data)
-      updateMessage(res.data)
+      let combinedData = res.data.reduce((acc, rating) => {
+        return `${acc}${rating[0]}: ${ratings[rating[1]]}\n`;
+      }, '');
+
+      axios.get('http://localhost:4545/api/findComment/'+feedbackid).then((res)=>{
+        setComment(res.data)
+      
+    })
+    combinedData += `Comment: ${comment}`;
+    setshareData(combinedData)
+    // updateMessage(combinedData)
     })
   }
 
 
   const sendEmail = (e) => {
-
-
     const templateParams = {
       to_email: emailTo,
-      message: shareData+comment,
+      message: shareData,
     };
     
       emailjs.send('service_91z8rbi', 'template_uc7dh9l', templateParams, 'piZXRCXKpuBTMThCC')
@@ -138,68 +143,23 @@ const headers = ['NAME', 'MAIL'];
       </div>
       }
 
-      {/* <table className='table1'>
 
-      <thead>
-    <tr>
-      <th>
-      {headers.map((header) => (
-              <th key={header}>{header}</th>
-            ))}
-            <th>Feedback</th>
-            <th>Share</th>
+ <div className='tableContainer'> 
 
-      </th>
-    </tr>
-  </thead>
-
-        <tbody>
-          {props.data.map((user) => (
-            <tr key={user[2]}>
-              <td>{user[1]}</td>
-              <td>{user[2]}</td>
-              <td>
-                <button
-                  id='btn'
-                  onClick={() => handleView(user[4])}
-                  disabled={user[3] === 0}
-                  title={user[3] === 0 ? 'Feedback not available' : ''}
-                  style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
-                >
-                  View
-                </button>
-              </td>
-              <td>
-                <button
-                  id='btn'
-                  onClick={() => handleShare(user[4])}
-                  disabled={user[3] === 0}
-                  title={user[3] === 0 ? 'Feedback not available' : ''}
-                  style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
-                >
-                  Share
-                  {console.log("user",user)}
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
-
-<Table style={{width:"900px"}} className='styled-table'>
+  <Table style={{width:"900px"}} className='center'>
   <thead>
     <tr>
       <th>
-        Name
+        NAME
       </th>
       <th>
-        Mail
+        MAIL
       </th>
       <th>
-        View Feedback
+        VIEW FEEDBACK
       </th>
       <th>
-        Share
+        SHARE
       </th>
     </tr>
   </thead>
@@ -228,13 +188,14 @@ const headers = ['NAME', 'MAIL'];
                   style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
                 >
                   Share
-                  {console.log("user",user)}
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
 </Table>
+
+</div>
       <ToastContainer/>
 
 

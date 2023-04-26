@@ -32,23 +32,18 @@ function SideNav() {
 
   useEffect(()=>{
     axios.get("http://localhost:4545/api/checkRole/"+emailId).then((res)=>{
-      
-      //  console.log("role",res.data);
 
        if(res.data=="manager"){
-        // console.log("MANAGER");
         setrole("MANAGER")
      } else if(res.data=="employee") {
         console.log("USER");
         setrole("USER")
      }
      else if(res.data=="ADMIN") {
-      // console.log("ADMIN");
       setrole("ADMIN")
    }
    else
    {
-    // console.log("BU Head");
     setrole("BU HEAD")
    }
     })
@@ -76,7 +71,7 @@ function SideNav() {
         <div>{role}</div>
         </div>
 
-<Menu
+<Menu className='menu'
   onClick={({ key }) => {
     navigate(key);
   }}
@@ -124,7 +119,7 @@ function SideNav() {
       ...(role==='BU HEAD'
       ? [
           {
-            label: 'View BU Reportees',
+            label: 'View BU Report',
             key: '/viewbureportees',
             icon: <SolutionOutlined />,
           },

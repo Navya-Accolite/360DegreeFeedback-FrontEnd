@@ -54,11 +54,42 @@ h4{
 
 } */
 
+
+
+.homeclass{
+
+  width:963px;
+  height:100%;
+  /* background-color:#cfe0e5; */
+  background-color:#f6fdfb;
+  display:flex;
+  justify-content:center;
+}
+
 .homeh3{
   padding-top: 30px;
-    font-weight: bold;
-    color: black;
+  font-weight: bold;
+  color: black;
+  font-size: 28px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
+
+/* .homeclass{
+  width:100%;
+  min-height:100vh;
+  background-color:#0D1117;
+  display:flex;
+  justify-content:center;
+}
+
+.homeh3{
+  padding-top: 30px;
+  font-weight: bold;
+  color: #F8F8FF;
+  font-size: 28px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+} */
+
 
 .card1 {
   display: flex;

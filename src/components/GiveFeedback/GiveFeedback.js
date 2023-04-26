@@ -19,7 +19,7 @@ function GiveFeedback() {
   return (
     <>
 
-    <div className='givefeedbackhome'>
+    <div className='homeclass'>
     <div>
       <h3 className='givefeedbackh3'></h3>
     </div>

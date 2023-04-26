@@ -25,12 +25,12 @@ function ViewReportees() {
 
   return (
     <>
-      <div className='manageuserhome'>
+      <div className='homeclass'>
         <div>
-          <center><h5 style={{paddingTop:"50px"}} className='homeh3'>Your Reportees</h5></center>
+          <center><h5 style={{paddingTop:"50px"}} className='homeh3'></h5></center>
         </div>
-        <div className='homeclass'>
-          <Table style={{width:"800px", marginLeft:"100px",marginTop:"50px"}} className='styled-table'>
+        <div>
+          <Table className='tableContainer' style={{width:"800px"}}>
             <thead>
               <tr>
                 <th>
@@ -50,7 +50,7 @@ function ViewReportees() {
                   <td>{user[0]}</td>
                   <td>{user[1]}</td>
                   <td>
-                    <button onClick={() => handleClick(user[1])}>ViewReportees Feedback</button> {/* call handleClick with the user's name */}
+                    <button id="btn" onClick={() => handleClick(user[1])}>View</button> {/* call handleClick with the user's name */}
                   </td>
                 </tr>
               ))}

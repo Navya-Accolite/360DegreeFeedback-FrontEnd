@@ -12,10 +12,11 @@ function HomeContent() {
         .then((response) => setData(response.data));
 }, []);
 
+// cfe0e5
   return (
-    <div className='homeclass' style={{width:"1000px",height:"100%",backgroundColor:"#cfe0e5", display:"flex",justifyContent:"center"}}>
+    <div className='homeclass'>
     <div>
-      <h3 className='homeh3'>Your Feedbacks!</h3>
+      <h3 className='homeh3'>YOUR FEEDBACKS!</h3>
       <div style={{width:"100%"}}>
       {data.length?<HomeTable data={data} />:<p>You have no Feedbacks available. Please request to view here.</p>}
       </div>

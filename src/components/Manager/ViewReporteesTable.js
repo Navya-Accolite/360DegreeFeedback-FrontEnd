@@ -41,7 +41,7 @@ function ViewReporteesFeedback(props) {
 
   return (
     <>
-      <div className='viewreporteetablehome'>
+      <div className='homeclass'>
         <div className='homeclass1'>
           <center>
             <h5 style={{ paddingTop: '40px' }}>
