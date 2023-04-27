@@ -38,7 +38,7 @@ function ManageQuestionsTable(props) {
 
   return (
     <>
-      <table className='styled-table2'>
+      <table className='styled-table2' style={{marginTop:"40px"}}>
         <thead>
           <tr>
             {headers.map((header) => (

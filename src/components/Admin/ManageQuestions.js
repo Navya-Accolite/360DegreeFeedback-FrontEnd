@@ -9,6 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import {
+  PlusCircleFilled
+} from '@ant-design/icons';
+
 function ManageQuestions() {
   const emailId = window.sessionStorage.getItem('emailId');
   const [data, setData] = useState([]);
@@ -52,7 +56,7 @@ const postQuestion=(e)=>{
 
   return (
     <>
-    <div className='managequestionhome'>
+    <div className='homeclass'>
     <div>
       <h4 className='managequestionsh4' style={{color:"#c5e0e5"}}>.</h4>
     </div>
@@ -62,7 +66,7 @@ const postQuestion=(e)=>{
     <ManageQuestionsTable data={data} />
     </div>
 
-    <button id="btn2" onClick={handleFeedBack}>Add Attribute</button>
+    <button id="btn" onClick={handleFeedBack} style={{marginLeft:"80px"}}>Add Attribute</button>
 
     </div>
 

@@ -46,7 +46,7 @@ function App() {
                 <span className='logo'>
                   <img src={a} style={{height:"65px",width:"200px"}}></img>
                 </span>
-                  <span className='name'>360 DEGREE FEEDBACK</span>
+                  <span className='name'>360 Degree Feedback</span>
               </span>
             
             <span className='Logout'><Button color="primary" onClick={handleRefresh}>
