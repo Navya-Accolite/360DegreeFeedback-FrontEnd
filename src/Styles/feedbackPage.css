@@ -13,7 +13,7 @@
 
 .popuptable {
   border-collapse: collapse;
-  margin: 25px 0;
+  /* margin: 25px 0; */
   margin-left: 30px;
   font-size: 0.9em;
   font-family: sans-serif;
@@ -179,7 +179,6 @@ margin-right: 100%;
 .cmntBox1{
   margin-top: 30px;
   margin-left: 20px;
-  font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   font-size: large;
   display: flex;
@@ -190,10 +189,9 @@ textarea{
   width:300px;
   height: 80px;
   margin-top: 10px;
+  resize: none;
 }
-textarea::placeholder{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
+
 .popupContainer1
 {
 top:100px;
@@ -260,6 +258,15 @@ td{
   padding: 10px 10px;
   text-align: center;
   font-size: 15px;
+}
+
+.comments{
+  font-size: medium;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  font-family:  serif;
+  margin-top: 0%;
 }
 
 

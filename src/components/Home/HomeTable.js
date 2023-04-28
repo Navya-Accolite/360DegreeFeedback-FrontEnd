@@ -106,7 +106,7 @@ const headers = ['NAME', 'MAIL'];
                 ))}
               </tbody>
             </table>
-            <div className='comment2'>Feedback:  {comment}</div>
+            <div className='comments'>Feedback:  {comment}</div>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@ const headers = ['NAME', 'MAIL'];
               
               <form ref={form}>
       <Row>
-        <Col md={6}>
+        <Col md={10}>
           <FormGroup style={{paddingLeft:"20px"}}>
             <Label for="exampleEmail" className='label' style={{width:"400px"}}>
               Email

@@ -62,11 +62,12 @@
     background: #83a4d4;  
     background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
   }
-<<<<<<< HEAD
+
 
   textarea{
     resize: none;
-=======
+  }
+
   
   .newfeedbackhead{
     padding-top: 2px;
@@ -74,5 +75,4 @@
     color: black;
     font-size: 20px;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
->>>>>>> 38444149216b0cc147f0f4990beee05e8fc21663
   }

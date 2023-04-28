@@ -21,18 +21,7 @@ function RequestFeedback() {
   const emailId = window.sessionStorage.getItem('emailId');
 
   var limit = 20;
-  const wordLimit=(e)=>{
-    updateMessage(e)
-    var textLength = e.length;
-    var myText=document.getElementById("my-text");
-    var res=document.getElementById("result");
 
-    if(textLength > limit){
-      myText.value = e.slice(0,limit);
-      textLength=textLength-1;
-    }
-    res.textContent =  textLength + "/" + limit;
-  }
 
   const today = new Date().toISOString().split('T')[0];
 
@@ -176,6 +165,7 @@ function RequestFeedback() {
           placeholder="Self Input"
           type="textarea"
           value={message}
+          style={{height:"90px"}}
           onChange={handleChange}
         />
         <span>
