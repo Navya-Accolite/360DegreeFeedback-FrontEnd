@@ -17,7 +17,7 @@ function RequestFeedback() {
   const[projectName, updateProjectName]= useState('');
   const [todate,updateToDate]=useState('');
   const [fromdate,updateFromDate]=useState('');
-  const [message,updateMessage]=useState('');
+  // const [message,updateMessage]=useState('');
   const emailId = window.sessionStorage.getItem('emailId');
 
   var limit = 20;
@@ -35,6 +35,16 @@ function RequestFeedback() {
   }
 
   const today = new Date().toISOString().split('T')[0];
+
+  const [message, setMessage] = useState('');
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    if (value.length <= 1000) {
+      setMessage(value);
+    }
+  };
+
 
   const data =
   {
@@ -71,6 +81,9 @@ function RequestFeedback() {
 
 
     <div className='homeclass'>
+      <div className='newfeedbackhead'>
+        New Feedback Request 
+      </div>
 
       <div>
         <form ref={form} onSubmit={(e) => { sendEmail(e); form.current.reset(); }} className='Formelement'>
@@ -137,10 +150,10 @@ function RequestFeedback() {
             </Col>
           </Row>
 
-          <Row md={2}>
+          {/* <Row md={1}>
             <FormGroup>
               <Label for="exampleZip" className='label'>
-                Message
+                Self Input
               </Label>
               <Input onChange={(e)=>wordLimit(e.target.value)}
                 id="my-text"
@@ -150,7 +163,26 @@ function RequestFeedback() {
               />
               <p id='result'>0/{limit}</p>
             </FormGroup>
-          </Row>
+          </Row> */}
+
+<Row md={1}>
+      <FormGroup>
+        <Label for="exampleZip" className="label">
+          Self Input
+        </Label>
+        <Input
+          id="exampleZip"
+          name="message"
+          placeholder="Self Input"
+          type="textarea"
+          value={message}
+          onChange={handleChange}
+        />
+        <span>
+          {message.length} / 1000
+        </span>
+      </FormGroup>
+    </Row>
 
           <button type="submit" value="Send" className='requestbutton'>
              Request Feedback

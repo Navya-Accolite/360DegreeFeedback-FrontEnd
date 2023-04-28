@@ -16,7 +16,7 @@ function HomeContent() {
   return (
     <div className='homeclass'>
     <div>
-      <h3 className='homeh3'>YOUR FEEDBACKS!</h3>
+      <h3 className='homeh3'>Your Feedbacks!</h3>
       <div style={{width:"100%"}}>
       {data.length?<HomeTable data={data} />:<p>You have no Feedbacks available. Please request to view here.</p>}
       </div>

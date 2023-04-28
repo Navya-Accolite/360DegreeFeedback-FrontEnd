@@ -90,76 +90,89 @@ h4{
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 } */
 
-
 .card1 {
+  background: #83a4d4;  
+  background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  
+  background: linear-gradient(to right, #b6fbff, #83a4d4); 
+  box-shadow: 0px 0px 8px rgba(223, 108, 108, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  width: 1000px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  background-color: #c5e0e5;
+  justify-content: center;
 }
 
-.card-content1 {
-  width: 500px;
-  padding: 40px;
-  background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+.card1 .card-content1 {
+  width: 100%;
+  max-width: 400px;
 }
 
-.card-title1 {
+.card1 .card-title1 {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  /* color: #1c1c1c; */
 }
 
 .select-wrapper1 {
   position: relative;
-  display: inline-block;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
-select {
-  appearance: none;
-  border: none;
-  background-color: #fff;
-  padding: 10px;
-  font-size: 16px;
-  color: #333;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-select:focus {
-  outline: none;
-}
-
-.select-arrow1 {
+.select-wrapper1 .select-arrow1 {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 8px;
   transform: translateY(-50%);
-  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-top: 8px solid #2d3436;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
 }
 
-.select-arrow1:before {
-  content: '';
-  display: block;
-  width: 0.6em;
-  height: 0.6em;
-  border-top: 0.2em solid #ccc;
-  border-right: 0.2em solid #ccc;
-  transform: rotate(45deg);
+.select-wrapper1 select {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+background-color: #f2f2f2;
+border: none;
+border-radius: 8px;
+padding: 12px 16px;
+width: 100%;
+font-size: 16px;
+font-weight: bold;
+/* color: #1c1c1c; */
+cursor: pointer;
+}
+
+.select-wrapper1 select:focus {
+outline: none;
 }
 
 .submit-button1 {
-  background-color: #0077cc;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+background-color: #1c1c1c;
+color: #ffffff;
+border: none;
+border-radius: 8px;
+padding: 12px 32px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.2s ease;
 }
+
+.submit-button1:hover {
+background-color: #2d3436;
+}
+
+@media (max-width: 768px) {
+.card1 {
+width: 100%;
+}
+}
+

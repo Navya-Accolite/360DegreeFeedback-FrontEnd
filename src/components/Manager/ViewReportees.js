@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
+import { EyeOutlined } from '@ant-design/icons';
 function ViewReportees() {
   
   const emailId = window.sessionStorage.getItem('emailId');
@@ -50,7 +51,7 @@ function ViewReportees() {
                   <td>{user[0]}</td>
                   <td>{user[1]}</td>
                   <td>
-                    <button id="btn" onClick={() => handleClick(user[1])}>View</button> {/* call handleClick with the user's name */}
+                    <button id="btn1" onClick={() => handleClick(user[1])}><EyeOutlined className='eye'/></button> {/* call handleClick with the user's name */}
                   </td>
                 </tr>
               ))}

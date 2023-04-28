@@ -16,7 +16,7 @@ function DropDown(props) {
   };
 
   return (
-
+<div>
     <div className="card1">
       <div className="card-content1">
         <div className="card-title1">View Feedback of</div>
@@ -27,8 +27,9 @@ function DropDown(props) {
           </select>
           <div className="select-arrow1"></div>
         </div>
-        <button className="submit-button1" onClick={() => handleOptionSelect(selectedOption)}>Submit</button>
+        <button className="submit-button1" onClick={() => handleOptionSelect(selectedOption)}>View 360° Feedback</button>
       </div>
+    </div>
     </div>
 
 
