@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
 import { Input,Label,FormGroup,Row } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
+import { Divider } from 'antd';
 
 
 const FeedbackForm = (props) => {
@@ -91,11 +92,12 @@ const func = () => {
 
           <div className="cmntBox2">
             <label>Feedback</label>
-            <textarea placeholder="Provide the Feedback" id="text" onChange={(e) => setComment(e.target.value)}></textarea>
-            <span><button id='btn2' onClick={() => func()}>Submit Feedback</button>&nbsp;&nbsp;
-              {/* <button id='btn' onClick={() => setIsOpenCon(false)}>Cancel</button> */}
-              </span>
+            <textarea placeholder="Provide the Feedback" id="text" onChange={(e) => setComment(e.target.value)} classname="feedbacktextarea"></textarea>
           </div>
+          &nbsp;
+          <div><button id='button1' onClick={() => func()}>Submit Feedback</button>&nbsp;&nbsp;
+              {/* <button id='btn' onClick={() => setIsOpenCon(false)}>Cancel</button> */}
+              </div>
         </div>
       </div>
       

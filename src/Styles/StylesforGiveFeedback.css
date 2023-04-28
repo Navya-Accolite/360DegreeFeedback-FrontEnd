@@ -1,6 +1,5 @@
 .givefeedbackhome{
   background-color: #c5e0e5;
-  /* background-color: grey; */
   width: 1000px;
   height: 100%;
 }
@@ -79,7 +78,7 @@ margin-right: 100%;
 }
 
 textarea{
-  width:300px;
+  width:570px;
   height: 150px;
   margin-top: 10px;
 }

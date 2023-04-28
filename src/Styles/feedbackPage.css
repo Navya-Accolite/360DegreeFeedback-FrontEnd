@@ -101,6 +101,20 @@ color: #009879;
     width: 50px;
     cursor: pointer;
   }
+
+
+  #button1{
+   margin-left: 45%;
+    background: #6441A5;  
+    border: none;
+    color: white;
+    border-radius: 3px;
+    /* padding: 7px 10px; */
+    text-align: center;
+    font-size: 12px;
+    width: 100px;
+    cursor: pointer;
+  }
   
   #btn2 {
     background-color: #6441A5;

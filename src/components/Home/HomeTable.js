@@ -11,7 +11,6 @@ import { EyeFilled , ShareAltOutlined } from '@ant-design/icons';
 import { ToastContainer, toast } from 'react-toastify';
 import { AntCloudOutlined } from '@ant-design/icons';
 function HomeTable(props) {
-const headers = ['NAME', 'MAIL'];
 
   const [isOpenCon, setIsOpenCon] = useState(false);
   const [data, setData] = useState([]);
@@ -151,16 +150,16 @@ const headers = ['NAME', 'MAIL'];
   <thead>
     <tr>
       <th>
-        NAME
+        Name
       </th>
       <th>
-        MAIL
+        Mail
       </th>
       <th>
-        VIEW FEEDBACK
+        View Feedback
       </th>
       <th>
-        SHARE
+        Share
       </th>
     </tr>
   </thead>

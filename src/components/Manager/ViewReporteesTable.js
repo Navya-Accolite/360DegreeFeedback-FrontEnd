@@ -110,7 +110,14 @@ function ViewReporteesFeedback(props) {
                   View
                 </button>
                   </td>
-                  <td>{feedback.feedbackComment}</td>
+                  {/* <td>{feedback.feedbackComment}</td> */}
+                  <td>
+                  <button onClick={()=>handleClick(feedback.feedbackComment)}
+                  id='btn1'>
+                  View
+                </button>
+                  </td>
+
                   {question.map(attribute => (
                     <td key={attribute.attributeId}>
                       {console.log(attribute.attribute)}
