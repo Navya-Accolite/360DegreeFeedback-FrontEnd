@@ -247,10 +247,10 @@
 
 
 .popup-boxd2 {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -265,7 +265,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 300px;
+  /* margin-top: 300px; */
   margin-bottom: 20px;
   width: 100%;
 }
