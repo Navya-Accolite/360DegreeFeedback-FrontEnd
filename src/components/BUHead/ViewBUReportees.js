@@ -35,7 +35,7 @@ function ViewBUReportees() {
 
   return (
     <>
-      <div className='manageuserhome'>
+      <div className='homeclass'>
         <div>
         <DropDown data={data} />
         </div>

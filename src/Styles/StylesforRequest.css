@@ -4,7 +4,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: 30px;
+    margin-top: 40px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: #83a4d4;  
@@ -61,4 +61,12 @@
   .requestbutton:hover{
     background: #83a4d4;  
     background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
+  }
+  
+  .newfeedbackhead{
+    padding-top: 2px;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
   }

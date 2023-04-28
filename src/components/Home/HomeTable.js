@@ -7,8 +7,9 @@ import { FormGroup, Label, Form, Input, Row, Col, Button} from 'reactstrap';
 import emailjs from '@emailjs/browser';
 import 'react-toastify/dist/ReactToastify.css';
 import {Table} from 'reactstrap';
-
+import { EyeFilled , ShareAltOutlined } from '@ant-design/icons';
 import { ToastContainer, toast } from 'react-toastify';
+import { AntCloudOutlined } from '@ant-design/icons';
 function HomeTable(props) {
 const headers = ['NAME', 'MAIL'];
 
@@ -105,7 +106,7 @@ const headers = ['NAME', 'MAIL'];
                 ))}
               </tbody>
             </table>
-            <div className='comment2'>Comment: {comment}</div>
+            <div className='comment2'>Feedback:  {comment}</div>
           </div>
         </div>
       </div>
@@ -170,24 +171,24 @@ const headers = ['NAME', 'MAIL'];
               <td>{user[2]}</td>
               <td>
                 <button
-                  id='btn'
+                  id='btn1'
                   onClick={() => handleView(user[4])}
                   disabled={user[3] === 0}
                   title={user[3] === 0 ? 'Feedback not available' : ''}
                   style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
                 >
-                  View
+                  < EyeFilled className='eye'/> 
                 </button>
               </td>
               <td>
                 <button
-                  id='btn'
+                  id='btn1'
                   onClick={() => handleShare(user[4])}
                   disabled={user[3] === 0}
                   title={user[3] === 0 ? 'Feedback not available' : ''}
                   style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
                 >
-                  Share
+                  <ShareAltOutlined className='eye'/>
                 </button>
               </td>
             </tr>

@@ -1,12 +1,15 @@
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Table } from 'reactstrap';
 
 function ViewReporteesFeedback(props) {
   const location = useLocation();
   const propValue = location.state.propValue;
+  const name = propValue.split(".");
   const [data, setData] = useState([]);
   const [question, setQuestion] = useState([]);
+  const [selfInput,setSelfInput]=useState('');
+  const [isOpenShare, setIsOpenShare] = useState(false);
 
   const ratings = {
     1: 'Poor',
@@ -22,7 +25,7 @@ function ViewReporteesFeedback(props) {
     'SDate',
     'EDate',
     'Self Input',
-    'Comment'
+    'Feedback'
   ];
 
   useEffect(() => {
@@ -39,53 +42,88 @@ function ViewReporteesFeedback(props) {
       .catch(error => console.log(error));
   }, []);
 
+  const handleClick = (feedback) => {
+    setSelfInput(feedback);
+    setIsOpenShare(true);
+  };
+  
+
   return (
     <>
-     
-        <div className='homeclass'>
-          <center>
-            
-          </center>
-          <div className='scrolltablediv'>
-          <h5 style={{ paddingTop: '40px' }}>
-              Here's {propValue}'s overall feedback
-            </h5>
-            <Table
-              style={{ width: '1000px' }}
-              className='styled-table'
-            >
-              <thead>
-                <tr>
-                  {headings.map((heading, index) => (
-                    <th key={index}>{heading}</th>
-                  ))}
-                  {question.map(attribute => (
-                    <th key={attribute.attributeId}>{attribute.attribute}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((feedback, index) => (
-                  <tr key={index}>
-                    <td>{feedback.projectName}</td>
-                    <td>{feedback.feedbackProvider}</td>
-                    <td>{feedback.startDate}</td>
-                    <td>{feedback.endDate}</td>
-                    <td>{feedback.selfInput}</td>
-                    <td>{feedback.feedbackComment}</td>
-                    {question.map(attribute => (
-                      <td key={attribute.attributeId}>
-                        {console.log(attribute.attribute)}
-                        {ratings[feedback[attribute.attribute]] || '-'}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+
+{isOpenShare && <div className='popupContainer1' onClick={() => setIsOpenShare(false)}>
+        <div className='popup-boxd1' onClick={(e) => { e.stopPropagation() }}>
+          <div className="ques1">
+
+            {selfInput}
           </div>
         </div>
-     
+      </div>
+      }
+
+      <div className='homeclass'>
+        <center>
+
+        </center>
+        <div className='scrolltablediv'>
+          <h5 style={{ paddingTop: '40px' }}>
+            {name[0]}'s 360 Degree Feedback
+          </h5>
+          <Table
+            style={{ width: '1000px' }}
+            className='styled-table'
+          >
+
+
+
+
+            <thead>
+
+              <tr>
+                <td colSpan={headings.length} style={{ backgroundColor: "#302b63" }}></td>
+                <td colSpan={question.length} style={{ backgroundColor: "#302b63", fontWeight: "bold", border: "1.4px solid white", color: "white" }}>
+                  Performance Parameters
+                </td>
+              </tr>
+
+              <tr>
+                {headings.map((heading, index) => (
+                  <th key={index}>{heading}</th>
+                ))}
+
+                {question.map(attribute => (
+                  <th key={attribute.attributeId}>{attribute.attribute}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((feedback, index) => (
+                <tr key={index}>
+                  <td>{feedback.projectName}</td>
+                  <td>{feedback.feedbackProvider}</td>
+                  <td>{feedback.startDate}</td>
+                  <td>{feedback.endDate}</td>
+                  {/* <td>{feedback.selfInput}</td> */}
+                  <td>
+                  <button onClick={()=>handleClick(feedback.selfInput)}
+                  id='btn1'>
+                  View
+                </button>
+                  </td>
+                  <td>{feedback.feedbackComment}</td>
+                  {question.map(attribute => (
+                    <td key={attribute.attributeId}>
+                      {console.log(attribute.attribute)}
+                      {ratings[feedback[attribute.attribute]] || '-'}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
+      </div>
+
     </>
   );
 }

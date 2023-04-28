@@ -17,6 +17,7 @@ import './index.css';
 import a from '../src/Styles/accoliteimage-removebg.png'
 import ViewReporteesFeedback from './components/Manager/ViewReporteesTable';
 import LoginForm from './components/Auth/LoginForm';
+import FeedbackForm from './components/GiveFeedback/FeedbackForm';
 function App() {
   useEffect(() => {
     if (window.sessionStorage.getItem('emailId')) {
@@ -74,6 +75,7 @@ function Content() {
         <Route path="viewreporteesfeedback" element={<ViewReporteesFeedback />} />
         <Route path="/viewbureportees" element={<ViewBUReportees />} />
         <Route path="/viewbumanagers" element={<ViewBUManagers />} />
+        <Route path="/feedbackform" element={<FeedbackForm />} />
       </Routes>
     </div>
   );
