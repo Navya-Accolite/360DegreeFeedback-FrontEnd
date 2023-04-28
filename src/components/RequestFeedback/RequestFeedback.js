@@ -8,6 +8,7 @@ import '../../Styles/StylesforRequest.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TextArea from 'antd/es/input/TextArea';
 
 function RequestFeedback() {
 
@@ -19,8 +20,21 @@ function RequestFeedback() {
   // const [message,updateMessage]=useState('');
   const emailId = window.sessionStorage.getItem('emailId');
 
+  var limit = 20;
+  const wordLimit=(e)=>{
+    updateMessage(e)
+    var textLength = e.length;
+    var myText=document.getElementById("my-text");
+    var res=document.getElementById("result");
+
+    if(textLength > limit){
+      myText.value = e.slice(0,limit);
+      textLength=textLength-1;
+    }
+    res.textContent =  textLength + "/" + limit;
+  }
+
   const today = new Date().toISOString().split('T')[0];
-  console.log("today",today);
 
   const [message, setMessage] = useState('');
 
@@ -141,12 +155,13 @@ function RequestFeedback() {
               <Label for="exampleZip" className='label'>
                 Self Input
               </Label>
-              <Input onChange={(e)=>updateMessage(e.target.value)}
-                id="exampleZip"
+              <Input onChange={(e)=>wordLimit(e.target.value)}
+                id="my-text"
                 name="message"
                 placeholder='Self Input'
                 type="textarea"
               />
+              <p id='result'>0/{limit}</p>
             </FormGroup>
           </Row> */}
 
