@@ -2,13 +2,12 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import HomeContent from './components/Home/HomeContent';
 import GiveFeedback from './components/GiveFeedback/GiveFeedback';
 import SideNav from './components/Auth/SideNav';
 import RequestFeedback from './components/RequestFeedback/RequestFeedback';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LogOutPage from './components/Auth/LogOutPage';
 import ManageQuestions from './components/Admin/ManageQuestions';
 import ManageUsers from './components/Admin/ManageUsers';
 import ViewReportees from './components/Manager/ViewReportees';
@@ -19,19 +18,23 @@ import a from '../src/Styles/accoliteimage-removebg.png'
 import ViewReporteesFeedback from './components/Manager/ViewReporteesTable';
 import LoginForm from './components/Auth/LoginForm';
 import FeedbackForm from './components/GiveFeedback/FeedbackForm';
+
 function App() {
-  const navigate=useNavigate();
+
+  const navigate = useNavigate();
   useEffect(() => {
     if (window.sessionStorage.getItem('emailId')) {
       setIsLoggedIn(true);
     }
   }, []);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const onLoginSuccess = () => {
     if (window.sessionStorage.getItem('emailId')) {
       setIsLoggedIn(true);
     }
   }
+
   const onLogout = () => {
     if (window.confirm("Are you sure you want to Logout?")) {
       sessionStorage.clear();
@@ -39,6 +42,7 @@ function App() {
       navigate('/');
     }
   }
+
   return (
     <>
       {!isLoggedIn &&
@@ -46,13 +50,13 @@ function App() {
       {isLoggedIn &&
         <>
           <div className="Head">
-             <span>
-                <span className='logo'>
-                  <img src={a} style={{height:"65px",width:"200px"}}></img>
-                </span>
-                  <span className='name'>360 Degree Feedback</span>
+            <span>
+              <span className='logo'>
+                <img src={a} style={{ height: "65px", width: "200px" }}></img>
               </span>
-            
+              <span className='name'>360 Degree Feedback</span>
+            </span>
+
             <span className='Logout'><Button color="primary" onClick={onLogout}>
               Logout
             </Button></span>
