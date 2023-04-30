@@ -15,7 +15,7 @@ function ManageQuestions() {
   const [question, setQuestion] = useState("");
   const [isOpenCon, setIsOpenCon] = useState(false);
 
-
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const postdata =
   {
     "attribute": question,
@@ -25,7 +25,12 @@ function ManageQuestions() {
 
   const postQuestion = (e) => {
 
-    axios.post('http://localhost:4545/api/questions', postdata)
+    axios.post('http://localhost:4545/api/questions', postdata,{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    })
       .then(response => {
         console.log(response.data);
       })
@@ -39,7 +44,12 @@ function ManageQuestions() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:4545/api/allQuestions")
+    fetch("http://localhost:4545/api/allQuestions",{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    })
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.log(error));

@@ -10,6 +10,7 @@ import { Divider } from 'antd';
 
 
 const FeedbackForm = (props) => {
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
     const location = useLocation();
     const navigate=useNavigate();
     const propValue = location.state.propValue;
@@ -21,7 +22,12 @@ const FeedbackForm = (props) => {
   const [ratingArray, setRatingArray] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:4545/api/questions/checkValid")
+        axios.get("http://localhost:4545/api/questions/checkValid",{
+          headers: {
+            "Content-type": "application/json",
+             Authorization: header,
+          }
+        })
           .then((response) => setData(response.data));
         console.log(data);
       }, []);

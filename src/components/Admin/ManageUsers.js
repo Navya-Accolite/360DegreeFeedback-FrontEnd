@@ -12,6 +12,7 @@ function ManageUsers() {
   const [role,updaterole]=useState("");
 
     function updateuser(){  
+      
 
       const url="http://localhost:4545/api/update/"+email;
         console.log(role);

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Table } from 'reactstrap';
 
 function ViewReporteesFeedback(props) {
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const location = useLocation();
   const propValue = location.state.propValue;
   const name = propValue.split(".");
@@ -29,14 +30,24 @@ function ViewReporteesFeedback(props) {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:4545/api/getResults/' + propValue)
+    fetch('http://localhost:4545/api/getResults/' + propValue,{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    })
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.log(error));
   }, [propValue]);
 
   useEffect(() => {
-    fetch('http://localhost:4545/api/allQuestions')
+    fetch('http://localhost:4545/api/allQuestions',{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    })
       .then(response => response.json())
       .then(data => setQuestion(data))
       .catch(error => console.log(error));

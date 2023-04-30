@@ -11,11 +11,17 @@ function ViewBUManagers(props) {
   const [prop,setprop]=useState('');
 
   console.log("manager",propvalue);
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
 
 
   useEffect(() => {
      {
-      fetch("http://localhost:4545/api/employeesUnderManager/"+propvalue)
+      fetch("http://localhost:4545/api/employeesUnderManager/"+propvalue,{
+        headers: {
+          "Content-type": "application/json",
+           Authorization: header,
+        }
+      })
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.log(error));

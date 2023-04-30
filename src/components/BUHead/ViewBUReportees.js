@@ -6,13 +6,14 @@ function ViewBUReportees() {
 
   const emailId = window.sessionStorage.getItem('emailId');
   const [data, setData] = useState([]);
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
 
   useEffect(() => {
     if (emailId) {
       fetch("http://localhost:4545/api/employeesUnderBUHead/"+emailId,{
         headers: {
           "Content-type": "application/json",
-          //  Authorization: header,
+           Authorization: header,
         }
       })
         .then(response => response.json())

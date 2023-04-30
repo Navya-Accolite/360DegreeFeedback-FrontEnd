@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 function GiveFeedbackTable(props) {
 
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const headers = ['Name', 'Mail'];
   const [propValue,setPropValue]=useState([])
   const [quesIdArray, setquesIdArray] = useState([])
@@ -20,7 +21,12 @@ function GiveFeedbackTable(props) {
   const navigate=useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:4545/api/questions/checkValid")
+    axios.get("http://localhost:4545/api/questions/checkValid",{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    })
       .then((response) => setData(response.data));
     console.log(data);
   }, []);
@@ -54,7 +60,8 @@ function GiveFeedbackTable(props) {
 
     axios.post('http://localhost:4545/api/storeRes/' + feedbackid, obj, {
       headers: {
-        'Content-Type': 'application/json'
+        "Content-type": "application/json",
+         Authorization: header,
       }
     }
     )

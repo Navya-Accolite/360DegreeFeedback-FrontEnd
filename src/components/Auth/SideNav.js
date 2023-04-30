@@ -19,19 +19,28 @@ function SideNav() {
   const navigate = useNavigate();
   
   const emailId = window.sessionStorage.getItem('emailId');
-  //  console.log("mail",emailId);
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const [data,setdata]=useState([]);
   const [role,setrole]=useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:4545/api/getDetails/"+emailId).then((res)=>{
+    axios.get("http://localhost:4545/api/getDetails/"+emailId,{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    }).then((res)=>{
       //  console.log(res.data);
        setdata(res.data)
     })
   })
 
   useEffect(()=>{
-    axios.get("http://localhost:4545/api/checkRole/"+emailId).then((res)=>{
+    axios.get("http://localhost:4545/api/checkRole/"+emailId,
+    { headers: {
+      "Content-type": "application/json",
+       Authorization: header,
+    }}).then((res)=>{
 
        if(res.data=="manager"){
         setrole("MANAGER")

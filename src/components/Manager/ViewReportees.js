@@ -3,13 +3,19 @@ import { Table } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
 import { EyeOutlined } from '@ant-design/icons';
 function ViewReportees() {
-  
+
+    const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const emailId = window.sessionStorage.getItem('emailId');
   const [data, setData] = useState([]);
 
   useEffect(() => {
     if (emailId) {
-      fetch("http://localhost:4545/api/employeesUnderManager/"+emailId)
+      fetch("http://localhost:4545/api/employeesUnderManager/"+emailId,{
+        headers: {
+          "Content-type": "application/json",
+           Authorization: header,
+        }
+      })
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.log(error));
