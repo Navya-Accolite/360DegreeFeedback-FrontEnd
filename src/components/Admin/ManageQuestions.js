@@ -70,17 +70,17 @@ const postQuestion=(e)=>{
 
     </div>
 
-    {isOpenCon && <div className='popupContainer' >
-            <div className='popup-boxd'>
-                <div className="ques">
+    {isOpenCon && <div className='popupContainer1'>
+            <div className='popup-boxd1'  style={{height:"200px"}}>
+                <div className="ques1">
                     
                 </div>
                 <div className="cmntBox">
                     <label>Enter an Attribute</label>
-                    <textarea id="text" onChange={(e)=>setQuestion(e.target.value)}></textarea>
-                    <span>
-                    <button id='btn1' onClick={()=>postQuestion()}>Submit</button>
-                    <button id='btn1' onClick={()=>setIsOpenCon(false)}>Cancel</button>
+                    <input id="text" onChange={(e)=>setQuestion(e.target.value)} style={{width:"200px"}}></input>
+                    <span>&nbsp; &nbsp;
+                    <button id='btn' onClick={()=>postQuestion()}>Submit</button> &nbsp; &nbsp;
+                    <button id='btn' onClick={()=>setIsOpenCon(false)}>Cancel</button>
                     </span>
                     <ToastContainer />
                 </div>
