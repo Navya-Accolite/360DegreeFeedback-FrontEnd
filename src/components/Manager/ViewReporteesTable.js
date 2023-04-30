@@ -22,8 +22,8 @@ function ViewReporteesFeedback(props) {
   const headings = [
     'Project Name',
     'Received by',
-    'SDate',
-    'EDate',
+    'Start',
+    'End',
     'Self Input',
     'Feedback'
   ];
@@ -73,9 +73,6 @@ function ViewReporteesFeedback(props) {
             style={{ width: '1000px' }}
             className='styled-table'
           >
-
-
-
 
             <thead>
 

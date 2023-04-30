@@ -46,6 +46,7 @@ function RequestFeedback() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    
     emailjs.sendForm('service_91z8rbi', 'template_yq7ixod', form.current, 'piZXRCXKpuBTMThCC')
       .then((result) => {
         console.log(result.text);
