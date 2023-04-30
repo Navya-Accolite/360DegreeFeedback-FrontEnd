@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 function GiveFeedbackTable(props) {
 
-  const headers = ['NAME', 'MAIL'];
+  const headers = ['Name', 'Mail'];
   const [propValue,setPropValue]=useState([])
   const [quesIdArray, setquesIdArray] = useState([])
   const [ratingArray, setRatingArray] = useState([])
