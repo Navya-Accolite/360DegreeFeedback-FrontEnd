@@ -211,7 +211,9 @@ function RequestFeedback() {
   const [fromdate,updateFromDate]=useState('');
   const [message,updateMessage]=useState('');
   const emailId = window.sessionStorage.getItem('emailId');
+
   var limit = 20;
+  
   const wordLimit=(e)=>{
     updateMessage(e)
     var textLength = e.length;
