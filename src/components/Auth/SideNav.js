@@ -56,7 +56,7 @@ function SideNav() {
     setrole("BU HEAD")
    }
     })
-  })
+  },[])
 
 
   const [current, setCurrent] = useState('/');

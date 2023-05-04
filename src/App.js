@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'reactstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import HomeContent from './components/Home/HomeContent';
 import GiveFeedback from './components/GiveFeedback/GiveFeedback';
@@ -18,11 +18,15 @@ import a from '../src/Styles/accoliteimage-removebg.png'
 import ViewReporteesFeedback from './components/Manager/ViewReporteesTable';
 import LoginForm from './components/Auth/LoginForm';
 import FeedbackForm from './components/GiveFeedback/FeedbackForm';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
 
+  const location = useLocation();
   const navigate = useNavigate();
+
   useEffect(() => {
+    console.log(location.pathname)
     if (window.sessionStorage.getItem('emailId')) {
       setIsLoggedIn(true);
     }
@@ -46,7 +50,13 @@ function App() {
   return (
     <>
       {!isLoggedIn &&
-        <LoginForm onLoginSuccess={onLoginSuccess} />}
+      <>
+        <Routes>
+            <Route exact path="/" element={<LoginForm onLoginSuccess={onLoginSuccess} />} />
+            <Route path="*" element={<ErrorPage />}/>
+        </Routes>
+      </>    
+        }
       {isLoggedIn &&
         <>
           <div className="Head">
@@ -73,16 +83,17 @@ function Content() {
   return (
     <div className='class1'>
       <Routes>
-        <Route path="/" element={<HomeContent />} />
-        <Route path="/givefeedback" element={<GiveFeedback />} />
-        <Route path="/requestfeedback" element={<RequestFeedback />} />
-        <Route path="/managequestions" element={<ManageQuestions />} />
-        <Route path="/manageusers" element={<ManageUsers />} />
-        <Route path="/viewreportees" element={<ViewReportees />} />
-        <Route path="viewreporteesfeedback" element={<ViewReporteesFeedback />} />
-        <Route path="/viewbureportees" element={<ViewBUReportees />} />
-        <Route path="/viewbumanagers" element={<ViewBUManagers />} />
-        <Route path="/feedbackform" element={<FeedbackForm />} />
+        <Route exact path="/" element={<HomeContent />} />
+        <Route exact path="/givefeedback" element={<GiveFeedback />} />
+        <Route exact path="/requestfeedback" element={<RequestFeedback />} />
+        <Route exact path="/managequestions" element={<ManageQuestions />} />
+        <Route exact path="/manageusers" element={<ManageUsers />} />
+        <Route exact path="/viewreportees" element={<ViewReportees />} />
+        <Route exact path="viewreporteesfeedback" element={<ViewReporteesFeedback />} />
+        <Route exact path="/viewbureportees" element={<ViewBUReportees />} />
+        <Route exact path="/viewbumanagers" element={<ViewBUManagers />} />
+        <Route exact path="/feedbackform" element={<FeedbackForm />} />
+        <Route path="*" element={<ErrorPage />}/>
       </Routes>
     </div>
   );

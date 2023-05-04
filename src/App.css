@@ -329,4 +329,72 @@ textarea:focus {
   outline: none;
 }
 
+.error-page{
+  position: absolute;
+  top: 15%;
+  left: 17%;
+  right: 17%;
+  bottom: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-page .content{
+  max-width: 600px;
+  text-align: center;   
+}
+
+.content h1{
+  font-size: 9vw;
+  line-height: 1em;
+  margin-top: 15px;
+  margin-bottom: 60px;
+}
+
+.content h4{
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #000;
+  max-width: 600px;
+}
+
+.content p{
+  font-size: 1.2em;
+  color: #0d0d0d;
+}
+
+.content .btn{
+  margin: 25px 0;
+  display: inline-flex;
+}
+
+.content .btn button{
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid #69a6ce;
+  color: #69a6ce;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+}
+
+.content .btn button:hover{
+  color: #fff;
+  background: #69a6ce;
+}
+
+
+
+
+
+
+
 
