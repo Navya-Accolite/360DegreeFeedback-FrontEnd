@@ -59,7 +59,8 @@ const func = () => {
 
   axios.post('http://localhost:4545/api/storeRes/' + propValue, obj, {
     headers: {
-      'Content-Type': 'application/json'
+      "Content-type": "application/json",
+       Authorization: header,
     }
   })
     .then(response => {
