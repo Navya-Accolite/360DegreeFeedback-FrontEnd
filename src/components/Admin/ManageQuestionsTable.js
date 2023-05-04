@@ -8,6 +8,8 @@ import { Input } from 'reactstrap';
 function ManageQuestionsTable(props) {
   const headers = ['ATTRIBUTE'];
   const header="Bearer "+window.sessionStorage.getItem('accessToken');
+
+  console.log(props);
   function handleOnChange(attributeId, status) {
     const url = 'http://localhost:4545/api/status/'+attributeId;
     if(status===0)

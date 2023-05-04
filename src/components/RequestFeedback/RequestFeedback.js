@@ -105,7 +105,7 @@ function RequestFeedback() {
                 </Label>
                 <Input onChange={(e) => updateProjectName(e.target.value)}
                   id="projectName"
-                  name="projectName"
+                  name="message"
                   placeholder='Project Name'
                   type="text"
                 />

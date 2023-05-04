@@ -33,7 +33,7 @@ function GiveFeedbackTable(props) {
 
   const handleFeedBack = (id) => {
     setPropValue(id); 
-    navigate('/feedbackform', { state: { propValue: id } }); 
+    navigate('/feedbackform', { state: { feedbackid: id } }); 
 
   }
   const update = (value, id1) => {

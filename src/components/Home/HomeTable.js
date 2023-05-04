@@ -101,8 +101,7 @@ function HomeTable(props) {
 
         setIsOpenShare(false)
         toast.success("Report sent Successfully!")
-    
-  };
+     };
 
   return (
     <>

@@ -5,7 +5,8 @@ import logo from '../../Styles/accolite-logo.png';
 import { Navigate, useNavigate } from 'react-router-dom';
 const LoginForm = ({onLoginSuccess}) => {
   const navigate= useNavigate();
-    useEffect(()=>{
+
+  useEffect(()=>{
         /* global google */
    setTimeout(()=>{
     google.accounts.id.initialize({

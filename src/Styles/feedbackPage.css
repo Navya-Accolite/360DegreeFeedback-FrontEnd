@@ -276,10 +276,10 @@ td{
 
 .comments{
   font-size: medium;
-  font-weight: bold;
   display: flex;
+  /* background-color: whitesmoke; */
+  border-radius: 5px;
   justify-content: center;
-  font-family:  serif;
   margin-top: 0%;
 }
 
