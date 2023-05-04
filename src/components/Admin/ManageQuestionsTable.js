@@ -7,7 +7,7 @@ import { Input } from 'reactstrap';
 
 function ManageQuestionsTable(props) {
   const headers = ['ATTRIBUTE'];
-    
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
   function handleOnChange(attributeId, status) {
     const url = 'http://localhost:4545/api/status/'+attributeId;
     if(status===0)
@@ -17,7 +17,12 @@ function ManageQuestionsTable(props) {
 
     toast.success("Updated Successfully!")
     
-    axios.put(url, status, { headers: { 'Content-Type': 'application/json' }})
+    axios.put(url, status, {
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    })
     .then(response => {
       console.log(response.data);
     })

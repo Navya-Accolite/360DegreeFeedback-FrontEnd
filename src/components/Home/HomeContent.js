@@ -6,9 +6,15 @@ import axios from 'axios';
 function HomeContent() {
   
   const emailId = window.sessionStorage.getItem('emailId');
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:4545/api/feedbackProviders/"+emailId)
+    axios.get("http://localhost:4545/api/feedbackProviders/"+emailId, {
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    })
         .then((response) => setData(response.data));
 }, []);
 

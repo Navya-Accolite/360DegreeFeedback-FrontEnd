@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 function DropDown(props) {
 
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const [selectedOption, setSelectedOption] = useState("");
   const navigate = useNavigate();
   const options = props.data.map((option) => (

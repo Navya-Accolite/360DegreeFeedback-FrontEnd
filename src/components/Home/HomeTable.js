@@ -12,6 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { AntCloudOutlined } from '@ant-design/icons';
 function HomeTable(props) {
 
+  const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const [isOpenCon, setIsOpenCon] = useState(false);
   const [data, setData] = useState([]);
   const [shareData, setshareData] = useState([]);
@@ -38,23 +39,43 @@ function HomeTable(props) {
 
   const handleView = (feedbackid) => {
     setIsOpenCon(true)
-    axios.get('http://localhost:4545/api/getRating/' + feedbackid).then((res) => {
+    axios.get('http://localhost:4545/api/getRating/' + feedbackid,{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    }).then((res) => {
       setData(res.data)
     })
 
-    axios.get('http://localhost:4545/api/findComment/'+feedbackid).then((res)=>{
+    axios.get('http://localhost:4545/api/findComment/'+feedbackid,{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    }).then((res)=>{
       setComment(res.data)
     })
   }
 
   const handleShare = (feedbackid) => {
     setIsOpenShare(true)
-    axios.get('http://localhost:4545/api/getRating/' + feedbackid).then((res) => {
+    axios.get('http://localhost:4545/api/getRating/' + feedbackid,{
+      headers: {
+        "Content-type": "application/json",
+         Authorization: header,
+      }
+    }).then((res) => {
       let combinedData = res.data.reduce((acc, rating) => {
         return `${acc}${rating[0]}: ${ratings[rating[1]]}\n`;
       }, '');
 
-      axios.get('http://localhost:4545/api/findComment/'+feedbackid).then((res)=>{
+      axios.get('http://localhost:4545/api/findComment/'+feedbackid,{
+        headers: {
+          "Content-type": "application/json",
+           Authorization: header,
+        }
+      }).then((res)=>{
         setComment(res.data)
       
     })
