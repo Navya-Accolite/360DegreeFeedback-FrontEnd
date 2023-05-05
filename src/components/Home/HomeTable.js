@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {Table} from 'reactstrap';
 import { EyeFilled , ShareAltOutlined } from '@ant-design/icons';
 import { ToastContainer, toast } from 'react-toastify';
-import { AntCloudOutlined } from '@ant-design/icons';
+import PieExample from './PieChart'
 function HomeTable(props) {
 
   const header="Bearer "+window.sessionStorage.getItem('accessToken');
@@ -18,7 +18,6 @@ function HomeTable(props) {
   const [shareData, setshareData] = useState([]);
   const [isOpenShare, setIsOpenShare] = useState(false);
   const emailId = window.localStorage.getItem('emailId');
-  const [message,updateMessage]=useState('');
   const [comment,setComment]=useState('');
 
   const form = useRef();
@@ -84,7 +83,6 @@ function HomeTable(props) {
     // updateMessage(combinedData)
     })
   }
-
 
   const sendEmail = (e) => {
     const templateParams = {
@@ -165,7 +163,7 @@ function HomeTable(props) {
 
 
  <div className='tableContainer'> 
-
+ <PieExample/>
   <Table style={{width:"900px"}} className='center'>
   <thead>
     <tr>
@@ -218,11 +216,8 @@ function HomeTable(props) {
           ))}
         </tbody>
 </Table>
-
 </div>
       <ToastContainer/>
-
-
     </>
   );
 }

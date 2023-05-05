@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
-import axios from 'axios';
+import React, {  useEffect } from 'react'
 import image from '../../Styles/feedback1.jpg';
 import logo from '../../Styles/accolite-logo.png';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const LoginForm = ({onLoginSuccess}) => {
-  const navigate= useNavigate();
 
   useEffect(()=>{
         /* global google */
@@ -56,7 +54,7 @@ const LoginForm = ({onLoginSuccess}) => {
             if (data.length !== 0) {
               window.sessionStorage.setItem('emailId', data.email);
               window.sessionStorage.setItem('accessToken', data.accessToken);
-              // localStorage.setItem("accessToken", data.accessToken);
+              console.log("accessToken",data.accessToken);
               console.log(data.accessToken)
               onLoginSuccess();
             }

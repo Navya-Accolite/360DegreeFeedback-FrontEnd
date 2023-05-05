@@ -133,6 +133,8 @@
 
 
 
+
+
 /* .profiledetails{
   background-color:#070A52;
   align-items: center;
@@ -391,10 +393,8 @@ textarea:focus {
   background: #69a6ce;
 }
 
-
-
-
-
-
-
-
+.piechart{
+  width: 900px;
+  border-radius: 5px;
+  background-color: grey;
+}
