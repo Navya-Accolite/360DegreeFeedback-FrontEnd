@@ -21,7 +21,6 @@ import FeedbackForm from './components/GiveFeedback/FeedbackForm';
 import ErrorPage from './components/ErrorPage';
 
 function App() {
-
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -50,13 +49,12 @@ function App() {
   return (
     <>
       {!isLoggedIn &&
-      <>
         <Routes>
-            <Route exact path="/" element={<LoginForm onLoginSuccess={onLoginSuccess} />} />
-            <Route path="*" element={<ErrorPage />}/>
+          <Route exact path="/" element={<LoginForm onLoginSuccess={onLoginSuccess} />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
-      </>    
-        }
+      }
+
       {isLoggedIn &&
         <>
           <div className="Head">
@@ -67,18 +65,23 @@ function App() {
               <span className='name'>360 Degree Feedback</span>
             </span>
 
-            <span className='Logout'><Button color="primary" onClick={onLogout}>
-              Logout
-            </Button></span>
+            <span className='Logout'>
+              <Button color="primary" onClick={onLogout}>
+                Logout
+              </Button>
+            </span>
           </div>
+
           <div className="sidebar">
-            <SideNav />
+            {location.pathname !== "*" && <SideNav />}
             <Content />
           </div>
-        </>}
+        </>
+      }
     </>
   );
 }
+
 function Content() {
   return (
     <div className='class1'>
@@ -93,9 +96,10 @@ function Content() {
         <Route exact path="/viewbureportees" element={<ViewBUReportees />} />
         <Route exact path="/viewbumanagers" element={<ViewBUManagers />} />
         <Route exact path="/feedbackform" element={<FeedbackForm />} />
-        <Route path="*" element={<ErrorPage />}/>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
 }
+
 export default App;

@@ -176,6 +176,9 @@ function HomeTable(props) {
         Mail
       </th>
       <th>
+        Project Name
+      </th>
+      <th>
         View Feedback
       </th>
       <th>
@@ -188,6 +191,7 @@ function HomeTable(props) {
             <tr key={user[2]}>
               <td>{user[1]}</td>
               <td>{user[2]}</td>
+              <td>{user[5]}</td>
               <td>
                 <button
                   id='btn1'
