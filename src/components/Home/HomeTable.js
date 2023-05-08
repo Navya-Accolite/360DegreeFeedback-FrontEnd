@@ -163,7 +163,7 @@ function HomeTable(props) {
 
 
  <div className='tableContainer'> 
- <PieExample/>
+ {/* <PieExample/> */}
   <Table style={{width:"900px"}} className='center'>
   <thead>
     <tr>
