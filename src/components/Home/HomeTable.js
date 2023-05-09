@@ -189,14 +189,14 @@ function HomeTable(props) {
             <tr key={user[2]}>
               <td>{user[1]}</td>
               <td>{user[2]}</td>
-              <td>{user[5]}</td>
+              <td>{user[3]}</td>
               <td>
                 <button
                   id='btn1'
-                  onClick={() => handleView(user[4])}
-                  disabled={user[3] === 0}
-                  title={user[3] === 0 ? 'Feedback not available' : ''}
-                  style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
+                  onClick={() => handleView(user[5])}
+                  disabled={user[4] === 0}
+                  title={user[4] === 0 ? 'Feedback not available' : ''}
+                  style={{ backgroundColor: user[4] === 0 ? 'grey' : '' }}
                 >
                   < EyeFilled className='eye'/> 
                 </button>
@@ -204,10 +204,10 @@ function HomeTable(props) {
               <td>
                 <button
                   id='btn1'
-                  onClick={() => handleShare(user[4])}
-                  disabled={user[3] === 0}
-                  title={user[3] === 0 ? 'Feedback not available' : ''}
-                  style={{ backgroundColor: user[3] === 0 ? 'grey' : '' }}
+                  onClick={() => handleShare(user[5])}
+                  disabled={user[4] === 0}
+                  title={user[4] === 0 ? 'Feedback not available' : ''}
+                  style={{ backgroundColor: user[4] === 0 ? 'grey' : '' }}
                 >
                   <ShareAltOutlined className='eye'/>
                 </button>
