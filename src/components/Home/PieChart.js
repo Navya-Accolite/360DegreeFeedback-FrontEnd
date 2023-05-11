@@ -27,44 +27,21 @@ function PieExample() {
     value,
   }));
 
- const options = {
+  const options = {
     title: {
-        display: true,
-        text: 'My Pie Chart',
-    },
-    legend: {
-        display: true,
-        position: 'right',
-        labels: {
-            fontColor: '#333',
-            generateLabels: function(chart) {
-                const data = chart.data.datasets[0].data;
-                const labels = chart.data.labels;
-                const legendLabels = [];
-
-                for (let i = 0; i < data.length; i++) {
-                    const color = chart.data.datasets[0].backgroundColor[i];
-                    legendLabels.push({
-                        text: `${labels[i]}: ${data[i]}`,
-                        fillStyle: color
-                    });
-                }
-                
-                return legendLabels;
-            }
-        }
+      display: true,
+      text: 'My Pie Chart',
     },
     plugins: {
-        datalabels: {
-            display: true,
-            color: '#fff',
-            formatter: function(value, context) {
-                return context.chart.data.labels[context.dataIndex];
-            }
+      datalabels: {
+        display: true,
+        color: '#fff',
+        formatter: function(value, context) {
+          return context.chart.data.labels[context.dataIndex];
         }
+      }
     }
-};
-
+  };
 
   const colors = ['red', 'green', 'blue', 'orange', 'purple'];
 
@@ -74,11 +51,22 @@ function PieExample() {
   }];
 
   return (
-    <div className="col-5 col-sm-3">
-        <div className="piechart">
-        <Pie data={{ labels: data.map(({ label }) => label), datasets }} options={options} style={{height:"200px"}}/>
-        </div>
+    <div className="piehome">
+  <div className="piechart-wrapper">
+    <div className="piechart">
+      <Pie data={{ datasets }} options={options} />
     </div>
+    <div className="legend">
+      {data.map(({ label }, index) => (
+        <div key={index} className="legend-label">
+          <span className="legend-color" style={{ backgroundColor: colors[index] }}></span>
+          <span className="legend-text">{label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
   );
 }
 

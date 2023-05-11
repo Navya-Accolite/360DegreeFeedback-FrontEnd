@@ -19,6 +19,11 @@ function HomeTable(props) {
   const [isOpenShare, setIsOpenShare] = useState(false);
   const emailId = window.localStorage.getItem('emailId');
   const [comment,setComment]=useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(2);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = props.data.slice(indexOfFirstItem, indexOfLastItem);
 
   const form = useRef();
   const [emailTo, setEmailTo] = useState('');
@@ -34,79 +39,90 @@ function HomeTable(props) {
     4:"Very Satisfactory",
     5:"Outstanding"
   }
- 
-
-  const handleView = (feedbackid) => {
-    setIsOpenCon(true)
-    axios.get('http://localhost:4545/api/getRating/' + feedbackid,{
-      headers: {
-        "Content-type": "application/json",
-         Authorization: header,
-      }
-    }).then((res) => {
-      setData(res.data)
-    })
-
-    axios.get('http://localhost:4545/api/findComment/'+feedbackid,{
-      headers: {
-        "Content-type": "application/json",
-         Authorization: header,
-      }
-    }).then((res)=>{
-      setComment(res.data)
-    })
-  }
-
-  const handleShare = (feedbackid) => {
-    setIsOpenShare(true)
-    axios.get('http://localhost:4545/api/getRating/' + feedbackid,{
-      headers: {
-        "Content-type": "application/json",
-         Authorization: header,
-      }
-    }).then((res) => {
-      let combinedData = res.data.reduce((acc, rating) => {
-        return `${acc}${rating[0]}: ${ratings[rating[1]]}\n`;
-      }, '');
-
-      axios.get('http://localhost:4545/api/findComment/'+feedbackid,{
-        headers: {
-          "Content-type": "application/json",
-           Authorization: header,
-        }
-      }).then((res)=>{
-        setComment(res.data)
-      
-    })
-    combinedData += `Comment: ${comment}`;
-    setshareData(combinedData)
-    // updateMessage(combinedData)
-    })
-  }
-
-  const sendEmail = (e) => {
-    const templateParams = {
-      to_email: emailTo,
-      message: shareData,
-    };
     
-      emailjs.send('service_91z8rbi', 'template_uc7dh9l', templateParams, 'piZXRCXKpuBTMThCC')
-        .then((result) => { 
-          console.log(result.text);
-        }, (error) => {
-          console.log(error.text);
-        });
+      const pageNumbers = [];
+      for (let i = 1; i <= Math.ceil(props.data.length / itemsPerPage); i++) {
+        pageNumbers.push(i);
+      }
+    
+      const renderPageNumbers = pageNumbers.map((number) => {
+        return (
+          <button 
+             className='paginatebutton'
+            key={number}
+            // className={currentPage === number ? {backgroundColor:"red"} : null}
+            onClick={() => setCurrentPage(number)}
+          >
+            {number}
+          </button>
+        );
+      });
 
-        setIsOpenShare(false)
-        toast.success("Report sent Successfully!")
-     };
+      const handleView = (feedbackid) => {
+        setIsOpenCon(true)
+        axios.get('http://localhost:4545/api/getRating/' + feedbackid,{
+          headers: {
+            "Content-type": "application/json",
+             Authorization: header,
+          }
+        }).then((res) => {
+          setData(res.data)
+        })
+        axios.get('http://localhost:4545/api/findComment/'+feedbackid,{
+          headers: {
+            "Content-type": "application/json",
+             Authorization: header,
+          }
+        }).then((res)=>{
+          setComment(res.data)
+        })
+      }
+      const handleShare = (feedbackid) => {
+        setIsOpenShare(true)
+        axios.get('http://localhost:4545/api/getRating/' + feedbackid,{
+          headers: {
+            "Content-type": "application/json",
+             Authorization: header,
+          }
+        }).then((res) => {
+          let combinedData = res.data.reduce((acc, rating) => {
+            return `${acc}${rating[0]}: ${ratings[rating[1]]}\n`;
+          }, '');
+          axios.get('http://localhost:4545/api/findComment/'+feedbackid,{
+            headers: {
+              "Content-type": "application/json",
+               Authorization: header,
+            }
+          }).then((res)=>{
+            setComment(res.data)
+        })
+        combinedData += `Comment: ${comment}`;
+        setshareData(combinedData)
+        // updateMessage(combinedData)
+        })
+      }
+
+      const sendEmail = (e) => {
+        const templateParams = {
+          to_email: emailTo,
+          message: shareData,
+        };
+          emailjs.send('service_91z8rbi', 'template_uc7dh9l', templateParams, 'piZXRCXKpuBTMThCC')
+            .then((result) => {
+              console.log(result.text);
+            }, (error) => {
+              console.log(error.text);
+            });
+            setIsOpenShare(false)
+            toast.success("Report sent Successfully!")
+         };
 
   return (
     <>
-      {isOpenCon && <div className='popupContainer1' onClick={() => setIsOpenCon(false)}>
+
+{isOpenCon && <div className='popupContainer1' onClick={() => setIsOpenCon(false)}>
         <div className='popup-boxd1' onClick={(e) => { e.stopPropagation() }}>
           <div className="ques1">
-
             <table className='popuptable'>
               <thead>
                 <tr>
@@ -128,12 +144,9 @@ function HomeTable(props) {
         </div>
       </div>
       }
-
-
       {isOpenShare && <div className='popupContainer1' onClick={() => setIsOpenShare(false)}>
         <div className='popup-boxd1' onClick={(e) => { e.stopPropagation() }}>
           <div className="ques1">
-              
               <form ref={form}>
       <Row>
         <Col md={10}>
@@ -150,7 +163,6 @@ function HomeTable(props) {
           </FormGroup>
         </Col>
       </Row>
-
       <Button onClick={()=>sendEmail()} style={{marginLeft:"20px"}}>
         Send Report
       </Button>
@@ -163,30 +175,20 @@ function HomeTable(props) {
 
 
  <div className='tableContainer'> 
- {/* <PieExample/> */}
-  <Table style={{width:"900px"}} className='center'>
-  <thead>
-    <tr>
-      <th>
-        Name
-      </th>
-      <th>
-        Mail
-      </th>
-      <th>
-        Project Name
-      </th>
-      <th>
-        View Feedback
-      </th>
-      <th>
-        Share
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-          {props.data.map((user) => (
-            <tr key={user[2]}>
+ <PieExample/>
+ <Table style={{ width: '900px' }} className='center'>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Mail</th>
+            <th>Project Name</th>
+            <th>Feedback</th>
+            <th>Share</th>
+          </tr>
+        </thead>
+        <tbody>
+           {currentItems.map((user) => (
+            <tr key={user[5]}>
               <td>{user[1]}</td>
               <td>{user[2]}</td>
               <td>{user[3]}</td>
@@ -198,7 +200,7 @@ function HomeTable(props) {
                   title={user[4] === 0 ? 'Feedback not available' : ''}
                   style={{ backgroundColor: user[4] === 0 ? 'grey' : '' }}
                 >
-                  < EyeFilled className='eye'/> 
+                  <EyeFilled className='eye' />
                 </button>
               </td>
               <td>
@@ -209,13 +211,14 @@ function HomeTable(props) {
                   title={user[4] === 0 ? 'Feedback not available' : ''}
                   style={{ backgroundColor: user[4] === 0 ? 'grey' : '' }}
                 >
-                  <ShareAltOutlined className='eye'/>
+                  <ShareAltOutlined className='eye' />
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
-</Table>
+      </Table>
+      <ul id='page-numbers'>Page: {renderPageNumbers}</ul>
 </div>
       <ToastContainer/>
     </>

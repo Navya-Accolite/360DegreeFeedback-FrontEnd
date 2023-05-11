@@ -389,8 +389,65 @@ textarea:focus {
   background: #69a6ce;
 }
 
+.piehome{
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
 .piechart{
-  width: 900px;
+  height:170px;
   border-radius: 5px;
-  background-color: grey;
+}
+
+.piechart-wrapper {
+  display: inline-block;
+}
+.piechart {
+  display: inline-block;
+  vertical-align: top;
+}
+.legend {
+  display: inline-block;
+  margin-left: 150px;
+  margin-top: 20px;
+}
+.legend-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.legend-color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.legend-text {
+  display: inline-block;
+}
+
+
+.legend-label {
+  display: flex;
+  align-items: center;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+}
+
+.legend-text {
+  font-size: 14px;
+}
+
+.paginatebutton{
+  align-content: flex-end;
+  margin-right: 5px;
+  background: #6441A5;
+  font-size: small;
+  color: white;
 }
