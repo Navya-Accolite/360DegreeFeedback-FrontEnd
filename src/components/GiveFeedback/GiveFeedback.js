@@ -32,7 +32,6 @@ function GiveFeedback() {
     <div className="searchBarContainer">
 
     <div className='givefeedbacktable'>
-      {console.log("data",data.length)}
       {data.length ? <GiveFeedbackTable data={data} /> : <div className='norequest'>No Requested Feedbacks</div> }
 
     </div>

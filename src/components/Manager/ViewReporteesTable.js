@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Table } from 'reactstrap';
+import Pdf from '../Pdf';
+import CsvDownloadButton from 'react-json-to-csv'
+import { DownloadOutlined } from '@ant-design/icons';
 
 function ViewReporteesFeedback(props) {
-  const header="Bearer "+window.sessionStorage.getItem('accessToken');
+  const header = "Bearer " + window.sessionStorage.getItem('accessToken');
   const location = useLocation();
   const propValue = location.state.propValue;
   const name = propValue.split(".");
   const [data, setData] = useState([]);
   const [question, setQuestion] = useState([]);
-  const [selfInput,setSelfInput]=useState('');
+  const [selfInput, setSelfInput] = useState('');
   const [isOpenShare, setIsOpenShare] = useState(false);
 
   const ratings = {
@@ -30,10 +33,10 @@ function ViewReporteesFeedback(props) {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:4545/api/getResults/' + propValue,{
+    fetch('http://localhost:4545/api/getResults/' + propValue, {
       headers: {
         "Content-type": "application/json",
-         Authorization: header,
+        Authorization: header,
       }
     })
       .then(response => response.json())
@@ -42,10 +45,10 @@ function ViewReporteesFeedback(props) {
   }, [propValue]);
 
   useEffect(() => {
-    fetch('http://localhost:4545/api/allQuestions',{
+    fetch('http://localhost:4545/api/allQuestions', {
       headers: {
         "Content-type": "application/json",
-         Authorization: header,
+        Authorization: header,
       }
     })
       .then(response => response.json())
@@ -57,15 +60,14 @@ function ViewReporteesFeedback(props) {
     setSelfInput(feedback);
     setIsOpenShare(true);
   };
-  
+
 
   return (
     <>
 
-{isOpenShare && <div className='popupContainer1' onClick={() => setIsOpenShare(false)}>
+      {isOpenShare && <div className='popupContainer1' onClick={() => setIsOpenShare(false)}>
         <div className='popup-boxd1' onClick={(e) => { e.stopPropagation() }}>
           <div className="ques1">
-
             {selfInput}
           </div>
         </div>
@@ -73,9 +75,7 @@ function ViewReporteesFeedback(props) {
       }
 
       <div className='homeclass'>
-        <center>
 
-        </center>
         <div className='scrolltablediv'>
           <h5 style={{ paddingTop: '40px' }}>
             {name[0]}'s 360 Degree Feedback
@@ -84,6 +84,7 @@ function ViewReporteesFeedback(props) {
             style={{ width: '1000px' }}
             className='styled-table'
           >
+
 
             <thead>
 
@@ -113,17 +114,17 @@ function ViewReporteesFeedback(props) {
                   <td>{feedback.endDate}</td>
                   {/* <td>{feedback.selfInput}</td> */}
                   <td>
-                  <button onClick={()=>handleClick(feedback.selfInput)}
-                  id='btn1'>
-                  View
-                </button>
+                    <button onClick={() => handleClick(feedback.selfInput)}
+                      id='btn1'>
+                      View
+                    </button>
                   </td>
                   {/* <td>{feedback.feedbackComment}</td> */}
                   <td>
-                  <button onClick={()=>handleClick(feedback.feedbackComment)}
-                  id='btn1'>
-                  View
-                </button>
+                    <button onClick={() => handleClick(feedback.feedbackComment)}
+                      id='btn1'>
+                      View
+                    </button>
                   </td>
 
                   {question.map(attribute => (
@@ -136,6 +137,12 @@ function ViewReporteesFeedback(props) {
               ))}
             </tbody>
           </Table>
+        
+          <div>
+            {/* <Pdf data={data} heading={headings} question={question}/> */}
+            <CsvDownloadButton data={data} filename={name[0]} id='btn'><DownloadOutlined />  .csv</CsvDownloadButton>
+          </div>
+          
         </div>
       </div>
 

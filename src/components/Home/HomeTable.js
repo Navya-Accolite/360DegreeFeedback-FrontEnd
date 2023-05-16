@@ -7,9 +7,10 @@ import { FormGroup, Label, Form, Input, Row, Col, Button} from 'reactstrap';
 import emailjs from '@emailjs/browser';
 import 'react-toastify/dist/ReactToastify.css';
 import {Table} from 'reactstrap';
-import { EyeFilled , ShareAltOutlined } from '@ant-design/icons';
+import { EyeFilled , ShareAltOutlined, BellOutlined} from '@ant-design/icons';
 import { ToastContainer, toast } from 'react-toastify';
 import PieExample from './PieChart'
+import { Toast } from 'react-bootstrap';
 function HomeTable(props) {
 
   const header="Bearer "+window.sessionStorage.getItem('accessToken');
@@ -48,6 +49,7 @@ function HomeTable(props) {
       const renderPageNumbers = pageNumbers.map((number) => {
         return (
           <button 
+            //  id='butt1'
              className='paginatebutton'
             key={number}
             // className={currentPage === number ? {backgroundColor:"red"} : null}
@@ -58,6 +60,10 @@ function HomeTable(props) {
         );
       });
 
+      const handleReminder=()=>{
+        Toast.success("Reminder sent!");
+        Toast.error("Reminder not sent!")
+      }
       const handleView = (feedbackid) => {
         setIsOpenCon(true)
         axios.get('http://localhost:4545/api/getRating/' + feedbackid,{
@@ -204,15 +210,26 @@ function HomeTable(props) {
                 </button>
               </td>
               <td>
+
+                {user[4]==0?
                 <button
-                  id='btn1'
-                  onClick={() => handleShare(user[5])}
-                  disabled={user[4] === 0}
-                  title={user[4] === 0 ? 'Feedback not available' : ''}
-                  style={{ backgroundColor: user[4] === 0 ? 'grey' : '' }}
-                >
-                  <ShareAltOutlined className='eye' />
-                </button>
+                id='btn1'
+                onClick={() => handleShare(user[5])}
+                disabled={user[4] === 0}
+                title={user[4] === 0 ? 'Feedback not available' : ''}
+              >
+                <BellOutlined className='eye'/>
+              </button>:
+              <button
+              id='btn1'
+              onClick={() => handleShare(user[5])}
+              disabled={user[4] === 0}
+              title={user[4] === 0 ? 'Feedback not available' : ''}
+              style={{ backgroundColor: user[4] === 0 ? 'grey' : '' }}
+            >
+              <ShareAltOutlined className='eye' />
+            </button>}
+               
               </td>
             </tr>
           ))}

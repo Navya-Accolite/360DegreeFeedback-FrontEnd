@@ -28,7 +28,6 @@ function GiveFeedbackTable(props) {
       }
     })
       .then((response) => setData(response.data));
-    console.log(data);
   }, []);
 
   const handleFeedBack = (id) => {
