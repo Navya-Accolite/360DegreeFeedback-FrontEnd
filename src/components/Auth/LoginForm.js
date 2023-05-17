@@ -21,22 +21,6 @@ const LoginForm = ({onLoginSuccess}) => {
   )
    },500)
     },[])
-    // function handleLoginApi(response){
-    //     console.log(response.credential);
-    //     window.sessionStorage.setItem('LoggedIn',"YES");
-    //     axios.post("http://localhost:4545/auth/login",{
-    //       body: JSON.stringify({ token: response.credential }),
-    //     }).then((response) => {
-    //         console.log("response",response)
-    //         console.log(response.data.user.emailId);
-    //         const emailId = response.data.user.emailId;
-    //         console.log(emailId);
-    //         window.sessionStorage.setItem('emailId', emailId);
-    //         onLoginSuccess();
-    //     });
-    // }
-
-    
     const handleLoginApi = (response) => {
       console.log(response)
         fetch(`http://localhost:4545/auth/login`, {
@@ -64,30 +48,6 @@ const LoginForm = ({onLoginSuccess}) => {
           });
     };
 
-
-//     return (
-//         <>
-//         <div
-//         style={{
-//             backgroundImage: `url(${image})`,
-//             backgroundSize: "cover",
-//             backgroundPosition: "center",
-//             height: "100vh",
-//         display: "flex",
-//         justifyContent: "center",
-//         alignItems: "center",
-//         }}
-//         >
-//         <div className='loginWrapper'>
-//                 <h2>Welcome</h2>
-//                 <div className="google_btn" onClick={handleLoginApi}>
-//                     <div id="LoginButton"></div>
-//                 </div>
-//             </div>
-//             </div>
-//         </>
-//     )
-// }
 return (
     <div
       style={{

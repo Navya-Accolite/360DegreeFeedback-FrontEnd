@@ -56,8 +56,6 @@ function Pdf(props) {
 
   return (
     <div>
-        {console.log(props.data),
-        console.log(props.question)}
     <PDFDownloadLink
       document={
        
