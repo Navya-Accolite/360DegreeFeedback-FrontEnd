@@ -19,6 +19,7 @@ function HomeTable(props) {
   const [isOpenShare, setIsOpenShare] = useState(false);
   const emailId = window.localStorage.getItem('emailId');
   const [comment, setComment] = useState('');
+
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(2);
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -48,7 +49,6 @@ function HomeTable(props) {
   const renderPageNumbers = pageNumbers.map((number) => {
     return (
       <button
-        //  id='butt1'
         className='paginatebutton'
         key={number}
         // className={currentPage === number ? {backgroundColor:"red"} : null}
