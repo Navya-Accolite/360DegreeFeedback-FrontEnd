@@ -19,29 +19,8 @@ import ViewReporteesFeedback from './components/Manager/ViewReporteesTable';
 import LoginForm from './components/Auth/LoginForm';
 import FeedbackForm from './components/GiveFeedback/FeedbackForm';
 import ErrorPage from './components/ErrorPage';
-import { useMediaQuery } from 'react-responsive'
 
 function App() {
-
-  const isMobileDevice = useMediaQuery({
-    query: "(min-device-width: 480px)",
-  });
-
-  const isTabletDevice = useMediaQuery({
-    query: "(min-device-width: 768px)",
-  });
-
-  const isLaptop = useMediaQuery({
-    query: "(min-device-width: 1024px)",
-  });
-
-  const isDesktop = useMediaQuery({
-    query: "(min-device-width: 1200px)",
-  });
-
-  const isBigScreen = useMediaQuery({
-    query: "(min-device-width: 1201px )",
-  });
   
   const location = useLocation();
   const navigate = useNavigate();
@@ -88,6 +67,7 @@ function App() {
             </span>
 
             <span className='Logout'>
+            {/* <img src={a} style={{ height: "65px", width: "200px" }}></img> */}
               <Button color="primary" onClick={onLogout}>
                 Logout
               </Button>

@@ -6,9 +6,11 @@ function DropDown(props) {
   const header="Bearer "+window.sessionStorage.getItem('accessToken');
   const [selectedOption, setSelectedOption] = useState("");
   const navigate = useNavigate();
+ 
   const options = props.data.map((option) => (
-    <option key={option[1]} value={option[1]}>
-      {option[1]}
+
+    <option key={option.emailId} value={option.emailId}>
+      {option.emailId}
     </option>
   ));
 

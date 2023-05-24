@@ -10,7 +10,7 @@ function ViewBUReportees() {
 
   useEffect(() => {
     if (emailId) {
-      fetch("http://localhost:4545/api/employeesUnderBUHead/"+emailId,{
+      fetch("http://localhost:4545/api/hod/"+emailId,{
         headers: {
           "Content-type": "application/json",
            Authorization: header,
