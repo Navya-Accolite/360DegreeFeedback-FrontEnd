@@ -39,6 +39,7 @@ function ManageQuestions() {
       });
 
     setIsOpenCon(false);
+    window.location.reload();
     toast.success('Question Added Successfully!');
 
   }

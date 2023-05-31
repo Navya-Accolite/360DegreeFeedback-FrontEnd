@@ -60,10 +60,7 @@ function HomeTable(props) {
     );
   });
 
-  const handleReminder=(e) => {
-    toast.success("Reminder sent Successfully!");
 
-  }
   const handleView = (feedbackid) => {
     setIsOpenCon(true)
     axios.get('http://localhost:4545/api/getRating/' + feedbackid, {
@@ -120,7 +117,7 @@ function HomeTable(props) {
         console.log(error.text);
       });
     setIsOpenShare(false)
-    toast.success("Report sent Successfully!")
+    toast.success("Feedback Report sent Successfully!")
   };
 
   return (
@@ -143,9 +140,14 @@ function HomeTable(props) {
                     <td>{ratings[question[1]]}</td>
                   </tr>
                 ))}
+                <tr>
+                  <td>
+                    Feedback
+                  </td>
+                  <td>{comment}</td>
+                </tr>
               </tbody>
             </table>
-            <div className='comments'>Feedback:  {comment}</div>
           </div>
         </div>
         <ToastContainer/>
@@ -211,15 +213,7 @@ function HomeTable(props) {
                   </button>
                 </td>
                 <td>
-                  {user[4] == 0 ?
-                    <button
-                      id='btn1'
-                      onClick={() => handleReminder()}
-                    // disabled={user[4] === 0}
-                    >
-                      <BellOutlined className='eye' />
-                      <ToastContainer />
-                    </button> :
+                  
                     <button
                       id='btn1'
                       onClick={() => handleShare(user[5])}
@@ -228,7 +222,7 @@ function HomeTable(props) {
                       style={{ backgroundColor: user[4] === 0 ? 'grey' : '' }}
                     >
                       <ShareAltOutlined className='eye' />
-                    </button>}
+                    </button>
 
 
                 </td>
